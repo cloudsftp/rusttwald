@@ -1,1 +1,5 @@
 openapi-generator-cli.jar
+
+/target/
+**/*.rs.bk
+Cargo.lock
