@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cluster_domain** | Option<**String**> |  | [optional]
+**cluster_id** | Option<**String**> | deprecated by property clusterId | [optional]
 **cluster_id** | Option<**String**> |  | [optional]
 **created_at** | **String** |  | 
 **customer_id** | **String** |  | 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | 
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **image_ref_id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**is_ready** | **bool** | deprecated by property status | 
 **project_hosting_id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **readiness** | [**models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus**](de.mittwald.v1.project.DeprecatedProjectReadinessStatus.md) |  | 
 **server_id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]

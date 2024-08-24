@@ -16,12 +16,20 @@ pub struct IngressUpdateIngressTlsRequestOneOf {
     /// Has to be `true`, as ssl cannot be deactivated.
     #[serde(rename = "acme")]
     pub acme: bool,
+    /// Was added by mistake. Never did anything.
+    #[serde(rename = "isCreated", skip_serializing_if = "Option::is_none")]
+    pub is_created: Option<bool>,
+    /// Was added by mistake. Never did anything.
+    #[serde(rename = "requestDeadline", skip_serializing_if = "Option::is_none")]
+    pub request_deadline: Option<String>,
 }
 
 impl IngressUpdateIngressTlsRequestOneOf {
     pub fn new(acme: bool) -> IngressUpdateIngressTlsRequestOneOf {
         IngressUpdateIngressTlsRequestOneOf {
             acme,
+            is_created: None,
+            request_deadline: None,
         }
     }
 }

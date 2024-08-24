@@ -23,16 +23,20 @@ pub struct DePeriodMittwaldPeriodV1PeriodFilePeriodFileMeta {
     pub name: String,
     #[serde(rename = "sizeInBytes")]
     pub size_in_bytes: i32,
+    /// deprecated, see mimeType
+    #[serde(rename = "type")]
+    pub r#type: String,
 }
 
 impl DePeriodMittwaldPeriodV1PeriodFilePeriodFileMeta {
-    pub fn new(friendly_url: String, id: uuid::Uuid, mime_type: String, name: String, size_in_bytes: i32) -> DePeriodMittwaldPeriodV1PeriodFilePeriodFileMeta {
+    pub fn new(friendly_url: String, id: uuid::Uuid, mime_type: String, name: String, size_in_bytes: i32, r#type: String) -> DePeriodMittwaldPeriodV1PeriodFilePeriodFileMeta {
         DePeriodMittwaldPeriodV1PeriodFilePeriodFileMeta {
             friendly_url,
             id,
             mime_type,
             name,
             size_in_bytes,
+            r#type,
         }
     }
 }

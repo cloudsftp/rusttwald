@@ -14,13 +14,13 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum MailUpdateProjectMailSettingRequest {
-    MailUpdateProjectMailSettingRequestOneOf(Box<models::MailUpdateProjectMailSettingRequestOneOf>),
-    MailUpdateProjectMailSettingRequestOneOf1(Box<models::MailUpdateProjectMailSettingRequestOneOf1>),
+    MailProjectsettingUpdateBlacklistDeprecatedRequest(Box<models::MailProjectsettingUpdateBlacklistDeprecatedRequest>),
+    MailProjectsettingUpdateWhitelistDeprecatedRequest(Box<models::MailProjectsettingUpdateWhitelistDeprecatedRequest>),
 }
 
 impl Default for MailUpdateProjectMailSettingRequest {
     fn default() -> Self {
-        Self::MailUpdateProjectMailSettingRequestOneOf(Default::default())
+        Self::MailProjectsettingUpdateBlacklistDeprecatedRequest(Default::default())
     }
 }
 

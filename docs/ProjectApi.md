@@ -32,6 +32,7 @@ Method | HTTP request | Description
 [**project_update_project_description**](ProjectApi.md#project_update_project_description) | **PATCH** /v2/projects/{projectId}/description | Update a Project's description.
 [**project_update_project_membership**](ProjectApi.md#project_update_project_membership) | **PATCH** /v2/project-memberships/{projectMembershipId} | Update a ProjectMembership.
 [**project_update_server_description**](ProjectApi.md#project_update_server_description) | **PATCH** /v2/servers/{serverId}/description | Update a Servers's description.
+[**v2_project_project_id_invites_post**](ProjectApi.md#v2_project_project_id_invites_post) | **POST** /v2/project/{projectId}/invites | Create a ProjectInvite.
 
 
 
@@ -95,7 +96,7 @@ Name | Type | Description  | Required | Notes
 
 ## project_create_project_invite
 
-> models::DePeriodMittwaldPeriodV1PeriodMembershipPeriodProjectInvite project_create_project_invite(project_id, project_create_project_invite_request)
+> models::DePeriodMittwaldPeriodV1PeriodMembershipPeriodProjectInvite project_create_project_invite(project_id, v2_project_project_id_invites_post_request)
 Create a ProjectInvite.
 
 ### Parameters
@@ -104,7 +105,7 @@ Create a ProjectInvite.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **project_id** | **uuid::Uuid** | ID of the Project to create a ProjectInvite for. | [required] |
-**project_create_project_invite_request** | [**ProjectCreateProjectInviteRequest**](ProjectCreateProjectInviteRequest.md) |  | [required] |
+**v2_project_project_id_invites_post_request** | [**V2ProjectProjectIdInvitesPostRequest**](V2ProjectProjectIdInvitesPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -837,6 +838,35 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_project_project_id_invites_post
+
+> v2_project_project_id_invites_post(project_id, v2_project_project_id_invites_post_request)
+Create a ProjectInvite.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**project_id** | **uuid::Uuid** | ID of the Project to create a ProjectInvite for. | [required] |
+**v2_project_project_id_invites_post_request** | [**V2ProjectProjectIdInvitesPostRequest**](V2ProjectProjectIdInvitesPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

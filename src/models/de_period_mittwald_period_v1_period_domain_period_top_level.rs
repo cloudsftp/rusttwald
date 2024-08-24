@@ -19,16 +19,19 @@ pub struct DePeriodMittwaldPeriodV1PeriodDomainPeriodTopLevel {
     pub rgp_days: i32,
     #[serde(rename = "tld")]
     pub tld: String,
+    #[serde(rename = "transferAuthCodeRequired")]
+    pub transfer_auth_code_required: bool,
     #[serde(rename = "transferAuthentication")]
     pub transfer_authentication: models::DePeriodMittwaldPeriodV1PeriodDomainPeriodTransferAuthentication,
 }
 
 impl DePeriodMittwaldPeriodV1PeriodDomainPeriodTopLevel {
-    pub fn new(irtp: bool, rgp_days: i32, tld: String, transfer_authentication: models::DePeriodMittwaldPeriodV1PeriodDomainPeriodTransferAuthentication) -> DePeriodMittwaldPeriodV1PeriodDomainPeriodTopLevel {
+    pub fn new(irtp: bool, rgp_days: i32, tld: String, transfer_auth_code_required: bool, transfer_authentication: models::DePeriodMittwaldPeriodV1PeriodDomainPeriodTransferAuthentication) -> DePeriodMittwaldPeriodV1PeriodDomainPeriodTopLevel {
         DePeriodMittwaldPeriodV1PeriodDomainPeriodTopLevel {
             irtp,
             rgp_days,
             tld,
+            transfer_auth_code_required,
             transfer_authentication,
         }
     }

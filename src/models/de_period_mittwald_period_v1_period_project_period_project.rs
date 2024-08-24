@@ -15,6 +15,9 @@ use serde::{Deserialize, Serialize};
 pub struct DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
     #[serde(rename = "clusterDomain", skip_serializing_if = "Option::is_none")]
     pub cluster_domain: Option<String>,
+    /// deprecated by property clusterId
+    #[serde(rename = "clusterID", skip_serializing_if = "Option::is_none")]
+    pub cluster_id: Option<String>,
     #[serde(rename = "clusterId", skip_serializing_if = "Option::is_none")]
     pub cluster_id: Option<String>,
     #[serde(rename = "createdAt")]
@@ -35,6 +38,9 @@ pub struct DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
     pub id: uuid::Uuid,
     #[serde(rename = "imageRefId", skip_serializing_if = "Option::is_none")]
     pub image_ref_id: Option<uuid::Uuid>,
+    /// deprecated by property status
+    #[serde(rename = "isReady")]
+    pub is_ready: bool,
     #[serde(rename = "projectHostingId", skip_serializing_if = "Option::is_none")]
     pub project_hosting_id: Option<uuid::Uuid>,
     #[serde(rename = "readiness")]
@@ -60,9 +66,10 @@ pub struct DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
 }
 
 impl DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
-    pub fn new(created_at: String, customer_id: String, description: String, directories: std::collections::HashMap<String, String>, enabled: bool, id: uuid::Uuid, readiness: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus, short_id: String, status: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodProjectStatus, status_set_at: String, web_storage_usage_in_bytes: i64, web_storage_usage_in_bytes_set_at: String) -> DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
+    pub fn new(created_at: String, customer_id: String, description: String, directories: std::collections::HashMap<String, String>, enabled: bool, id: uuid::Uuid, is_ready: bool, readiness: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus, short_id: String, status: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodProjectStatus, status_set_at: String, web_storage_usage_in_bytes: i64, web_storage_usage_in_bytes_set_at: String) -> DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
         DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
             cluster_domain: None,
+            cluster_id: None,
             cluster_id: None,
             created_at,
             customer_id,
@@ -73,6 +80,7 @@ impl DePeriodMittwaldPeriodV1PeriodProjectPeriodProject {
             enabled,
             id,
             image_ref_id: None,
+            is_ready,
             project_hosting_id: None,
             readiness,
             server_id: None,

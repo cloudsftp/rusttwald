@@ -71,6 +71,30 @@ pub enum MailDeleteMailAddressError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`mail_deliverybox_update_description_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailDeliveryboxUpdateDescriptionDeprecatedError {
+    Status403(),
+    Status404(),
+    Status429(models::AppExecuteAction429Response),
+    Status500(),
+    Status503(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`mail_deliverybox_update_password_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailDeliveryboxUpdatePasswordDeprecatedError {
+    Status403(),
+    Status404(),
+    Status429(models::AppExecuteAction429Response),
+    Status500(),
+    Status503(),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`mail_get_delivery_box`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -141,6 +165,42 @@ pub enum MailListProjectMailSettingsError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`mail_mailaddress_update_address_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailMailaddressUpdateAddressDeprecatedError {
+    Status403(),
+    Status404(),
+    Status429(models::AppExecuteAction429Response),
+    Status500(),
+    Status503(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`mail_projectsetting_update_blacklist_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailProjectsettingUpdateBlacklistDeprecatedError {
+    Status403(),
+    Status404(),
+    Status429(models::AppExecuteAction429Response),
+    Status500(),
+    Status503(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`mail_projectsetting_update_whitelist_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailProjectsettingUpdateWhitelistDeprecatedError {
+    Status403(),
+    Status404(),
+    Status429(models::AppExecuteAction429Response),
+    Status500(),
+    Status503(),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`mail_update_delivery_box_description`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -197,10 +257,38 @@ pub enum MailUpdateMailAddressAutoresponderError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`mail_update_mail_address_autoresponder_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateMailAddressAutoresponderV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`mail_update_mail_address_catch_all`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum MailUpdateMailAddressCatchAllError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`mail_update_mail_address_catchall_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateMailAddressCatchallV2DeprecatedError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
@@ -225,10 +313,38 @@ pub enum MailUpdateMailAddressForwardAddressesError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`mail_update_mail_address_forward_addresses_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateMailAddressForwardAddressesV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`mail_update_mail_address_password`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum MailUpdateMailAddressPasswordError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`mail_update_mail_address_password_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateMailAddressPasswordV2DeprecatedError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
@@ -253,10 +369,38 @@ pub enum MailUpdateMailAddressQuotaError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`mail_update_mail_address_quota_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateMailAddressQuotaV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`mail_update_mail_address_spam_protection`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum MailUpdateMailAddressSpamProtectionError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`mail_update_mail_address_spam_protection_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateMailAddressSpamProtectionV2DeprecatedError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
@@ -281,8 +425,127 @@ pub enum MailUpdateProjectMailSettingError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`mail_update_project_mail_setting_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum MailUpdateProjectMailSettingV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    Status500(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status503(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
 
-pub async fn mail_create_deliverybox(configuration: &configuration::Configuration, project_id: &str, mail_create_deliverybox_request: Option<models::MailCreateDeliveryboxRequest>) -> Result<models::AppRequestAppinstallation201Response, Error<MailCreateDeliveryboxError>> {
+/// struct for typed errors of method [`v2_deliveryboxes_delivery_box_id_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DeliveryboxesDeliveryBoxIdDeleteError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_deliveryboxes_delivery_box_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DeliveryboxesDeliveryBoxIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_auto_responder_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdAutoResponderPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_catch_all_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdCatchAllPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdDeleteError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_forwardaddresses_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdForwardaddressesPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_password_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdPasswordPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_quota_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdQuotaPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_mailaddresses_mail_address_id_spamprotection_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2MailaddressesMailAddressIdSpamprotectionPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_deliveryboxes_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdDeliveryboxesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_deliveryboxes_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdDeliveryboxesPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_mailaddresses_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdMailaddressesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_mailaddresses_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdMailaddressesPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_mailsettings_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdMailsettingsGetError {
+    UnknownValue(serde_json::Value),
+}
+
+
+pub async fn mail_create_deliverybox(configuration: &configuration::Configuration, project_id: &str, v2_projects_project_id_deliveryboxes_post_request: Option<models::V2ProjectsProjectIdDeliveryboxesPostRequest>) -> Result<models::AppRequestAppinstallation201Response, Error<MailCreateDeliveryboxError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -301,7 +564,7 @@ pub async fn mail_create_deliverybox(configuration: &configuration::Configuratio
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_create_deliverybox_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_projects_project_id_deliveryboxes_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -318,7 +581,7 @@ pub async fn mail_create_deliverybox(configuration: &configuration::Configuratio
     }
 }
 
-pub async fn mail_create_mail_address(configuration: &configuration::Configuration, project_id: &str, mail_create_mail_address_request: Option<models::MailCreateMailAddressRequest>) -> Result<models::AppRequestAppinstallation201Response, Error<MailCreateMailAddressError>> {
+pub async fn mail_create_mail_address(configuration: &configuration::Configuration, project_id: &str, v2_projects_project_id_mailaddresses_post_request: Option<models::V2ProjectsProjectIdMailaddressesPostRequest>) -> Result<models::AppRequestAppinstallation201Response, Error<MailCreateMailAddressError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -337,7 +600,7 @@ pub async fn mail_create_mail_address(configuration: &configuration::Configurati
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_create_mail_address_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_projects_project_id_mailaddresses_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -419,6 +682,78 @@ pub async fn mail_delete_mail_address(configuration: &configuration::Configurati
         Ok(())
     } else {
         let local_var_entity: Option<MailDeleteMailAddressError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_deliverybox_update_description_deprecated(configuration: &configuration::Configuration, id: &str, database_update_mysql_database_description_request: Option<models::DatabaseUpdateMysqlDatabaseDescriptionRequest>) -> Result<(), Error<MailDeliveryboxUpdateDescriptionDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/deliveryboxes/{id}/description", local_var_configuration.base_path, id=crate::apis::urlencode(id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&database_update_mysql_database_description_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailDeliveryboxUpdateDescriptionDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_deliverybox_update_password_deprecated(configuration: &configuration::Configuration, id: &str, database_update_mysql_user_password_request: Option<models::DatabaseUpdateMysqlUserPasswordRequest>) -> Result<(), Error<MailDeliveryboxUpdatePasswordDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/deliveryboxes/{id}/password", local_var_configuration.base_path, id=crate::apis::urlencode(id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&database_update_mysql_user_password_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailDeliveryboxUpdatePasswordDeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -599,6 +934,114 @@ pub async fn mail_list_project_mail_settings(configuration: &configuration::Conf
     }
 }
 
+pub async fn mail_mailaddress_update_address_deprecated(configuration: &configuration::Configuration, id: &str, mail_mailaddress_update_address_deprecated_request: Option<models::MailMailaddressUpdateAddressDeprecatedRequest>) -> Result<(), Error<MailMailaddressUpdateAddressDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{id}/address", local_var_configuration.base_path, id=crate::apis::urlencode(id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_mailaddress_update_address_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailMailaddressUpdateAddressDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_projectsetting_update_blacklist_deprecated(configuration: &configuration::Configuration, project_id: &str, mail_projectsetting_update_blacklist_deprecated_request: Option<models::MailProjectsettingUpdateBlacklistDeprecatedRequest>) -> Result<(), Error<MailProjectsettingUpdateBlacklistDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/mailsettings/blacklist", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_projectsetting_update_blacklist_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailProjectsettingUpdateBlacklistDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_projectsetting_update_whitelist_deprecated(configuration: &configuration::Configuration, project_id: &str, mail_projectsetting_update_whitelist_deprecated_request: Option<models::MailProjectsettingUpdateWhitelistDeprecatedRequest>) -> Result<(), Error<MailProjectsettingUpdateWhitelistDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/mailsettings/whitelist", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_projectsetting_update_whitelist_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailProjectsettingUpdateWhitelistDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
 pub async fn mail_update_delivery_box_description(configuration: &configuration::Configuration, delivery_box_id: &str, database_update_mysql_database_description_request: Option<models::DatabaseUpdateMysqlDatabaseDescriptionRequest>) -> Result<(), Error<MailUpdateDeliveryBoxDescriptionError>> {
     let local_var_configuration = configuration;
 
@@ -671,7 +1114,7 @@ pub async fn mail_update_delivery_box_password(configuration: &configuration::Co
     }
 }
 
-pub async fn mail_update_mail_address_address(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_address_request: Option<models::MailUpdateMailAddressAddressRequest>) -> Result<(), Error<MailUpdateMailAddressAddressError>> {
+pub async fn mail_update_mail_address_address(configuration: &configuration::Configuration, mail_address_id: &str, mail_mailaddress_update_address_deprecated_request: Option<models::MailMailaddressUpdateAddressDeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressAddressError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -690,7 +1133,7 @@ pub async fn mail_update_mail_address_address(configuration: &configuration::Con
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_address_request);
+    local_var_req_builder = local_var_req_builder.json(&mail_mailaddress_update_address_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -707,7 +1150,7 @@ pub async fn mail_update_mail_address_address(configuration: &configuration::Con
     }
 }
 
-pub async fn mail_update_mail_address_autoresponder(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_autoresponder_request: Option<models::MailUpdateMailAddressAutoresponderRequest>) -> Result<(), Error<MailUpdateMailAddressAutoresponderError>> {
+pub async fn mail_update_mail_address_autoresponder(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_autoresponder_v2_deprecated_request: Option<models::MailUpdateMailAddressAutoresponderV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressAutoresponderError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -726,7 +1169,7 @@ pub async fn mail_update_mail_address_autoresponder(configuration: &configuratio
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_autoresponder_request);
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_autoresponder_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -738,6 +1181,42 @@ pub async fn mail_update_mail_address_autoresponder(configuration: &configuratio
         Ok(())
     } else {
         let local_var_entity: Option<MailUpdateMailAddressAutoresponderError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_mail_address_autoresponder_v2_deprecated(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_autoresponder_v2_deprecated_request: Option<models::MailUpdateMailAddressAutoresponderV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressAutoresponderV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mail-addresses/{mailAddressId}/autoresponder", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_autoresponder_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateMailAddressAutoresponderV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -779,7 +1258,43 @@ pub async fn mail_update_mail_address_catch_all(configuration: &configuration::C
     }
 }
 
-pub async fn mail_update_mail_address_forward_addresses(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_forward_addresses_request: Option<models::MailUpdateMailAddressForwardAddressesRequest>) -> Result<(), Error<MailUpdateMailAddressForwardAddressesError>> {
+pub async fn mail_update_mail_address_catchall_v2_deprecated(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_catch_all_request: Option<models::MailUpdateMailAddressCatchAllRequest>) -> Result<(), Error<MailUpdateMailAddressCatchallV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mail-addresses/{mailAddressId}/catchall", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_catch_all_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateMailAddressCatchallV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_mail_address_forward_addresses(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_forward_addresses_v2_deprecated_request: Option<models::MailUpdateMailAddressForwardAddressesV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressForwardAddressesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -798,7 +1313,7 @@ pub async fn mail_update_mail_address_forward_addresses(configuration: &configur
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_forward_addresses_request);
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_forward_addresses_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -810,6 +1325,42 @@ pub async fn mail_update_mail_address_forward_addresses(configuration: &configur
         Ok(())
     } else {
         let local_var_entity: Option<MailUpdateMailAddressForwardAddressesError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_mail_address_forward_addresses_v2_deprecated(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_forward_addresses_v2_deprecated_request: Option<models::MailUpdateMailAddressForwardAddressesV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressForwardAddressesV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mail-addresses/{mailAddressId}/forward-addresses", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_forward_addresses_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateMailAddressForwardAddressesV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -851,7 +1402,43 @@ pub async fn mail_update_mail_address_password(configuration: &configuration::Co
     }
 }
 
-pub async fn mail_update_mail_address_quota(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_quota_request: Option<models::MailUpdateMailAddressQuotaRequest>) -> Result<(), Error<MailUpdateMailAddressQuotaError>> {
+pub async fn mail_update_mail_address_password_v2_deprecated(configuration: &configuration::Configuration, mail_address_id: &str, database_update_mysql_user_password_request: Option<models::DatabaseUpdateMysqlUserPasswordRequest>) -> Result<(), Error<MailUpdateMailAddressPasswordV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mail-addresses/{mailAddressId}/password", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&database_update_mysql_user_password_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateMailAddressPasswordV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_mail_address_quota(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_quota_v2_deprecated_request: Option<models::MailUpdateMailAddressQuotaV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressQuotaError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -870,7 +1457,7 @@ pub async fn mail_update_mail_address_quota(configuration: &configuration::Confi
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_quota_request);
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_quota_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -887,7 +1474,43 @@ pub async fn mail_update_mail_address_quota(configuration: &configuration::Confi
     }
 }
 
-pub async fn mail_update_mail_address_spam_protection(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_spam_protection_request: Option<models::MailUpdateMailAddressSpamProtectionRequest>) -> Result<(), Error<MailUpdateMailAddressSpamProtectionError>> {
+pub async fn mail_update_mail_address_quota_v2_deprecated(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_quota_v2_deprecated_request: Option<models::MailUpdateMailAddressQuotaV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressQuotaV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mail-addresses/{mailAddressId}/quota", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_quota_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateMailAddressQuotaV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_mail_address_spam_protection(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_spam_protection_v2_deprecated_request: Option<models::MailUpdateMailAddressSpamProtectionV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressSpamProtectionError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -906,7 +1529,7 @@ pub async fn mail_update_mail_address_spam_protection(configuration: &configurat
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_spam_protection_request);
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_spam_protection_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -918,6 +1541,42 @@ pub async fn mail_update_mail_address_spam_protection(configuration: &configurat
         Ok(())
     } else {
         let local_var_entity: Option<MailUpdateMailAddressSpamProtectionError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_mail_address_spam_protection_v2_deprecated(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_spam_protection_v2_deprecated_request: Option<models::MailUpdateMailAddressSpamProtectionV2DeprecatedRequest>) -> Result<(), Error<MailUpdateMailAddressSpamProtectionV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mail-addresses/{mailAddressId}/spam-protection", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_spam_protection_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateMailAddressSpamProtectionV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -954,6 +1613,575 @@ pub async fn mail_update_project_mail_setting(configuration: &configuration::Con
         Ok(())
     } else {
         let local_var_entity: Option<MailUpdateProjectMailSettingError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn mail_update_project_mail_setting_v2_deprecated(configuration: &configuration::Configuration, project_id: &str, setting: &str, mail_update_project_mail_setting_request: Option<models::MailUpdateProjectMailSettingRequest>) -> Result<(), Error<MailUpdateProjectMailSettingV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/mail-settings/{setting}", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id), setting=crate::apis::urlencode(setting));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_project_mail_setting_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<MailUpdateProjectMailSettingV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_deliveryboxes_delivery_box_id_delete(configuration: &configuration::Configuration, delivery_box_id: &str) -> Result<(), Error<V2DeliveryboxesDeliveryBoxIdDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/deliveryboxes/{deliveryBoxId}", local_var_configuration.base_path, deliveryBoxId=crate::apis::urlencode(delivery_box_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DeliveryboxesDeliveryBoxIdDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_deliveryboxes_delivery_box_id_get(configuration: &configuration::Configuration, delivery_box_id: &str) -> Result<(), Error<V2DeliveryboxesDeliveryBoxIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/deliveryboxes/{deliveryBoxId}", local_var_configuration.base_path, deliveryBoxId=crate::apis::urlencode(delivery_box_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DeliveryboxesDeliveryBoxIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_auto_responder_put(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_autoresponder_v2_deprecated_request: Option<models::MailUpdateMailAddressAutoresponderV2DeprecatedRequest>) -> Result<(), Error<V2MailaddressesMailAddressIdAutoResponderPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}/autoResponder", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_autoresponder_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdAutoResponderPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_catch_all_put(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_catch_all_request: Option<models::MailUpdateMailAddressCatchAllRequest>) -> Result<(), Error<V2MailaddressesMailAddressIdCatchAllPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}/catchAll", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_catch_all_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdCatchAllPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_delete(configuration: &configuration::Configuration, mail_address_id: &str) -> Result<(), Error<V2MailaddressesMailAddressIdDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_forwardaddresses_put(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_forward_addresses_v2_deprecated_request: Option<models::MailUpdateMailAddressForwardAddressesV2DeprecatedRequest>) -> Result<(), Error<V2MailaddressesMailAddressIdForwardaddressesPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}/forwardaddresses", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_forward_addresses_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdForwardaddressesPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_get(configuration: &configuration::Configuration, mail_address_id: &str) -> Result<(), Error<V2MailaddressesMailAddressIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_password_put(configuration: &configuration::Configuration, mail_address_id: &str, database_update_mysql_user_password_request: Option<models::DatabaseUpdateMysqlUserPasswordRequest>) -> Result<(), Error<V2MailaddressesMailAddressIdPasswordPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}/password", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&database_update_mysql_user_password_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdPasswordPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_quota_put(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_quota_v2_deprecated_request: Option<models::MailUpdateMailAddressQuotaV2DeprecatedRequest>) -> Result<(), Error<V2MailaddressesMailAddressIdQuotaPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}/quota", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_quota_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdQuotaPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_mailaddresses_mail_address_id_spamprotection_put(configuration: &configuration::Configuration, mail_address_id: &str, mail_update_mail_address_spam_protection_v2_deprecated_request: Option<models::MailUpdateMailAddressSpamProtectionV2DeprecatedRequest>) -> Result<(), Error<V2MailaddressesMailAddressIdSpamprotectionPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/mailaddresses/{mailAddressId}/spamprotection", local_var_configuration.base_path, mailAddressId=crate::apis::urlencode(mail_address_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&mail_update_mail_address_spam_protection_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2MailaddressesMailAddressIdSpamprotectionPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_deliveryboxes_get(configuration: &configuration::Configuration, project_id: &str) -> Result<(), Error<V2ProjectsProjectIdDeliveryboxesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/deliveryboxes", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdDeliveryboxesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_deliveryboxes_post(configuration: &configuration::Configuration, project_id: &str, v2_projects_project_id_deliveryboxes_post_request: Option<models::V2ProjectsProjectIdDeliveryboxesPostRequest>) -> Result<(), Error<V2ProjectsProjectIdDeliveryboxesPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/deliveryboxes", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_projects_project_id_deliveryboxes_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdDeliveryboxesPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_mailaddresses_get(configuration: &configuration::Configuration, project_id: &str) -> Result<(), Error<V2ProjectsProjectIdMailaddressesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/mailaddresses", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdMailaddressesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_mailaddresses_post(configuration: &configuration::Configuration, project_id: &str, v2_projects_project_id_mailaddresses_post_request: Option<models::V2ProjectsProjectIdMailaddressesPostRequest>) -> Result<(), Error<V2ProjectsProjectIdMailaddressesPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/mailaddresses", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_projects_project_id_mailaddresses_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdMailaddressesPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_mailsettings_get(configuration: &configuration::Configuration, project_id: &str) -> Result<(), Error<V2ProjectsProjectIdMailsettingsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/mailsettings", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdMailsettingsGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

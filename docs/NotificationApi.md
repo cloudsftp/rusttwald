@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**notifications_count_unread_notifications**](NotificationApi.md#notifications_count_unread_notifications) | **GET** /v2/notification-unread-counts | Get the counts for unread notifications of the user.
 [**notifications_list_notifications**](NotificationApi.md#notifications_list_notifications) | **GET** /v2/notifications | List all unread notifications.
 [**notifications_read_all_notifications**](NotificationApi.md#notifications_read_all_notifications) | **POST** /v2/notifications/actions/read-all | Mark all notifications as read.
+[**notifications_read_all_notifications_deprecated**](NotificationApi.md#notifications_read_all_notifications_deprecated) | **PUT** /v2/notifications/status | Mark all notifications as read (deprecated).
 [**notifications_read_notification**](NotificationApi.md#notifications_read_notification) | **PUT** /v2/notifications/{notificationId}/status | Mark notification as read.
+[**v2_notifications_unread_counts_get**](NotificationApi.md#v2_notifications_unread_counts_get) | **GET** /v2/notifications/unread-counts | Get the counts for unread notifications of the user.
 
 
 
@@ -154,7 +156,7 @@ Name | Type | Description  | Required | Notes
 
 ## notifications_read_all_notifications
 
-> models::NotificationsReadAllNotifications200Response notifications_read_all_notifications(body)
+> models::NotificationsReadAllNotificationsDeprecated200Response notifications_read_all_notifications(body)
 Mark all notifications as read.
 
 Mark all notifications for the authenticated user as read.
@@ -168,7 +170,37 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::NotificationsReadAllNotifications200Response**](notifications_read_all_notifications_200_response.md)
+[**models::NotificationsReadAllNotificationsDeprecated200Response**](notifications_read_all_notifications_deprecated_200_response.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## notifications_read_all_notifications_deprecated
+
+> models::NotificationsReadAllNotificationsDeprecated200Response notifications_read_all_notifications_deprecated(body)
+Mark all notifications as read (deprecated).
+
+Deprecated route. Please use /v2/notifications/actions/read-all instead.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+[**models::NotificationsReadAllNotificationsDeprecated200Response**](notifications_read_all_notifications_deprecated_200_response.md)
 
 ### Authorization
 
@@ -184,7 +216,7 @@ Name | Type | Description  | Required | Notes
 
 ## notifications_read_notification
 
-> models::NotificationsReadAllNotifications200Response notifications_read_notification(notification_id, notifications_read_all_notifications200_response)
+> models::NotificationsReadAllNotificationsDeprecated200Response notifications_read_notification(notification_id, notifications_read_all_notifications_deprecated200_response)
 Mark notification as read.
 
 ### Parameters
@@ -193,11 +225,11 @@ Mark notification as read.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **notification_id** | **uuid::Uuid** |  | [required] |
-**notifications_read_all_notifications200_response** | [**NotificationsReadAllNotifications200Response**](NotificationsReadAllNotifications200Response.md) |  | [required] |
+**notifications_read_all_notifications_deprecated200_response** | [**NotificationsReadAllNotificationsDeprecated200Response**](NotificationsReadAllNotificationsDeprecated200Response.md) |  | [required] |
 
 ### Return type
 
-[**models::NotificationsReadAllNotifications200Response**](notifications_read_all_notifications_200_response.md)
+[**models::NotificationsReadAllNotificationsDeprecated200Response**](notifications_read_all_notifications_deprecated_200_response.md)
 
 ### Authorization
 
@@ -207,6 +239,33 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_notifications_unread_counts_get
+
+> v2_notifications_unread_counts_get()
+Get the counts for unread notifications of the user.
+
+The user is determined by the access token used. Lighter weight route instead of getting all unread notifications and count yourself. 
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

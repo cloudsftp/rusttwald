@@ -19,6 +19,9 @@ pub struct DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules {
     pub file_types: Vec<models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileType>,
     #[serde(rename = "maxSizeInBytes")]
     pub max_size_in_bytes: i32,
+    /// deprecated, see maxSizeInBytes
+    #[serde(rename = "maxSizeInKB")]
+    pub max_size_in_kb: i32,
     #[serde(rename = "mimeTypes")]
     pub mime_types: Vec<String>,
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]
@@ -26,11 +29,12 @@ pub struct DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules {
 }
 
 impl DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules {
-    pub fn new(extensions: Vec<String>, file_types: Vec<models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileType>, max_size_in_bytes: i32, mime_types: Vec<String>) -> DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules {
+    pub fn new(extensions: Vec<String>, file_types: Vec<models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileType>, max_size_in_bytes: i32, max_size_in_kb: i32, mime_types: Vec<String>) -> DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules {
         DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules {
             extensions,
             file_types,
             max_size_in_bytes,
+            max_size_in_kb,
             mime_types,
             properties: None,
         }

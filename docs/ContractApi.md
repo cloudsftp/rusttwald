@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**contract_list_contracts**](ContractApi.md#contract_list_contracts) | **GET** /v2/customers/{customerId}/contracts | Return a list of Contracts for the given Customer.
 [**contract_terminate_contract**](ContractApi.md#contract_terminate_contract) | **POST** /v2/contracts/{contractId}/termination | Schedule the Termination of a Contract.
 [**contract_terminate_contract_item**](ContractApi.md#contract_terminate_contract_item) | **POST** /v2/contracts/{contractId}/items/{contractItemId}/termination | Schedule the Termination of a ContractItem.
+[**deprecated_invoice_detail_of_invoice**](ContractApi.md#deprecated_invoice_detail_of_invoice) | **GET** /v2/customers/{customerId}/invoices/{invoiceId} | Get details of an Invoice.
 [**invoice_detail**](ContractApi.md#invoice_detail) | **GET** /v2/invoices/{invoiceId} | Get details of an Invoice.
 [**invoice_get_detail_of_invoice_settings**](ContractApi.md#invoice_get_detail_of_invoice_settings) | **GET** /v2/customers/{customerId}/invoice-settings | Get InvoiceSettings of a Customer.
 [**invoice_get_file_access_token**](ContractApi.md#invoice_get_file_access_token) | **GET** /v2/customers/{customerId}/invoices/{invoiceId}/file-access-token | Request an Access Token for the Invoice file.
@@ -431,6 +432,37 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_invoice_detail_of_invoice
+
+> models::DePeriodMittwaldPeriodV1PeriodInvoicePeriodInvoice deprecated_invoice_detail_of_invoice(customer_id, invoice_id)
+Get details of an Invoice.
+
+This route is deprecated. Use /v2/invoices/{invoiceId} instead.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**customer_id** | **String** |  | [required] |
+**invoice_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**models::DePeriodMittwaldPeriodV1PeriodInvoicePeriodInvoice**](de.mittwald.v1.invoice.Invoice.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ownership** | [**models::DePeriodMittwaldPeriodV1PeriodIngressPeriodOwnership**](de.mittwald.v1.ingress.Ownership.md) |  | 
 **paths** | [**Vec<models::DePeriodMittwaldPeriodV1PeriodIngressPeriodPath>**](de.mittwald.v1.ingress.Path.md) | A list of paths. The default path `/` is always present and cannot be removed. | 
 **project_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
-**tls** | [**models::DeMittwaldV1IngressIngressTls**](de_mittwald_v1_ingress_Ingress_tls.md) |  | 
+**tls** | [**models::IngressTlsDeprecatedRequest**](ingress_tls_deprecated_request.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

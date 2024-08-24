@@ -19,6 +19,10 @@ pub struct DePeriodMittwaldPeriodV1PeriodCronjobPeriodCronjobExecution {
     pub duration_in_milliseconds: Option<i64>,
     #[serde(rename = "end", skip_serializing_if = "Option::is_none")]
     pub end: Option<String>,
+    #[serde(rename = "executionEnd", skip_serializing_if = "Option::is_none")]
+    pub execution_end: Option<String>,
+    #[serde(rename = "executionStart", skip_serializing_if = "Option::is_none")]
+    pub execution_start: Option<String>,
     #[serde(rename = "id")]
     pub id: String,
     #[serde(rename = "logPath", skip_serializing_if = "Option::is_none")]
@@ -39,6 +43,8 @@ impl DePeriodMittwaldPeriodV1PeriodCronjobPeriodCronjobExecution {
             aborted_by: None,
             duration_in_milliseconds: None,
             end: None,
+            execution_end: None,
+            execution_start: None,
             id,
             log_path: None,
             start: None,

@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**ssh_user_get_ssh_user**](SshsftpUserApi.md#ssh_user_get_ssh_user) | **GET** /v2/ssh-users/{sshUserId} | Get an SSHUser.
 [**ssh_user_list_ssh_users**](SshsftpUserApi.md#ssh_user_list_ssh_users) | **GET** /v2/projects/{projectId}/ssh-users | Get all SSHUsers for a Project.
 [**ssh_user_update_ssh_user**](SshsftpUserApi.md#ssh_user_update_ssh_user) | **PATCH** /v2/ssh-users/{sshUserId} | Update an SSHUser.
+[**v2_project_project_id_sftp_users_get**](SshsftpUserApi.md#v2_project_project_id_sftp_users_get) | **GET** /v2/project/{projectId}/sftp-users | Get all SFTPUsers for a Project.
+[**v2_sshusers_ssh_user_id_patch**](SshsftpUserApi.md#v2_sshusers_ssh_user_id_patch) | **PATCH** /v2/sshusers/{sshUserId} | Update an SSHUser.
 
 
 
@@ -301,6 +303,65 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_project_project_id_sftp_users_get
+
+> v2_project_project_id_sftp_users_get(project_id, limit, skip)
+Get all SFTPUsers for a Project.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**project_id** | **String** | ID of the Project to request SFTPUsers for. | [required] |
+**limit** | Option<**i32**> |  |  |
+**skip** | Option<**i32**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_sshusers_ssh_user_id_patch
+
+> v2_sshusers_ssh_user_id_patch(ssh_user_id, ssh_user_update_ssh_user_request)
+Update an SSHUser.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ssh_user_id** | **String** | ID of the SSHUser to be updated. | [required] |
+**ssh_user_update_ssh_user_request** | Option<[**SshUserUpdateSshUserRequest**](SshUserUpdateSshUserRequest.md)> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

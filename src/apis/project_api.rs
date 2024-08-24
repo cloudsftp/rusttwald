@@ -309,6 +309,13 @@ pub enum ProjectUpdateServerDescriptionError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`v2_project_project_id_invites_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectProjectIdInvitesPostError {
+    UnknownValue(serde_json::Value),
+}
+
 
 pub async fn project_accept_project_invite(configuration: &configuration::Configuration, project_invite_id: &str, customer_accept_customer_invite_request: models::CustomerAcceptCustomerInviteRequest) -> Result<(), Error<ProjectAcceptProjectInviteError>> {
     let local_var_configuration = configuration;
@@ -382,7 +389,7 @@ pub async fn project_create_project(configuration: &configuration::Configuration
     }
 }
 
-pub async fn project_create_project_invite(configuration: &configuration::Configuration, project_id: &str, project_create_project_invite_request: models::ProjectCreateProjectInviteRequest) -> Result<models::DePeriodMittwaldPeriodV1PeriodMembershipPeriodProjectInvite, Error<ProjectCreateProjectInviteError>> {
+pub async fn project_create_project_invite(configuration: &configuration::Configuration, project_id: &str, v2_project_project_id_invites_post_request: models::V2ProjectProjectIdInvitesPostRequest) -> Result<models::DePeriodMittwaldPeriodV1PeriodMembershipPeriodProjectInvite, Error<ProjectCreateProjectInviteError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -401,7 +408,7 @@ pub async fn project_create_project_invite(configuration: &configuration::Config
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&project_create_project_invite_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_project_project_id_invites_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1346,6 +1353,42 @@ pub async fn project_update_server_description(configuration: &configuration::Co
         Ok(())
     } else {
         let local_var_entity: Option<ProjectUpdateServerDescriptionError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_project_project_id_invites_post(configuration: &configuration::Configuration, project_id: &str, v2_project_project_id_invites_post_request: models::V2ProjectProjectIdInvitesPostRequest) -> Result<(), Error<V2ProjectProjectIdInvitesPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/project/{projectId}/invites", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_project_project_id_invites_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectProjectIdInvitesPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

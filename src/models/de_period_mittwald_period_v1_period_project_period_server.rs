@@ -27,6 +27,9 @@ pub struct DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
     pub id: uuid::Uuid,
     #[serde(rename = "imageRefId", skip_serializing_if = "Option::is_none")]
     pub image_ref_id: Option<uuid::Uuid>,
+    /// deprecated by property status
+    #[serde(rename = "isReady")]
+    pub is_ready: bool,
     #[serde(rename = "machineType")]
     pub machine_type: Box<models::DePeriodMittwaldPeriodV1PeriodProjectPeriodMachineType>,
     #[serde(rename = "readiness")]
@@ -42,7 +45,7 @@ pub struct DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
 }
 
 impl DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
-    pub fn new(cluster_name: String, created_at: String, customer_id: String, description: String, id: uuid::Uuid, machine_type: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodMachineType, readiness: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedServerReadinessStatus, short_id: String, status: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodServerStatus, storage: String) -> DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
+    pub fn new(cluster_name: String, created_at: String, customer_id: String, description: String, id: uuid::Uuid, is_ready: bool, machine_type: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodMachineType, readiness: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedServerReadinessStatus, short_id: String, status: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodServerStatus, storage: String) -> DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
         DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
             cluster_name,
             created_at,
@@ -51,6 +54,7 @@ impl DePeriodMittwaldPeriodV1PeriodProjectPeriodServer {
             disabled_reason: None,
             id,
             image_ref_id: None,
+            is_ready,
             machine_type: Box::new(machine_type),
             readiness,
             short_id,

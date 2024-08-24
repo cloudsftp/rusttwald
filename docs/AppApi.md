@@ -28,6 +28,23 @@ Method | HTTP request | Description
 [**app_set_database_users**](AppApi.md#app_set_database_users) | **PUT** /v2/app-installations/{appInstallationId}/databases/{databaseId}/users | Create linkage between an AppInstallation and DatabaseUsers.
 [**app_uninstall_appinstallation**](AppApi.md#app_uninstall_appinstallation) | **DELETE** /v2/app-installations/{appInstallationId} | Trigger an uninstallation process for an AppInstallation.
 [**app_unlink_database**](AppApi.md#app_unlink_database) | **DELETE** /v2/app-installations/{appInstallationId}/databases/{databaseId} | Remove linkage between an AppInstallation and a Database.
+[**deprecated_app_link_database**](AppApi.md#deprecated_app_link_database) | **PUT** /v2/appinstallations/{appInstallationId}/databases | Create linkage between an AppInstallation and a MySql-Database.
+[**v2_app_installations_app_installation_id_databases_database_id_put**](AppApi.md#v2_app_installations_app_installation_id_databases_database_id_put) | **PUT** /v2/app-installations/{appInstallationId}/databases/{databaseId} | Create linkage between an AppInstallation and DatabaseUsers.
+[**v2_appinstallations_app_installation_id_actions_action_post**](AppApi.md#v2_appinstallations_app_installation_id_actions_action_post) | **POST** /v2/appinstallations/{appInstallationId}/actions/{action} | Trigger a runtime action belonging to an AppInstallation.
+[**v2_appinstallations_app_installation_id_actions_copy_post**](AppApi.md#v2_appinstallations_app_installation_id_actions_copy_post) | **POST** /v2/appinstallations/{appInstallationId}/actions/copy | Request a copy of an AppInstallation.
+[**v2_appinstallations_app_installation_id_databases_database_id_delete**](AppApi.md#v2_appinstallations_app_installation_id_databases_database_id_delete) | **DELETE** /v2/appinstallations/{appInstallationId}/databases/{databaseId} | Remove linkage between an AppInstallation and a Database.
+[**v2_appinstallations_app_installation_id_databases_database_id_put**](AppApi.md#v2_appinstallations_app_installation_id_databases_database_id_put) | **PUT** /v2/appinstallations/{appInstallationId}/databases/{databaseId} | Create linkage between an AppInstallation and DatabaseUsers.
+[**v2_appinstallations_app_installation_id_delete**](AppApi.md#v2_appinstallations_app_installation_id_delete) | **DELETE** /v2/appinstallations/{appInstallationId} | Trigger an uninstallation process for an AppInstallation.
+[**v2_appinstallations_app_installation_id_get**](AppApi.md#v2_appinstallations_app_installation_id_get) | **GET** /v2/appinstallations/{appInstallationId} | Get an AppInstallation.
+[**v2_appinstallations_app_installation_id_missing_dependencies_get**](AppApi.md#v2_appinstallations_app_installation_id_missing_dependencies_get) | **GET** /v2/appinstallations/{appInstallationId}/missing-dependencies | Get the missing requirements of an appInstallation for a specific target AppVersion.
+[**v2_appinstallations_app_installation_id_patch**](AppApi.md#v2_appinstallations_app_installation_id_patch) | **PATCH** /v2/appinstallations/{appInstallationId} | Update properties belonging to an AppInstallation.
+[**v2_appinstallations_app_installation_id_status_get**](AppApi.md#v2_appinstallations_app_installation_id_status_get) | **GET** /v2/appinstallations/{appInstallationId}/status | Get runtime status belonging to an AppInstallation.
+[**v2_projects_project_id_appinstallations_get**](AppApi.md#v2_projects_project_id_appinstallations_get) | **GET** /v2/projects/{projectId}/appinstallations | List AppInstallations belonging to a Project.
+[**v2_projects_project_id_appinstallations_post**](AppApi.md#v2_projects_project_id_appinstallations_post) | **POST** /v2/projects/{projectId}/appinstallations | Request an AppInstallation.
+[**v2_systemsoftware_system_software_id_versions_get**](AppApi.md#v2_systemsoftware_system_software_id_versions_get) | **GET** /v2/systemsoftware/{systemSoftwareId}/versions | List SystemSoftwareVersions belonging to a SystemSoftware.
+[**v2_systemsoftware_system_software_id_versions_system_software_version_id_get**](AppApi.md#v2_systemsoftware_system_software_id_versions_system_software_version_id_get) | **GET** /v2/systemsoftware/{systemSoftwareId}/versions/{systemSoftwareVersionId} | Get a SystemSoftwareVersion.
+[**v2_systemsoftwares_get**](AppApi.md#v2_systemsoftwares_get) | **GET** /v2/systemsoftwares | List SystemSoftwares.
+[**v2_systemsoftwares_system_software_id_get**](AppApi.md#v2_systemsoftwares_system_software_id_get) | **GET** /v2/systemsoftwares/{systemSoftwareId} | Get a SystemSoftware.
 
 
 
@@ -501,7 +518,7 @@ Name | Type | Description  | Required | Notes
 
 ## app_patch_appinstallation
 
-> app_patch_appinstallation(app_installation_id, app_patch_appinstallation_request)
+> app_patch_appinstallation(app_installation_id, v2_appinstallations_app_installation_id_patch_request)
 Update properties belonging to an AppInstallation.
 
 ### Parameters
@@ -510,7 +527,7 @@ Update properties belonging to an AppInstallation.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **app_installation_id** | **uuid::Uuid** |  | [required] |
-**app_patch_appinstallation_request** | [**AppPatchAppinstallationRequest**](AppPatchAppinstallationRequest.md) | Properties to update for an AppInstallation. | [required] |
+**v2_appinstallations_app_installation_id_patch_request** | [**V2AppinstallationsAppInstallationIdPatchRequest**](V2AppinstallationsAppInstallationIdPatchRequest.md) | Properties to update for an AppInstallation. | [required] |
 
 ### Return type
 
@@ -559,7 +576,7 @@ Name | Type | Description  | Required | Notes
 
 ## app_request_appinstallation
 
-> models::AppRequestAppinstallation201Response app_request_appinstallation(project_id, app_request_appinstallation_request)
+> models::AppRequestAppinstallation201Response app_request_appinstallation(project_id, v2_projects_project_id_appinstallations_post_request)
 Request an AppInstallation.
 
 ### Parameters
@@ -568,7 +585,7 @@ Request an AppInstallation.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **project_id** | **uuid::Uuid** |  | [required] |
-**app_request_appinstallation_request** | [**AppRequestAppinstallationRequest**](AppRequestAppinstallationRequest.md) |  | [required] |
+**v2_projects_project_id_appinstallations_post_request** | [**V2ProjectsProjectIdAppinstallationsPostRequest**](V2ProjectsProjectIdAppinstallationsPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -588,7 +605,7 @@ Name | Type | Description  | Required | Notes
 
 ## app_request_appinstallation_copy
 
-> models::AppRequestAppinstallation201Response app_request_appinstallation_copy(app_installation_id, app_request_appinstallation_copy_request)
+> models::AppRequestAppinstallation201Response app_request_appinstallation_copy(app_installation_id, v2_appinstallations_app_installation_id_actions_copy_post_request)
 Request a copy of an AppInstallation.
 
 ### Parameters
@@ -597,7 +614,7 @@ Request a copy of an AppInstallation.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **app_installation_id** | **uuid::Uuid** |  | [required] |
-**app_request_appinstallation_copy_request** | [**AppRequestAppinstallationCopyRequest**](AppRequestAppinstallationCopyRequest.md) | Properties to copy an app installation. | [required] |
+**v2_appinstallations_app_installation_id_actions_copy_post_request** | [**V2AppinstallationsAppInstallationIdActionsCopyPostRequest**](V2AppinstallationsAppInstallationIdActionsCopyPostRequest.md) | Properties to copy an app installation. | [required] |
 
 ### Return type
 
@@ -645,7 +662,7 @@ Name | Type | Description  | Required | Notes
 
 ## app_set_database_users
 
-> app_set_database_users(app_installation_id, database_id, app_set_database_users_request)
+> app_set_database_users(app_installation_id, database_id, v2_app_installations_app_installation_id_databases_database_id_put_request)
 Create linkage between an AppInstallation and DatabaseUsers.
 
 ### Parameters
@@ -655,7 +672,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **app_installation_id** | **uuid::Uuid** |  | [required] |
 **database_id** | **uuid::Uuid** |  | [required] |
-**app_set_database_users_request** | [**AppSetDatabaseUsersRequest**](AppSetDatabaseUsersRequest.md) | Properties to update for the specified system software. | [required] |
+**v2_app_installations_app_installation_id_databases_database_id_put_request** | [**V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest**](V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest.md) | Properties to update for the specified system software. | [required] |
 
 ### Return type
 
@@ -726,6 +743,502 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_app_link_database
+
+> deprecated_app_link_database(app_installation_id, app_link_database_request)
+Create linkage between an AppInstallation and a MySql-Database.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**app_link_database_request** | [**AppLinkDatabaseRequest**](AppLinkDatabaseRequest.md) | Properties for linking a Database | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_app_installations_app_installation_id_databases_database_id_put
+
+> v2_app_installations_app_installation_id_databases_database_id_put(app_installation_id, database_id, v2_app_installations_app_installation_id_databases_database_id_put_request)
+Create linkage between an AppInstallation and DatabaseUsers.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**database_id** | **uuid::Uuid** |  | [required] |
+**v2_app_installations_app_installation_id_databases_database_id_put_request** | [**V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest**](V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest.md) | Properties to update for the specified system software. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_actions_action_post
+
+> v2_appinstallations_app_installation_id_actions_action_post(app_installation_id, action, body)
+Trigger a runtime action belonging to an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **String** |  | [required] |
+**action** | [**DePeriodMittwaldPeriodV1PeriodAppPeriodAction**](.md) |  | [required] |
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_actions_copy_post
+
+> v2_appinstallations_app_installation_id_actions_copy_post(app_installation_id, v2_appinstallations_app_installation_id_actions_copy_post_request)
+Request a copy of an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**v2_appinstallations_app_installation_id_actions_copy_post_request** | [**V2AppinstallationsAppInstallationIdActionsCopyPostRequest**](V2AppinstallationsAppInstallationIdActionsCopyPostRequest.md) | Properties to copy an app installation. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_databases_database_id_delete
+
+> v2_appinstallations_app_installation_id_databases_database_id_delete(app_installation_id, database_id)
+Remove linkage between an AppInstallation and a Database.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**database_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_databases_database_id_put
+
+> v2_appinstallations_app_installation_id_databases_database_id_put(app_installation_id, database_id, v2_app_installations_app_installation_id_databases_database_id_put_request)
+Create linkage between an AppInstallation and DatabaseUsers.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**database_id** | **uuid::Uuid** |  | [required] |
+**v2_app_installations_app_installation_id_databases_database_id_put_request** | [**V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest**](V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest.md) | Properties to update for the specified system software. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_delete
+
+> v2_appinstallations_app_installation_id_delete(app_installation_id)
+Trigger an uninstallation process for an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_get
+
+> v2_appinstallations_app_installation_id_get(app_installation_id)
+Get an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_missing_dependencies_get
+
+> v2_appinstallations_app_installation_id_missing_dependencies_get(app_installation_id, target_app_version_id)
+Get the missing requirements of an appInstallation for a specific target AppVersion.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**target_app_version_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_patch
+
+> v2_appinstallations_app_installation_id_patch(app_installation_id, v2_appinstallations_app_installation_id_patch_request)
+Update properties belonging to an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **uuid::Uuid** |  | [required] |
+**v2_appinstallations_app_installation_id_patch_request** | [**V2AppinstallationsAppInstallationIdPatchRequest**](V2AppinstallationsAppInstallationIdPatchRequest.md) | Properties to update for an AppInstallation. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_appinstallations_app_installation_id_status_get
+
+> v2_appinstallations_app_installation_id_status_get(app_installation_id)
+Get runtime status belonging to an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app_installation_id** | **String** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_projects_project_id_appinstallations_get
+
+> v2_projects_project_id_appinstallations_get(project_id, limit, page, skip)
+List AppInstallations belonging to a Project.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**project_id** | **uuid::Uuid** |  | [required] |
+**limit** | Option<**i32**> |  |  |
+**page** | Option<**i32**> |  |  |
+**skip** | Option<**i32**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_projects_project_id_appinstallations_post
+
+> v2_projects_project_id_appinstallations_post(project_id, v2_projects_project_id_appinstallations_post_request)
+Request an AppInstallation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**project_id** | **uuid::Uuid** |  | [required] |
+**v2_projects_project_id_appinstallations_post_request** | [**V2ProjectsProjectIdAppinstallationsPostRequest**](V2ProjectsProjectIdAppinstallationsPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_systemsoftware_system_software_id_versions_get
+
+> v2_systemsoftware_system_software_id_versions_get(system_software_id, version_range, recommended)
+List SystemSoftwareVersions belonging to a SystemSoftware.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**system_software_id** | **uuid::Uuid** |  | [required] |
+**version_range** | Option<**String**> |  |  |
+**recommended** | Option<**bool**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_systemsoftware_system_software_id_versions_system_software_version_id_get
+
+> v2_systemsoftware_system_software_id_versions_system_software_version_id_get(system_software_id, system_software_version_id)
+Get a SystemSoftwareVersion.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**system_software_id** | **uuid::Uuid** |  | [required] |
+**system_software_version_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_systemsoftwares_get
+
+> v2_systemsoftwares_get(limit, page, skip)
+List SystemSoftwares.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**limit** | Option<**i32**> |  |  |
+**page** | Option<**i32**> |  |  |
+**skip** | Option<**i32**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_systemsoftwares_system_software_id_get
+
+> v2_systemsoftwares_system_software_id_get(system_software_id)
+Get a SystemSoftware.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**system_software_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

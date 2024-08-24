@@ -31,6 +31,9 @@ pub struct ProjectListProjects200ResponseInner {
     pub id: String,
     #[serde(rename = "imageRefId", skip_serializing_if = "Option::is_none")]
     pub image_ref_id: Option<String>,
+    /// deprecated
+    #[serde(rename = "isReady")]
+    pub is_ready: bool,
     #[serde(rename = "projectHostingId", skip_serializing_if = "Option::is_none")]
     pub project_hosting_id: Option<uuid::Uuid>,
     #[serde(rename = "readiness")]
@@ -50,7 +53,7 @@ pub struct ProjectListProjects200ResponseInner {
 }
 
 impl ProjectListProjects200ResponseInner {
-    pub fn new(created_at: String, customer_id: String, customer_meta: models::ProjectListProjects200ResponseInnerCustomerMeta, description: String, enabled: bool, id: String, readiness: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus, short_id: String, status: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodProjectStatus, status_set_at: String, web_storage_usage_in_bytes: i32, web_storage_usage_in_bytes_set_at: String) -> ProjectListProjects200ResponseInner {
+    pub fn new(created_at: String, customer_id: String, customer_meta: models::ProjectListProjects200ResponseInnerCustomerMeta, description: String, enabled: bool, id: String, is_ready: bool, readiness: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus, short_id: String, status: models::DePeriodMittwaldPeriodV1PeriodProjectPeriodProjectStatus, status_set_at: String, web_storage_usage_in_bytes: i32, web_storage_usage_in_bytes_set_at: String) -> ProjectListProjects200ResponseInner {
         ProjectListProjects200ResponseInner {
             created_at,
             customer_id,
@@ -61,6 +64,7 @@ impl ProjectListProjects200ResponseInner {
             enabled,
             id,
             image_ref_id: None,
+            is_ready,
             project_hosting_id: None,
             readiness,
             server_id: None,

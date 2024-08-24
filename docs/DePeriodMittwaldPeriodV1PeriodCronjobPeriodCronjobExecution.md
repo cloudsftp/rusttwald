@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **aborted_by** | Option<[**models::DeMittwaldV1CronjobCronjobExecutionAbortedBy**](de_mittwald_v1_cronjob_CronjobExecution_abortedBy.md)> |  | [optional]
 **duration_in_milliseconds** | Option<**i64**> |  | [optional]
 **end** | Option<**String**> |  | [optional]
+**execution_end** | Option<**String**> |  | [optional]
+**execution_start** | Option<**String**> |  | [optional]
 **id** | **String** |  | 
 **log_path** | Option<**String**> |  | [optional]
 **start** | Option<**String**> |  | [optional]

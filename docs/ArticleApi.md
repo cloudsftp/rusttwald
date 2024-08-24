@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## article_get_article
 
-> models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle article_get_article(article_id)
+> models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle article_get_article(article_id, customer_id)
 Get an Article.
 
 ### Parameters
@@ -20,6 +20,7 @@ Get an Article.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **article_id** | **String** |  | [required] |
+**customer_id** | Option<**String**> | not in use. |  |
 
 ### Return type
 
@@ -39,7 +40,7 @@ No authorization required
 
 ## article_list_articles
 
-> Vec<models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle> article_list_articles(limit, skip, page, tags, template_names, article_ids, orderable, name)
+> Vec<models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle> article_list_articles(customer_id, limit, skip, page, tags, template_names, article_ids, orderable, name)
 List Articles.
 
 ### Parameters
@@ -47,6 +48,7 @@ List Articles.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**customer_id** | Option<**String**> | not in use. |  |
 **limit** | Option<**i32**> |  |  |
 **skip** | Option<**i32**> |  |  |
 **page** | Option<**i32**> |  |  |

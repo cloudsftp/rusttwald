@@ -35,7 +35,7 @@ pub enum ArticleListArticlesError {
 }
 
 
-pub async fn article_get_article(configuration: &configuration::Configuration, article_id: &str) -> Result<models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle, Error<ArticleGetArticleError>> {
+pub async fn article_get_article(configuration: &configuration::Configuration, article_id: &str, customer_id: Option<&str>) -> Result<models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle, Error<ArticleGetArticleError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -43,6 +43,9 @@ pub async fn article_get_article(configuration: &configuration::Configuration, a
     let local_var_uri_str = format!("{}/v2/articles/{articleId}", local_var_configuration.base_path, articleId=crate::apis::urlencode(article_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = customer_id {
+        local_var_req_builder = local_var_req_builder.query(&[("customerId", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
@@ -62,7 +65,7 @@ pub async fn article_get_article(configuration: &configuration::Configuration, a
     }
 }
 
-pub async fn article_list_articles(configuration: &configuration::Configuration, limit: Option<i32>, skip: Option<i32>, page: Option<i32>, tags: Option<Vec<String>>, template_names: Option<Vec<String>>, article_ids: Option<Vec<String>>, orderable: Option<Vec<String>>, name: Option<&str>) -> Result<Vec<models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle>, Error<ArticleListArticlesError>> {
+pub async fn article_list_articles(configuration: &configuration::Configuration, customer_id: Option<&str>, limit: Option<i32>, skip: Option<i32>, page: Option<i32>, tags: Option<Vec<String>>, template_names: Option<Vec<String>>, article_ids: Option<Vec<String>>, orderable: Option<Vec<String>>, name: Option<&str>) -> Result<Vec<models::DePeriodMittwaldPeriodV1PeriodArticlePeriodReadableArticle>, Error<ArticleListArticlesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -70,6 +73,9 @@ pub async fn article_list_articles(configuration: &configuration::Configuration,
     let local_var_uri_str = format!("{}/v2/articles", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = customer_id {
+        local_var_req_builder = local_var_req_builder.query(&[("customerId", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = limit {
         local_var_req_builder = local_var_req_builder.query(&[("limit", &local_var_str.to_string())]);
     }

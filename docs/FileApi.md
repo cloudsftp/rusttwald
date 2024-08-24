@@ -4,6 +4,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deprecated_file_get_file_token_rules**](FileApi.md#deprecated_file_get_file_token_rules) | **GET** /v2/file-token-rules/{token} | Get a Token's upload rules.
+[**deprecated_file_get_file_type_rules**](FileApi.md#deprecated_file_get_file_type_rules) | **GET** /v2/file-type-rules/{name} | Get a Type's upload rules.
 [**file_create_file**](FileApi.md#file_create_file) | **POST** /v2/files | Create a File.
 [**file_get_file**](FileApi.md#file_get_file) | **GET** /v2/files/{fileId} | Get a File.
 [**file_get_file_meta**](FileApi.md#file_get_file_meta) | **GET** /v2/files/{fileId}/meta | Get a File's meta.
@@ -11,6 +13,62 @@ Method | HTTP request | Description
 [**file_get_file_upload_type_rules**](FileApi.md#file_get_file_upload_type_rules) | **GET** /v2/file-upload-types/{fileUploadType}/rules | Get a FileUploadType's rules.
 [**file_get_file_with_name**](FileApi.md#file_get_file_with_name) | **GET** /v2/files/{fileId}/{fileName} | Get a File.
 
+
+
+## deprecated_file_get_file_token_rules
+
+> models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules deprecated_file_get_file_token_rules(token)
+Get a Token's upload rules.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**token** | **uuid::Uuid** | Token of the Token's upload rules to be retrieved. | [required] |
+
+### Return type
+
+[**models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules**](de.mittwald.v1.file.FileUploadRules.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_file_get_file_type_rules
+
+> models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules deprecated_file_get_file_type_rules(name)
+Get a Type's upload rules.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** | Name of the Type's upload rules to be retrieved. | [required] |
+
+### Return type
+
+[**models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileUploadRules**](de.mittwald.v1.file.FileUploadRules.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## file_create_file

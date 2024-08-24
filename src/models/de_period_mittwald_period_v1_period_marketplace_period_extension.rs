@@ -35,6 +35,9 @@ pub struct DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
     pub name: String,
     #[serde(rename = "scopes")]
     pub scopes: Vec<String>,
+    /// deprecated
+    #[serde(rename = "state")]
+    pub state: State,
     #[serde(rename = "support")]
     pub support: Box<models::DePeriodMittwaldPeriodV1PeriodMarketplacePeriodSupportMeta>,
     #[serde(rename = "tags")]
@@ -42,7 +45,7 @@ pub struct DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
 }
 
 impl DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
-    pub fn new(blocked: bool, context: models::DePeriodMittwaldPeriodV1PeriodMarketplacePeriodContext, contributor_id: uuid::Uuid, description: String, disabled: bool, id: uuid::Uuid, name: String, scopes: Vec<String>, support: models::DePeriodMittwaldPeriodV1PeriodMarketplacePeriodSupportMeta, tags: Vec<String>) -> DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
+    pub fn new(blocked: bool, context: models::DePeriodMittwaldPeriodV1PeriodMarketplacePeriodContext, contributor_id: uuid::Uuid, description: String, disabled: bool, id: uuid::Uuid, name: String, scopes: Vec<String>, state: State, support: models::DePeriodMittwaldPeriodV1PeriodMarketplacePeriodSupportMeta, tags: Vec<String>) -> DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
         DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
             blocked,
             context,
@@ -55,9 +58,26 @@ impl DePeriodMittwaldPeriodV1PeriodMarketplacePeriodExtension {
             id,
             name,
             scopes,
+            state,
             support: Box::new(support),
             tags,
         }
+    }
+}
+/// deprecated
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum State {
+    #[serde(rename = "enabled")]
+    Enabled,
+    #[serde(rename = "blocked")]
+    Blocked,
+    #[serde(rename = "disabled")]
+    Disabled,
+}
+
+impl Default for State {
+    fn default() -> State {
+        Self::Enabled
     }
 }
 

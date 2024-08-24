@@ -4,7 +4,36 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deprecated_user_change_email**](UserApi.md#deprecated_user_change_email) | **PUT** /v2/signup/email | Change your Email-Address.
+[**deprecated_user_confirm_password_reset**](UserApi.md#deprecated_user_confirm_password_reset) | **POST** /v2/signup/password/reset/confirm | Confirm password reset.
+[**deprecated_user_create_issue**](UserApi.md#deprecated_user_create_issue) | **POST** /v2/users/self/issues | Create a new issue.
+[**deprecated_user_delete_api_token**](UserApi.md#deprecated_user_delete_api_token) | **DELETE** /v2/signup/token/api/{apiTokenId} | Deletes an ApiToken.
+[**deprecated_user_delete_ssh_key**](UserApi.md#deprecated_user_delete_ssh_key) | **DELETE** /v2/signup/ssh/{sshKeyId} | Remove a ssh-key.
+[**deprecated_user_disable_mfa**](UserApi.md#deprecated_user_disable_mfa) | **DELETE** /v2/signup/mfa | Disable Multi Factor Authentication.
+[**deprecated_user_edit_api_token**](UserApi.md#deprecated_user_edit_api_token) | **PUT** /v2/signup/token/api/{apiTokenId} | Update an existing `ApiToken`.
+[**deprecated_user_edit_ssh_key**](UserApi.md#deprecated_user_edit_ssh_key) | **PUT** /v2/signup/ssh/{sshKeyId} | Edit a stored ssh-key.
+[**deprecated_user_init_password_reset**](UserApi.md#deprecated_user_init_password_reset) | **POST** /v2/signup/password/reset | Initialize password reset process.
+[**deprecated_user_logout**](UserApi.md#deprecated_user_logout) | **PUT** /v2/signup/logout | Terminate session and invalidate access token.
+[**deprecated_user_resend_verification_email**](UserApi.md#deprecated_user_resend_verification_email) | **POST** /v2/signup/email/resend | Resend the Email-Address verification email.
+[**deprecated_user_service_avatar_remove**](UserApi.md#deprecated_user_service_avatar_remove) | **DELETE** /v2/user/{userId}/avatar | Remove Avatar
+[**deprecated_user_service_avatar_request_upload**](UserApi.md#deprecated_user_service_avatar_request_upload) | **POST** /v2/user/{userId}/avatar | Request a new avatar upload
+[**deprecated_user_service_feedback_create**](UserApi.md#deprecated_user_service_feedback_create) | **POST** /v2/user/feedback | Submit user feedback
+[**deprecated_user_service_feedback_list**](UserApi.md#deprecated_user_service_feedback_list) | **GET** /v2/user/feedback | Returns your submitted feedback
+[**deprecated_user_service_issue_new**](UserApi.md#deprecated_user_service_issue_new) | **POST** /v2/user/issues | create a new issue
+[**deprecated_user_service_personal_information_update**](UserApi.md#deprecated_user_service_personal_information_update) | **PUT** /v2/user/{userId} | Change your personal information
+[**deprecated_user_service_personalized_settings_get**](UserApi.md#deprecated_user_service_personalized_settings_get) | **GET** /v2/user/settings | Get personalized settings for the user executing the request
+[**deprecated_user_service_personalized_settings_update**](UserApi.md#deprecated_user_service_personalized_settings_update) | **PUT** /v2/user/settings | update personalized settings
+[**deprecated_user_service_phone_number_add**](UserApi.md#deprecated_user_service_phone_number_add) | **POST** /v2/user/{userId}/phone | Add phone number and init verification process
+[**deprecated_user_service_phone_number_remove**](UserApi.md#deprecated_user_service_phone_number_remove) | **DELETE** /v2/user/{userId}/phone | remove your PhoneNumber
+[**deprecated_user_service_phone_number_verify**](UserApi.md#deprecated_user_service_phone_number_verify) | **POST** /v2/user/{userId}/phone/verify | Verify phone number
+[**deprecated_user_service_user_get**](UserApi.md#deprecated_user_service_user_get) | **GET** /v2/user/{userId} | Get profile information for the specified user if the user is related to the executing user
+[**deprecated_user_service_user_get_own**](UserApi.md#deprecated_user_service_user_get_own) | **GET** /v2/user | Get profile information for the executing user
+[**deprecated_user_terminate_all_sessions**](UserApi.md#deprecated_user_terminate_all_sessions) | **DELETE** /v2/signup/sessions | Terminate all sessions, except the current session.
+[**deprecated_user_terminate_session**](UserApi.md#deprecated_user_terminate_session) | **DELETE** /v2/signup/sessions/{tokenId} | Terminate a specific Session.
+[**deprecated_user_update_account**](UserApi.md#deprecated_user_update_account) | **PUT** /v2/signup/profile | Update your account information.
+[**deprecated_user_verify_email**](UserApi.md#deprecated_user_verify_email) | **POST** /v2/signup/email/verify | Verify an added Email-Address.
 [**password_validation_get_password_policy**](UserApi.md#password_validation_get_password_policy) | **GET** /v2/password-policies/{passwordPolicy} | Get a PasswordPolicy.
+[**password_validation_get_password_policy_v2_deprecated**](UserApi.md#password_validation_get_password_policy_v2_deprecated) | **GET** /v2/password/policies/{path} | Get a password policy.
 [**user_add_phone_number**](UserApi.md#user_add_phone_number) | **POST** /v2/users/{userId}/phone | Add phone number and start verification process.
 [**user_authenticate**](UserApi.md#user_authenticate) | **POST** /v2/authenticate | Authenticate yourself to get an access token.
 [**user_authenticate_mfa**](UserApi.md#user_authenticate_mfa) | **POST** /v2/authenticate-mfa | Validate your second factor.
@@ -59,7 +88,813 @@ Method | HTTP request | Description
 [**user_verify_email**](UserApi.md#user_verify_email) | **POST** /v2/users/self/credentials/email/actions/verify-email | Verify an added Email-Address.
 [**user_verify_phone_number**](UserApi.md#user_verify_phone_number) | **POST** /v2/users/{userId}/actions/verify-phone | Verify phone number.
 [**user_verify_registration**](UserApi.md#user_verify_registration) | **POST** /v2/verify-registration | Verify your registration.
+[**v2_signup_authentication_mfa_post**](UserApi.md#v2_signup_authentication_mfa_post) | **POST** /v2/signup/authentication/mfa | Validate your second factor.
+[**v2_signup_authentication_post**](UserApi.md#v2_signup_authentication_post) | **POST** /v2/signup/authentication | Authenticate yourself to get an access token.
+[**v2_signup_email_get**](UserApi.md#v2_signup_email_get) | **GET** /v2/signup/email | Get your verified Email-Address.
+[**v2_signup_mfa_confirm_post**](UserApi.md#v2_signup_mfa_confirm_post) | **POST** /v2/signup/mfa/confirm | Confirm Multi Factor Authentication.
+[**v2_signup_mfa_get**](UserApi.md#v2_signup_mfa_get) | **GET** /v2/signup/mfa | Get your current multi factor auth status.
+[**v2_signup_mfa_post**](UserApi.md#v2_signup_mfa_post) | **POST** /v2/signup/mfa | Initialize Multi Factor Authentication. If successful, it needs to be confirmed, before usage of mfa.
+[**v2_signup_mfa_reset_recoverycodes_put**](UserApi.md#v2_signup_mfa_reset_recoverycodes_put) | **PUT** /v2/signup/mfa/reset-recoverycodes | Reset RecoveryCodes for MFA.
+[**v2_signup_password_get**](UserApi.md#v2_signup_password_get) | **GET** /v2/signup/password | The timestamp of your latest password change.
+[**v2_signup_password_put**](UserApi.md#v2_signup_password_put) | **PUT** /v2/signup/password | Change your password.
+[**v2_signup_profile_delete**](UserApi.md#v2_signup_profile_delete) | **DELETE** /v2/signup/profile | Delete your account and all your personal data.
+[**v2_signup_profile_get**](UserApi.md#v2_signup_profile_get) | **GET** /v2/signup/profile | Get your account information.
+[**v2_signup_registration_post**](UserApi.md#v2_signup_registration_post) | **POST** /v2/signup/registration | Register with email and password.
+[**v2_signup_registration_verification_post**](UserApi.md#v2_signup_registration_verification_post) | **POST** /v2/signup/registration/verification | Verify your registration.
+[**v2_signup_sessions_get**](UserApi.md#v2_signup_sessions_get) | **GET** /v2/signup/sessions | List all sessions.
+[**v2_signup_sessions_token_id_get**](UserApi.md#v2_signup_sessions_token_id_get) | **GET** /v2/signup/sessions/{tokenId} | Get a specific session.
+[**v2_signup_ssh_get**](UserApi.md#v2_signup_ssh_get) | **GET** /v2/signup/ssh | Get your stored ssh-keys.
+[**v2_signup_ssh_post**](UserApi.md#v2_signup_ssh_post) | **POST** /v2/signup/ssh | Store a new ssh-key.
+[**v2_signup_ssh_ssh_key_id_get**](UserApi.md#v2_signup_ssh_ssh_key_id_get) | **GET** /v2/signup/ssh/{sshKeyId} | Get a specific stored ssh-key.
+[**v2_signup_supportcode_get**](UserApi.md#v2_signup_supportcode_get) | **GET** /v2/signup/supportcode | Request a support code.
+[**v2_signup_supportcodes_get**](UserApi.md#v2_signup_supportcodes_get) | **GET** /v2/signup/supportcodes | Request a support code.
+[**v2_signup_token_api_api_token_id_get**](UserApi.md#v2_signup_token_api_api_token_id_get) | **GET** /v2/signup/token/api/{apiTokenId} | Get a specific ApiToken.
+[**v2_signup_token_api_get**](UserApi.md#v2_signup_token_api_get) | **GET** /v2/signup/token/api | List all of your ApiTokens.
+[**v2_signup_token_api_post**](UserApi.md#v2_signup_token_api_post) | **POST** /v2/signup/token/api | Store a new ApiToken.
+[**v2_signup_token_check_post**](UserApi.md#v2_signup_token_check_post) | **POST** /v2/signup/token/check | Check token for validity.
+[**v2_users_user_id_phone_verify_post**](UserApi.md#v2_users_user_id_phone_verify_post) | **POST** /v2/users/{userId}/phone/verify | Verify phone number.
 
+
+
+## deprecated_user_change_email
+
+> deprecated_user_change_email(deprecated_user_change_email_request)
+Change your Email-Address.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_change_email_request** | [**DeprecatedUserChangeEmailRequest**](DeprecatedUserChangeEmailRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_confirm_password_reset
+
+> deprecated_user_confirm_password_reset(deprecated_user_confirm_password_reset_request)
+Confirm password reset.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_confirm_password_reset_request** | [**DeprecatedUserConfirmPasswordResetRequest**](DeprecatedUserConfirmPasswordResetRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_create_issue
+
+> serde_json::Value deprecated_user_create_issue(deprecated_user_create_issue_request)
+Create a new issue.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_create_issue_request** | Option<[**DeprecatedUserCreateIssueRequest**](DeprecatedUserCreateIssueRequest.md)> | Submit an issue. |  |
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_delete_api_token
+
+> deprecated_user_delete_api_token(api_token_id)
+Deletes an ApiToken.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**api_token_id** | **uuid::Uuid** | The uuid of an ApiToken. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_delete_ssh_key
+
+> deprecated_user_delete_ssh_key(ssh_key_id)
+Remove a ssh-key.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ssh_key_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_disable_mfa
+
+> serde_json::Value deprecated_user_disable_mfa(deprecated_user_disable_mfa_request)
+Disable Multi Factor Authentication.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_disable_mfa_request** | [**DeprecatedUserDisableMfaRequest**](DeprecatedUserDisableMfaRequest.md) |  | [required] |
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_edit_api_token
+
+> deprecated_user_edit_api_token(api_token_id, deprecated_user_edit_api_token_request)
+Update an existing `ApiToken`.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**api_token_id** | **uuid::Uuid** |  | [required] |
+**deprecated_user_edit_api_token_request** | [**DeprecatedUserEditApiTokenRequest**](DeprecatedUserEditApiTokenRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_edit_ssh_key
+
+> deprecated_user_edit_ssh_key(ssh_key_id, deprecated_user_edit_ssh_key_request)
+Edit a stored ssh-key.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ssh_key_id** | **uuid::Uuid** |  | [required] |
+**deprecated_user_edit_ssh_key_request** | [**DeprecatedUserEditSshKeyRequest**](DeprecatedUserEditSshKeyRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_init_password_reset
+
+> deprecated_user_init_password_reset(deprecated_user_init_password_reset_request)
+Initialize password reset process.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_init_password_reset_request** | [**DeprecatedUserInitPasswordResetRequest**](DeprecatedUserInitPasswordResetRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_logout
+
+> deprecated_user_logout(body)
+Terminate session and invalidate access token.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_resend_verification_email
+
+> deprecated_user_resend_verification_email(deprecated_user_resend_verification_email_request)
+Resend the Email-Address verification email.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_resend_verification_email_request** | [**DeprecatedUserResendVerificationEmailRequest**](DeprecatedUserResendVerificationEmailRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_avatar_remove
+
+> deprecated_user_service_avatar_remove(user_id)
+Remove Avatar
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **String** | `self` or the id of a user. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_avatar_request_upload
+
+> models::CustomerRequestAvatarUpload200Response deprecated_user_service_avatar_request_upload(user_id, body)
+Request a new avatar upload
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **uuid::Uuid** |  | [required] |
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+[**models::CustomerRequestAvatarUpload200Response**](customer_request_avatar_upload_200_response.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_feedback_create
+
+> serde_json::Value deprecated_user_service_feedback_create(deprecated_user_service_feedback_create_request)
+Submit user feedback
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_service_feedback_create_request** | Option<[**DeprecatedUserServiceFeedbackCreateRequest**](DeprecatedUserServiceFeedbackCreateRequest.md)> | The user feedback |  |
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_feedback_list
+
+> Vec<models::DePeriodMittwaldPeriodV1PeriodUserPeriodUserFeedback> deprecated_user_service_feedback_list(subject)
+Returns your submitted feedback
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**subject** | Option<**String**> |  |  |
+
+### Return type
+
+[**Vec<models::DePeriodMittwaldPeriodV1PeriodUserPeriodUserFeedback>**](de.mittwald.v1.user.UserFeedback.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_issue_new
+
+> deprecated_user_service_issue_new(deprecated_user_service_issue_new_request)
+create a new issue
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_service_issue_new_request** | Option<[**DeprecatedUserServiceIssueNewRequest**](DeprecatedUserServiceIssueNewRequest.md)> | Submit an issue. |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_personal_information_update
+
+> deprecated_user_service_personal_information_update(user_id, deprecated_user_service_personal_information_update_request)
+Change your personal information
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **uuid::Uuid** |  | [required] |
+**deprecated_user_service_personal_information_update_request** | [**DeprecatedUserServicePersonalInformationUpdateRequest**](DeprecatedUserServicePersonalInformationUpdateRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_personalized_settings_get
+
+> models::DeprecatedUserServicePersonalizedSettingsGet200Response deprecated_user_service_personalized_settings_get()
+Get personalized settings for the user executing the request
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::DeprecatedUserServicePersonalizedSettingsGet200Response**](deprecated_user_service_personalized_settings_get_200_response.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_personalized_settings_update
+
+> deprecated_user_service_personalized_settings_update(deprecated_user_service_personalized_settings_update_request)
+update personalized settings
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_service_personalized_settings_update_request** | [**DeprecatedUserServicePersonalizedSettingsUpdateRequest**](DeprecatedUserServicePersonalizedSettingsUpdateRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_phone_number_add
+
+> deprecated_user_service_phone_number_add(user_id, deprecated_user_service_phone_number_add_request)
+Add phone number and init verification process
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **uuid::Uuid** |  | [required] |
+**deprecated_user_service_phone_number_add_request** | [**DeprecatedUserServicePhoneNumberAddRequest**](DeprecatedUserServicePhoneNumberAddRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_phone_number_remove
+
+> deprecated_user_service_phone_number_remove(user_id)
+remove your PhoneNumber
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **String** | `self` or the id of a user. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_phone_number_verify
+
+> deprecated_user_service_phone_number_verify(user_id, deprecated_user_service_phone_number_verify_request)
+Verify phone number
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **uuid::Uuid** |  | [required] |
+**deprecated_user_service_phone_number_verify_request** | [**DeprecatedUserServicePhoneNumberVerifyRequest**](DeprecatedUserServicePhoneNumberVerifyRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_user_get
+
+> models::DePeriodMittwaldPeriodV1PeriodUserPeriodUser deprecated_user_service_user_get(user_id)
+Get profile information for the specified user if the user is related to the executing user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **String** |  | [required] |
+
+### Return type
+
+[**models::DePeriodMittwaldPeriodV1PeriodUserPeriodUser**](de.mittwald.v1.user.User.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_service_user_get_own
+
+> models::DePeriodMittwaldPeriodV1PeriodUserPeriodUser deprecated_user_service_user_get_own()
+Get profile information for the executing user
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::DePeriodMittwaldPeriodV1PeriodUserPeriodUser**](de.mittwald.v1.user.User.md)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_terminate_all_sessions
+
+> deprecated_user_terminate_all_sessions()
+Terminate all sessions, except the current session.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_terminate_session
+
+> deprecated_user_terminate_session(token_id)
+Terminate a specific Session.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**token_id** | **String** | TokenId to identify the concrete session. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_update_account
+
+> deprecated_user_update_account(deprecated_user_service_personal_information_update_request)
+Update your account information.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_service_personal_information_update_request** | [**DeprecatedUserServicePersonalInformationUpdateRequest**](DeprecatedUserServicePersonalInformationUpdateRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## deprecated_user_verify_email
+
+> deprecated_user_verify_email(deprecated_user_verify_email_request)
+Verify an added Email-Address.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**deprecated_user_verify_email_request** | [**DeprecatedUserVerifyEmailRequest**](DeprecatedUserVerifyEmailRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## password_validation_get_password_policy
@@ -73,6 +908,34 @@ Get a PasswordPolicy.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **password_policy** | **String** | The name of the PasswordPolicy to be retrieved. | [required] |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## password_validation_get_password_policy_v2_deprecated
+
+> String password_validation_get_password_policy_v2_deprecated(path)
+Get a password policy.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**path** | **String** |  | [required] |
 
 ### Return type
 
@@ -121,7 +984,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_authenticate
 
-> models::UserAuthenticateMfa200Response user_authenticate(user_authenticate_request)
+> models::UserAuthenticateMfa200Response user_authenticate(v2_signup_authentication_post_request)
 Authenticate yourself to get an access token.
 
 ### Parameters
@@ -129,7 +992,7 @@ Authenticate yourself to get an access token.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_authenticate_request** | [**UserAuthenticateRequest**](UserAuthenticateRequest.md) |  | [required] |
+**v2_signup_authentication_post_request** | [**V2SignupAuthenticationPostRequest**](V2SignupAuthenticationPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -149,7 +1012,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_authenticate_mfa
 
-> models::UserAuthenticateMfa200Response user_authenticate_mfa(user_authenticate_mfa_request)
+> models::UserAuthenticateMfa200Response user_authenticate_mfa(v2_signup_authentication_mfa_post_request)
 Validate your second factor.
 
 ### Parameters
@@ -157,7 +1020,7 @@ Validate your second factor.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_authenticate_mfa_request** | [**UserAuthenticateMfaRequest**](UserAuthenticateMfaRequest.md) |  | [required] |
+**v2_signup_authentication_mfa_post_request** | [**V2SignupAuthenticationMfaPostRequest**](V2SignupAuthenticationMfaPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -233,7 +1096,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_change_password
 
-> models::UserChangePassword200Response user_change_password(user_change_password_request)
+> models::UserChangePassword200Response user_change_password(v2_signup_password_put_request)
 Change your password.
 
 ### Parameters
@@ -241,7 +1104,7 @@ Change your password.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_change_password_request** | [**UserChangePasswordRequest**](UserChangePasswordRequest.md) |  | [required] |
+**v2_signup_password_put_request** | [**V2SignupPasswordPutRequest**](V2SignupPasswordPutRequest.md) |  | [required] |
 
 ### Return type
 
@@ -289,7 +1152,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_confirm_mfa
 
-> models::UserResetRecoverycodes200Response user_confirm_mfa(user_confirm_mfa_request)
+> models::UserResetRecoverycodes200Response user_confirm_mfa(v2_signup_mfa_confirm_post_request)
 Confirm Multi Factor Authentication.
 
 ### Parameters
@@ -297,7 +1160,7 @@ Confirm Multi Factor Authentication.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_confirm_mfa_request** | [**UserConfirmMfaRequest**](UserConfirmMfaRequest.md) |  | [required] |
+**v2_signup_mfa_confirm_post_request** | [**V2SignupMfaConfirmPostRequest**](V2SignupMfaConfirmPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -317,7 +1180,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_confirm_password_reset
 
-> user_confirm_password_reset(user_confirm_password_reset_request)
+> user_confirm_password_reset(deprecated_user_confirm_password_reset_request)
 Confirm password reset.
 
 ### Parameters
@@ -325,7 +1188,7 @@ Confirm password reset.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_confirm_password_reset_request** | [**UserConfirmPasswordResetRequest**](UserConfirmPasswordResetRequest.md) |  | [required] |
+**deprecated_user_confirm_password_reset_request** | [**DeprecatedUserConfirmPasswordResetRequest**](DeprecatedUserConfirmPasswordResetRequest.md) |  | [required] |
 
 ### Return type
 
@@ -345,7 +1208,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_create_api_token
 
-> models::UserCreateApiToken201Response user_create_api_token(user_create_api_token_request)
+> models::UserCreateApiToken201Response user_create_api_token(v2_signup_token_api_post_request)
 Store a new ApiToken.
 
 ### Parameters
@@ -353,7 +1216,7 @@ Store a new ApiToken.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_create_api_token_request** | [**UserCreateApiTokenRequest**](UserCreateApiTokenRequest.md) |  | [required] |
+**v2_signup_token_api_post_request** | [**V2SignupTokenApiPostRequest**](V2SignupTokenApiPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -401,7 +1264,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_create_ssh_key
 
-> serde_json::Value user_create_ssh_key(user_create_ssh_key_request)
+> serde_json::Value user_create_ssh_key(v2_signup_ssh_post_request)
 Store a new ssh-key.
 
 ### Parameters
@@ -409,7 +1272,7 @@ Store a new ssh-key.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_create_ssh_key_request** | [**UserCreateSshKeyRequest**](UserCreateSshKeyRequest.md) |  | [required] |
+**v2_signup_ssh_post_request** | [**V2SignupSshPostRequest**](V2SignupSshPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -485,7 +1348,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_delete_user
 
-> user_delete_user(user_delete_user_request)
+> user_delete_user(v2_signup_profile_delete_request)
 Delete your account and all your personal data.
 
 ### Parameters
@@ -493,7 +1356,7 @@ Delete your account and all your personal data.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_delete_user_request** | [**UserDeleteUserRequest**](UserDeleteUserRequest.md) |  | [required] |
+**v2_signup_profile_delete_request** | [**V2SignupProfileDeleteRequest**](V2SignupProfileDeleteRequest.md) |  | [required] |
 
 ### Return type
 
@@ -513,7 +1376,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_disable_mfa
 
-> user_disable_mfa(user_disable_mfa_request)
+> user_disable_mfa(deprecated_user_disable_mfa_request)
 Disable Multi Factor Authentication.
 
 ### Parameters
@@ -521,7 +1384,7 @@ Disable Multi Factor Authentication.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_disable_mfa_request** | [**UserDisableMfaRequest**](UserDisableMfaRequest.md) |  | [required] |
+**deprecated_user_disable_mfa_request** | [**DeprecatedUserDisableMfaRequest**](DeprecatedUserDisableMfaRequest.md) |  | [required] |
 
 ### Return type
 
@@ -541,7 +1404,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_edit_api_token
 
-> user_edit_api_token(api_token_id, user_edit_api_token_request)
+> user_edit_api_token(api_token_id, deprecated_user_edit_api_token_request)
 Update an existing `ApiToken`.
 
 ### Parameters
@@ -550,7 +1413,7 @@ Update an existing `ApiToken`.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **api_token_id** | **uuid::Uuid** |  | [required] |
-**user_edit_api_token_request** | [**UserEditApiTokenRequest**](UserEditApiTokenRequest.md) |  | [required] |
+**deprecated_user_edit_api_token_request** | [**DeprecatedUserEditApiTokenRequest**](DeprecatedUserEditApiTokenRequest.md) |  | [required] |
 
 ### Return type
 
@@ -570,7 +1433,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_edit_ssh_key
 
-> user_edit_ssh_key(ssh_key_id, user_edit_ssh_key_request)
+> user_edit_ssh_key(ssh_key_id, deprecated_user_edit_ssh_key_request)
 Edit a stored ssh-key.
 
 ### Parameters
@@ -579,7 +1442,7 @@ Edit a stored ssh-key.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **ssh_key_id** | **uuid::Uuid** |  | [required] |
-**user_edit_ssh_key_request** | [**UserEditSshKeyRequest**](UserEditSshKeyRequest.md) |  | [required] |
+**deprecated_user_edit_ssh_key_request** | [**DeprecatedUserEditSshKeyRequest**](DeprecatedUserEditSshKeyRequest.md) |  | [required] |
 
 ### Return type
 
@@ -901,7 +1764,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_init_password_reset
 
-> serde_json::Value user_init_password_reset(user_init_password_reset_request)
+> serde_json::Value user_init_password_reset(deprecated_user_init_password_reset_request)
 Initialize password reset process.
 
 ### Parameters
@@ -909,7 +1772,7 @@ Initialize password reset process.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_init_password_reset_request** | [**UserInitPasswordResetRequest**](UserInitPasswordResetRequest.md) |  | [required] |
+**deprecated_user_init_password_reset_request** | [**DeprecatedUserInitPasswordResetRequest**](DeprecatedUserInitPasswordResetRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1191,7 +2054,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_register
 
-> models::UserRegister201Response user_register(user_register_request)
+> models::UserRegister201Response user_register(v2_signup_registration_post_request)
 Register with email and password.
 
 ### Parameters
@@ -1199,7 +2062,7 @@ Register with email and password.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_register_request** | [**UserRegisterRequest**](UserRegisterRequest.md) |  | [required] |
+**v2_signup_registration_post_request** | [**V2SignupRegistrationPostRequest**](V2SignupRegistrationPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1441,7 +2304,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_update_account
 
-> user_update_account(user_update_account_request)
+> user_update_account(deprecated_user_service_personal_information_update_request)
 Update your account information.
 
 ### Parameters
@@ -1449,7 +2312,7 @@ Update your account information.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_update_account_request** | [**UserUpdateAccountRequest**](UserUpdateAccountRequest.md) |  | [required] |
+**deprecated_user_service_personal_information_update_request** | [**DeprecatedUserServicePersonalInformationUpdateRequest**](DeprecatedUserServicePersonalInformationUpdateRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1469,7 +2332,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_update_personal_information
 
-> user_update_personal_information(user_id, user_update_account_request)
+> user_update_personal_information(user_id, deprecated_user_service_personal_information_update_request)
 Change personal information.
 
 ### Parameters
@@ -1478,7 +2341,7 @@ Change personal information.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **user_id** | **String** | `self` or the id of a user. | [required] |
-**user_update_account_request** | [**UserUpdateAccountRequest**](UserUpdateAccountRequest.md) |  | [required] |
+**deprecated_user_service_personal_information_update_request** | [**DeprecatedUserServicePersonalInformationUpdateRequest**](DeprecatedUserServicePersonalInformationUpdateRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1527,7 +2390,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_verify_email
 
-> user_verify_email(user_verify_email_request)
+> user_verify_email(deprecated_user_verify_email_request)
 Verify an added Email-Address.
 
 ### Parameters
@@ -1535,7 +2398,7 @@ Verify an added Email-Address.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_verify_email_request** | [**UserVerifyEmailRequest**](UserVerifyEmailRequest.md) |  | [required] |
+**deprecated_user_verify_email_request** | [**DeprecatedUserVerifyEmailRequest**](DeprecatedUserVerifyEmailRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1555,7 +2418,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_verify_phone_number
 
-> user_verify_phone_number(user_id, user_verify_phone_number_request)
+> user_verify_phone_number(user_id, v2_users_user_id_phone_verify_post_request)
 Verify phone number.
 
 ### Parameters
@@ -1564,7 +2427,7 @@ Verify phone number.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **user_id** | **String** | `self` or the id of a user. | [required] |
-**user_verify_phone_number_request** | [**UserVerifyPhoneNumberRequest**](UserVerifyPhoneNumberRequest.md) |  | [required] |
+**v2_users_user_id_phone_verify_post_request** | [**V2UsersUserIdPhoneVerifyPostRequest**](V2UsersUserIdPhoneVerifyPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1584,7 +2447,7 @@ Name | Type | Description  | Required | Notes
 
 ## user_verify_registration
 
-> serde_json::Value user_verify_registration(user_verify_registration_request)
+> serde_json::Value user_verify_registration(v2_signup_registration_verification_post_request)
 Verify your registration.
 
 ### Parameters
@@ -1592,7 +2455,7 @@ Verify your registration.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**user_verify_registration_request** | [**UserVerifyRegistrationRequest**](UserVerifyRegistrationRequest.md) |  | [required] |
+**v2_signup_registration_verification_post_request** | [**V2SignupRegistrationVerificationPostRequest**](V2SignupRegistrationVerificationPostRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1606,6 +2469,692 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_authentication_mfa_post
+
+> v2_signup_authentication_mfa_post(v2_signup_authentication_mfa_post_request)
+Validate your second factor.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_authentication_mfa_post_request** | [**V2SignupAuthenticationMfaPostRequest**](V2SignupAuthenticationMfaPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_authentication_post
+
+> v2_signup_authentication_post(v2_signup_authentication_post_request)
+Authenticate yourself to get an access token.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_authentication_post_request** | [**V2SignupAuthenticationPostRequest**](V2SignupAuthenticationPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_email_get
+
+> v2_signup_email_get()
+Get your verified Email-Address.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_mfa_confirm_post
+
+> v2_signup_mfa_confirm_post(v2_signup_mfa_confirm_post_request)
+Confirm Multi Factor Authentication.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_mfa_confirm_post_request** | [**V2SignupMfaConfirmPostRequest**](V2SignupMfaConfirmPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_mfa_get
+
+> v2_signup_mfa_get()
+Get your current multi factor auth status.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_mfa_post
+
+> v2_signup_mfa_post(body)
+Initialize Multi Factor Authentication. If successful, it needs to be confirmed, before usage of mfa.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_mfa_reset_recoverycodes_put
+
+> v2_signup_mfa_reset_recoverycodes_put(user_reset_recoverycodes_request)
+Reset RecoveryCodes for MFA.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_reset_recoverycodes_request** | [**UserResetRecoverycodesRequest**](UserResetRecoverycodesRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_password_get
+
+> v2_signup_password_get(body)
+The timestamp of your latest password change.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_password_put
+
+> v2_signup_password_put(v2_signup_password_put_request)
+Change your password.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_password_put_request** | [**V2SignupPasswordPutRequest**](V2SignupPasswordPutRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_profile_delete
+
+> v2_signup_profile_delete(v2_signup_profile_delete_request)
+Delete your account and all your personal data.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_profile_delete_request** | [**V2SignupProfileDeleteRequest**](V2SignupProfileDeleteRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_profile_get
+
+> v2_signup_profile_get(body)
+Get your account information.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_registration_post
+
+> v2_signup_registration_post(v2_signup_registration_post_request)
+Register with email and password.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_registration_post_request** | [**V2SignupRegistrationPostRequest**](V2SignupRegistrationPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_registration_verification_post
+
+> v2_signup_registration_verification_post(v2_signup_registration_verification_post_request)
+Verify your registration.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_registration_verification_post_request** | [**V2SignupRegistrationVerificationPostRequest**](V2SignupRegistrationVerificationPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_sessions_get
+
+> v2_signup_sessions_get()
+List all sessions.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_sessions_token_id_get
+
+> v2_signup_sessions_token_id_get(token_id)
+Get a specific session.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**token_id** | **String** | TokenId to identify a specific session. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_ssh_get
+
+> v2_signup_ssh_get()
+Get your stored ssh-keys.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_ssh_post
+
+> v2_signup_ssh_post(v2_signup_ssh_post_request)
+Store a new ssh-key.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_ssh_post_request** | [**V2SignupSshPostRequest**](V2SignupSshPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_ssh_ssh_key_id_get
+
+> v2_signup_ssh_ssh_key_id_get(ssh_key_id)
+Get a specific stored ssh-key.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ssh_key_id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_supportcode_get
+
+> v2_signup_supportcode_get(force_recreate)
+Request a support code.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**force_recreate** | Option<**bool**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_supportcodes_get
+
+> v2_signup_supportcodes_get(force_recreate)
+Request a support code.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**force_recreate** | Option<**bool**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_token_api_api_token_id_get
+
+> v2_signup_token_api_api_token_id_get(api_token_id)
+Get a specific ApiToken.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**api_token_id** | **uuid::Uuid** | The id of an ApiToken. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_token_api_get
+
+> v2_signup_token_api_get()
+List all of your ApiTokens.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_token_api_post
+
+> v2_signup_token_api_post(v2_signup_token_api_post_request)
+Store a new ApiToken.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**v2_signup_token_api_post_request** | [**V2SignupTokenApiPostRequest**](V2SignupTokenApiPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_signup_token_check_post
+
+> v2_signup_token_check_post(body)
+Check token for validity.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | Option<**serde_json::Value**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v2_users_user_id_phone_verify_post
+
+> v2_users_user_id_phone_verify_post(user_id, v2_users_user_id_phone_verify_post_request)
+Verify phone number.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_id** | **String** | `self` or the id of a user. | [required] |
+**v2_users_user_id_phone_verify_post_request** | [**V2UsersUserIdPhoneVerifyPostRequest**](V2UsersUserIdPhoneVerifyPostRequest.md) |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[de.mittwald.v1.commons.AccessToken](../README.md#de.mittwald.v1.commons.AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

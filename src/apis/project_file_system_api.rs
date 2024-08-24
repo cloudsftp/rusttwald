@@ -74,6 +74,34 @@ pub enum ProjectFileSystemListFilesError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`v2_projects_project_id_filesystem_directories_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdFilesystemDirectoriesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_filesystem_files_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdFilesystemFilesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_filesystem_files_raw_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdFilesystemFilesRawGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_filesystem_usages_disk_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdFilesystemUsagesDiskGetError {
+    UnknownValue(serde_json::Value),
+}
+
 
 pub async fn project_file_system_get_directories(configuration: &configuration::Configuration, project_id: &str, directory: Option<&str>, name: Option<&str>, max_depth: Option<i32>, r#type: Option<Vec<String>>, executable: Option<bool>, hidden: Option<bool>) -> Result<models::DePeriodMittwaldPeriodV1PeriodProjectPeriodFilesystemDirectoryListing, Error<ProjectFileSystemGetDirectoriesError>> {
     let local_var_configuration = configuration;
@@ -278,6 +306,179 @@ pub async fn project_file_system_list_files(configuration: &configuration::Confi
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<ProjectFileSystemListFilesError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_filesystem_directories_get(configuration: &configuration::Configuration, project_id: &str, directory: Option<&str>, name: Option<&str>, max_depth: Option<i32>, r#type: Option<Vec<String>>, executable: Option<bool>, hidden: Option<bool>) -> Result<(), Error<V2ProjectsProjectIdFilesystemDirectoriesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/filesystem/directories", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = directory {
+        local_var_req_builder = local_var_req_builder.query(&[("directory", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = name {
+        local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = max_depth {
+        local_var_req_builder = local_var_req_builder.query(&[("max_depth", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = r#type {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("type".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
+            _ => local_var_req_builder.query(&[("type", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
+        };
+    }
+    if let Some(ref local_var_str) = executable {
+        local_var_req_builder = local_var_req_builder.query(&[("executable", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = hidden {
+        local_var_req_builder = local_var_req_builder.query(&[("hidden", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdFilesystemDirectoriesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_filesystem_files_get(configuration: &configuration::Configuration, project_id: &str, file: Option<&str>) -> Result<(), Error<V2ProjectsProjectIdFilesystemFilesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/filesystem/files", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = file {
+        local_var_req_builder = local_var_req_builder.query(&[("file", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdFilesystemFilesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_filesystem_files_raw_get(configuration: &configuration::Configuration, project_id: &str, file: Option<&str>, inline: Option<bool>) -> Result<(), Error<V2ProjectsProjectIdFilesystemFilesRawGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/filesystem/files/raw", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = file {
+        local_var_req_builder = local_var_req_builder.query(&[("file", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = inline {
+        local_var_req_builder = local_var_req_builder.query(&[("inline", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdFilesystemFilesRawGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_filesystem_usages_disk_get(configuration: &configuration::Configuration, project_id: &str, directory: Option<&str>) -> Result<(), Error<V2ProjectsProjectIdFilesystemUsagesDiskGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/filesystem/usages/disk", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = directory {
+        local_var_req_builder = local_var_req_builder.query(&[("directory", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdFilesystemUsagesDiskGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

@@ -15,6 +15,16 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
+/// struct for typed errors of method [`deprecated_domain_get_screenshot_for_domain`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedDomainGetScreenshotForDomainError {
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`dns_create_dns_zone`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -55,6 +65,76 @@ pub enum DnsListDnsZonesError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`dns_record_a_set_custom_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordASetCustomDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`dns_record_a_set_managed_by_ingress_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordASetManagedByIngressDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`dns_record_cname_set_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordCnameSetDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`dns_record_mx_set_custom_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordMxSetCustomDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`dns_record_mx_set_managed_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordMxSetManagedDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`dns_record_srv_set_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordSrvSetDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`dns_record_txt_set_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DnsRecordTxtSetDeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`dns_set_record_set_managed`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -86,10 +166,42 @@ pub enum DomainAbortDomainDeclarationError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`domain_change_ownerc_of_domain_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainChangeOwnercOfDomainV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`domain_change_project_of_domain_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainChangeProjectOfDomainV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`domain_check_domain_registrability`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DomainCheckDomainRegistrabilityError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`domain_check_domain_registrability_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainCheckDomainRegistrabilityV2DeprecatedError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status429(models::AppExecuteAction429Response),
     DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
@@ -110,6 +222,39 @@ pub enum DomainCheckDomainTransferabilityError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DomainCreateDomainAuthCodeError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`domain_declare_nameservers_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainDeclareNameserversV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`domain_declare_process_change_authcode_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainDeclareProcessChangeAuthcodeV2DeprecatedError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`domain_declare_process_change_handles_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainDeclareProcessChangeHandlesV2DeprecatedError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     Status429(models::AppExecuteAction429Response),
@@ -139,6 +284,15 @@ pub enum DomainGetDomainError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`domain_get_handle_fields_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainGetHandleFieldsV2DeprecatedError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`domain_get_latest_screenshot`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -153,6 +307,16 @@ pub enum DomainGetLatestScreenshotError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DomainListDomainsError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`domain_list_domains_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DomainListDomainsV2DeprecatedError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status429(models::AppExecuteAction429Response),
     DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
@@ -306,12 +470,42 @@ pub enum IngressListIngressesCompatibleWithCertificateError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`ingress_list_ingresses_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum IngressListIngressesV2DeprecatedError {
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`ingress_paths_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum IngressPathsDeprecatedError {
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`ingress_request_ingress_acme_certificate_issuance`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum IngressRequestIngressAcmeCertificateIssuanceError {
     Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
     Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`ingress_tls_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum IngressTlsDeprecatedError {
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     Status429(models::AppExecuteAction429Response),
     DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     UnknownValue(serde_json::Value),
@@ -431,8 +625,100 @@ pub enum SslReplaceCertificateError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`v2_dns_zones_dns_zone_id_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DnsZonesDnsZoneIdDeleteError {
+    UnknownValue(serde_json::Value),
+}
 
-pub async fn dns_create_dns_zone(configuration: &configuration::Configuration, dns_create_dns_zone_request: Option<models::DnsCreateDnsZoneRequest>) -> Result<models::AppRequestAppinstallation201Response, Error<DnsCreateDnsZoneError>> {
+/// struct for typed errors of method [`v2_dns_zones_dns_zone_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DnsZonesDnsZoneIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_dns_zones_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DnsZonesPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_domains_domain_id_actions_create_authcode_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DomainsDomainIdActionsCreateAuthcodePostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_domains_domain_id_authcode_patch`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DomainsDomainIdAuthcodePatchError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_domains_domain_id_declarations_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DomainsDomainIdDeclarationsDeleteError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_domains_supported_tlds_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2DomainsSupportedTldsGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_dns_zones_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdDnsZonesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+
+pub async fn deprecated_domain_get_screenshot_for_domain(configuration: &configuration::Configuration, domain_id: &str, deprecated_domain_get_screenshot_for_domain_request: models::DeprecatedDomainGetScreenshotForDomainRequest) -> Result<models::DeprecatedDomainGetScreenshotForDomain200Response, Error<DeprecatedDomainGetScreenshotForDomainError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/screenshots/newest", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_domain_get_screenshot_for_domain_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedDomainGetScreenshotForDomainError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_create_dns_zone(configuration: &configuration::Configuration, v2_dns_zones_post_request: Option<models::V2DnsZonesPostRequest>) -> Result<models::AppRequestAppinstallation201Response, Error<DnsCreateDnsZoneError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -451,7 +737,7 @@ pub async fn dns_create_dns_zone(configuration: &configuration::Configuration, d
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&dns_create_dns_zone_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_dns_zones_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -573,6 +859,258 @@ pub async fn dns_list_dns_zones(configuration: &configuration::Configuration, pr
     }
 }
 
+pub async fn dns_record_a_set_custom_deprecated(configuration: &configuration::Configuration, zone_id: &str, dns_record_a_set_custom_deprecated_request: Option<models::DnsRecordASetCustomDeprecatedRequest>) -> Result<(), Error<DnsRecordASetCustomDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/acombined/custom", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&dns_record_a_set_custom_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DnsRecordASetCustomDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_record_a_set_managed_by_ingress_deprecated(configuration: &configuration::Configuration, zone_id: &str, body: Option<serde_json::Value>) -> Result<models::DnsRecordASetManagedByIngressDeprecated204Response, Error<DnsRecordASetManagedByIngressDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/acombined/managed/ingress", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DnsRecordASetManagedByIngressDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_record_cname_set_deprecated(configuration: &configuration::Configuration, zone_id: &str, dns_record_cname_set_deprecated_request: Option<models::DnsRecordCnameSetDeprecatedRequest>) -> Result<(), Error<DnsRecordCnameSetDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/cname", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&dns_record_cname_set_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DnsRecordCnameSetDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_record_mx_set_custom_deprecated(configuration: &configuration::Configuration, zone_id: &str, dns_record_mx_set_custom_deprecated_request: Option<models::DnsRecordMxSetCustomDeprecatedRequest>) -> Result<(), Error<DnsRecordMxSetCustomDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/mx/custom", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&dns_record_mx_set_custom_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DnsRecordMxSetCustomDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_record_mx_set_managed_deprecated(configuration: &configuration::Configuration, zone_id: &str, body: Option<serde_json::Value>) -> Result<(), Error<DnsRecordMxSetManagedDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/mx/managed", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DnsRecordMxSetManagedDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_record_srv_set_deprecated(configuration: &configuration::Configuration, zone_id: &str, dns_record_srv_set_deprecated_request: Option<models::DnsRecordSrvSetDeprecatedRequest>) -> Result<(), Error<DnsRecordSrvSetDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/srv", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&dns_record_srv_set_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DnsRecordSrvSetDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn dns_record_txt_set_deprecated(configuration: &configuration::Configuration, zone_id: &str, dns_record_txt_set_deprecated_request: Option<models::DnsRecordTxtSetDeprecatedRequest>) -> Result<(), Error<DnsRecordTxtSetDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{zoneId}/recordset/txt", local_var_configuration.base_path, zoneId=crate::apis::urlencode(zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&dns_record_txt_set_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DnsRecordTxtSetDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
 pub async fn dns_set_record_set_managed(configuration: &configuration::Configuration, dns_zone_id: &str, record_set: &str, body: Option<serde_json::Value>) -> Result<models::DnsSetRecordSetManaged204Response, Error<DnsSetRecordSetManagedError>> {
     let local_var_configuration = configuration;
 
@@ -681,6 +1219,79 @@ pub async fn domain_abort_domain_declaration(configuration: &configuration::Conf
     }
 }
 
+/// Change the domain owner of a fully registered domain.
+pub async fn domain_change_ownerc_of_domain_v2_deprecated(configuration: &configuration::Configuration, domain_id: &str, domain_change_ownerc_of_domain_v2_deprecated_request: Option<models::DomainChangeOwnercOfDomainV2DeprecatedRequest>) -> Result<models::DomainChangeOwnercOfDomainV2Deprecated200Response, Error<DomainChangeOwnercOfDomainV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/handles/ownerc", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&domain_change_ownerc_of_domain_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DomainChangeOwnercOfDomainV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn domain_change_project_of_domain_v2_deprecated(configuration: &configuration::Configuration, domain_id: &str, domain_change_project_of_domain_v2_deprecated_request: Option<models::DomainChangeProjectOfDomainV2DeprecatedRequest>) -> Result<(), Error<DomainChangeProjectOfDomainV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/projectId", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&domain_change_project_of_domain_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DomainChangeProjectOfDomainV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
 /// If false, you have to start a transfer with an auth code instead.
 pub async fn domain_check_domain_registrability(configuration: &configuration::Configuration, domain_check_domain_registrability_request: Option<models::DomainCheckDomainRegistrabilityRequest>) -> Result<models::DomainCheckDomainRegistrability200Response, Error<DomainCheckDomainRegistrabilityError>> {
     let local_var_configuration = configuration;
@@ -705,6 +1316,35 @@ pub async fn domain_check_domain_registrability(configuration: &configuration::C
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<DomainCheckDomainRegistrabilityError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// If false, you have to start a transfer with an auth code instead.
+pub async fn domain_check_domain_registrability_v2_deprecated(configuration: &configuration::Configuration, domain_check_domain_registrability_request: Option<models::DomainCheckDomainRegistrabilityRequest>) -> Result<models::DomainCheckDomainRegistrabilityV2Deprecated200Response, Error<DomainCheckDomainRegistrabilityV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    local_var_req_builder = local_var_req_builder.json(&domain_check_domain_registrability_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DomainCheckDomainRegistrabilityV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -773,7 +1413,117 @@ pub async fn domain_create_domain_auth_code(configuration: &configuration::Confi
     }
 }
 
-pub async fn domain_delete_domain(configuration: &configuration::Configuration, domain_id: &str, transit: Option<bool>) -> Result<models::DomainDeleteDomain200Response, Error<DomainDeleteDomainError>> {
+pub async fn domain_declare_nameservers_v2_deprecated(configuration: &configuration::Configuration, domain_id: &str, domain_declare_nameservers_v2_deprecated_request: Option<models::DomainDeclareNameserversV2DeprecatedRequest>) -> Result<(), Error<DomainDeclareNameserversV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/nameservers", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&domain_declare_nameservers_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DomainDeclareNameserversV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Change a wrong AuthCode of your transfer domain request (declare domain process). This route will also restart the transfer itself.
+pub async fn domain_declare_process_change_authcode_v2_deprecated(configuration: &configuration::Configuration, domain_id: &str, domain_declare_process_change_authcode_v2_deprecated_request: Option<models::DomainDeclareProcessChangeAuthcodeV2DeprecatedRequest>) -> Result<models::DomainChangeOwnercOfDomainV2Deprecated200Response, Error<DomainDeclareProcessChangeAuthcodeV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/declarations/authcode", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&domain_declare_process_change_authcode_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DomainDeclareProcessChangeAuthcodeV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// This route will also restart the transfer or register itself.
+pub async fn domain_declare_process_change_handles_v2_deprecated(configuration: &configuration::Configuration, domain_id: &str, domain_change_ownerc_of_domain_v2_deprecated_request: Option<models::DomainChangeOwnercOfDomainV2DeprecatedRequest>) -> Result<models::DomainChangeOwnercOfDomainV2Deprecated200Response, Error<DomainDeclareProcessChangeHandlesV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/declarations/handles", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&domain_change_ownerc_of_domain_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DomainDeclareProcessChangeHandlesV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn domain_delete_domain(configuration: &configuration::Configuration, domain_id: &str, transit: Option<bool>) -> Result<models::DomainChangeOwnercOfDomainV2Deprecated200Response, Error<DomainDeleteDomainError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -846,7 +1596,35 @@ pub async fn domain_get_domain(configuration: &configuration::Configuration, dom
     }
 }
 
-pub async fn domain_get_latest_screenshot(configuration: &configuration::Configuration, domain_id: &str, domain_get_latest_screenshot_request: models::DomainGetLatestScreenshotRequest) -> Result<models::DomainGetLatestScreenshot200Response, Error<DomainGetLatestScreenshotError>> {
+/// Get required handle fields of a registrar for your domain process (transfer/registration).
+pub async fn domain_get_handle_fields_v2_deprecated(configuration: &configuration::Configuration, domain_name: &str) -> Result<models::DomainGetHandleFieldsV2Deprecated200Response, Error<DomainGetHandleFieldsV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/handle-schema/{domainName}", local_var_configuration.base_path, domainName=crate::apis::urlencode(domain_name));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DomainGetHandleFieldsV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn domain_get_latest_screenshot(configuration: &configuration::Configuration, domain_id: &str, deprecated_domain_get_screenshot_for_domain_request: models::DeprecatedDomainGetScreenshotForDomainRequest) -> Result<models::DomainGetLatestScreenshot200Response, Error<DomainGetLatestScreenshotError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -865,7 +1643,7 @@ pub async fn domain_get_latest_screenshot(configuration: &configuration::Configu
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&domain_get_latest_screenshot_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_domain_get_screenshot_for_domain_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -929,8 +1707,52 @@ pub async fn domain_list_domains(configuration: &configuration::Configuration, p
     }
 }
 
+pub async fn domain_list_domains_v2_deprecated(configuration: &configuration::Configuration, project_id: &str, page: Option<i32>, limit: Option<i32>, domain_search_name: Option<&str>) -> Result<Vec<models::DePeriodMittwaldPeriodV1PeriodDomainPeriodDomain>, Error<DomainListDomainsV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/domains", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = limit {
+        local_var_req_builder = local_var_req_builder.query(&[("limit", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = domain_search_name {
+        local_var_req_builder = local_var_req_builder.query(&[("domainSearchName", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DomainListDomainsV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
 /// List the contact schemas describing the fields required to register/transfer a Domain.
-pub async fn domain_list_tld_contact_schemas(configuration: &configuration::Configuration, tld: &str) -> Result<models::DomainListTldContactSchemas200Response, Error<DomainListTldContactSchemasError>> {
+pub async fn domain_list_tld_contact_schemas(configuration: &configuration::Configuration, tld: &str) -> Result<models::DomainGetHandleFieldsV2Deprecated200Response, Error<DomainListTldContactSchemasError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1067,7 +1889,7 @@ pub async fn domain_suggest(configuration: &configuration::Configuration, prompt
 }
 
 /// Update an incorrect auth code of an ongoing/failed Domain transfer. This route will also restart the transfer itself.
-pub async fn domain_update_domain_auth_code(configuration: &configuration::Configuration, domain_id: &str, domain_update_domain_auth_code_request: Option<models::DomainUpdateDomainAuthCodeRequest>) -> Result<models::DomainDeleteDomain200Response, Error<DomainUpdateDomainAuthCodeError>> {
+pub async fn domain_update_domain_auth_code(configuration: &configuration::Configuration, domain_id: &str, domain_declare_process_change_authcode_v2_deprecated_request: Option<models::DomainDeclareProcessChangeAuthcodeV2DeprecatedRequest>) -> Result<models::DomainChangeOwnercOfDomainV2Deprecated200Response, Error<DomainUpdateDomainAuthCodeError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1086,7 +1908,7 @@ pub async fn domain_update_domain_auth_code(configuration: &configuration::Confi
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&domain_update_domain_auth_code_request);
+    local_var_req_builder = local_var_req_builder.json(&domain_declare_process_change_authcode_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1103,7 +1925,7 @@ pub async fn domain_update_domain_auth_code(configuration: &configuration::Confi
     }
 }
 
-pub async fn domain_update_domain_contact(configuration: &configuration::Configuration, domain_id: &str, contact: &str, domain_update_domain_contact_request: Option<models::DomainUpdateDomainContactRequest>) -> Result<models::DomainDeleteDomain200Response, Error<DomainUpdateDomainContactError>> {
+pub async fn domain_update_domain_contact(configuration: &configuration::Configuration, domain_id: &str, contact: &str, domain_update_domain_contact_request: Option<models::DomainUpdateDomainContactRequest>) -> Result<models::DomainChangeOwnercOfDomainV2Deprecated200Response, Error<DomainUpdateDomainContactError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1139,7 +1961,7 @@ pub async fn domain_update_domain_contact(configuration: &configuration::Configu
     }
 }
 
-pub async fn domain_update_domain_nameservers(configuration: &configuration::Configuration, domain_id: &str, domain_update_domain_nameservers_request: Option<models::DomainUpdateDomainNameserversRequest>) -> Result<(), Error<DomainUpdateDomainNameserversError>> {
+pub async fn domain_update_domain_nameservers(configuration: &configuration::Configuration, domain_id: &str, domain_declare_nameservers_v2_deprecated_request: Option<models::DomainDeclareNameserversV2DeprecatedRequest>) -> Result<(), Error<DomainUpdateDomainNameserversError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1158,7 +1980,7 @@ pub async fn domain_update_domain_nameservers(configuration: &configuration::Con
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&domain_update_domain_nameservers_request);
+    local_var_req_builder = local_var_req_builder.json(&domain_declare_nameservers_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1175,7 +1997,7 @@ pub async fn domain_update_domain_nameservers(configuration: &configuration::Con
     }
 }
 
-pub async fn domain_update_domain_project_id(configuration: &configuration::Configuration, domain_id: &str, domain_update_domain_project_id_request: Option<models::DomainUpdateDomainProjectIdRequest>) -> Result<(), Error<DomainUpdateDomainProjectIdError>> {
+pub async fn domain_update_domain_project_id(configuration: &configuration::Configuration, domain_id: &str, domain_change_project_of_domain_v2_deprecated_request: Option<models::DomainChangeProjectOfDomainV2DeprecatedRequest>) -> Result<(), Error<DomainUpdateDomainProjectIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1194,7 +2016,7 @@ pub async fn domain_update_domain_project_id(configuration: &configuration::Conf
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&domain_update_domain_project_id_request);
+    local_var_req_builder = local_var_req_builder.json(&domain_change_project_of_domain_v2_deprecated_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1439,6 +2261,77 @@ pub async fn ingress_list_ingresses_compatible_with_certificate(configuration: &
     }
 }
 
+pub async fn ingress_list_ingresses_v2_deprecated(configuration: &configuration::Configuration, project_id: &str) -> Result<Vec<models::DePeriodMittwaldPeriodV1PeriodIngressPeriodIngressDeprecated>, Error<IngressListIngressesV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/ingresses", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<IngressListIngressesV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn ingress_paths_deprecated(configuration: &configuration::Configuration, ingress_id: &str, de_period_mittwald_period_v1_period_ingress_period_path: Option<Vec<models::DePeriodMittwaldPeriodV1PeriodIngressPeriodPath>>) -> Result<(), Error<IngressPathsDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/ingresses/{ingressId}/paths", local_var_configuration.base_path, ingressId=crate::apis::urlencode(ingress_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&de_period_mittwald_period_v1_period_ingress_period_path);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<IngressPathsDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
 pub async fn ingress_request_ingress_acme_certificate_issuance(configuration: &configuration::Configuration, ingress_id: &str) -> Result<(), Error<IngressRequestIngressAcmeCertificateIssuanceError>> {
     let local_var_configuration = configuration;
 
@@ -1469,6 +2362,42 @@ pub async fn ingress_request_ingress_acme_certificate_issuance(configuration: &c
         Ok(())
     } else {
         let local_var_entity: Option<IngressRequestIngressAcmeCertificateIssuanceError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn ingress_tls_deprecated(configuration: &configuration::Configuration, ingress_id: &str, ingress_tls_deprecated_request: Option<models::IngressTlsDeprecatedRequest>) -> Result<serde_json::Value, Error<IngressTlsDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/ingresses/{ingressId}/tls", local_var_configuration.base_path, ingressId=crate::apis::urlencode(ingress_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&ingress_tls_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<IngressTlsDeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -1872,6 +2801,283 @@ pub async fn ssl_replace_certificate(configuration: &configuration::Configuratio
         Ok(())
     } else {
         let local_var_entity: Option<SslReplaceCertificateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_dns_zones_dns_zone_id_delete(configuration: &configuration::Configuration, dns_zone_id: &str) -> Result<(), Error<V2DnsZonesDnsZoneIdDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{dnsZoneId}", local_var_configuration.base_path, dnsZoneId=crate::apis::urlencode(dns_zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DnsZonesDnsZoneIdDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_dns_zones_dns_zone_id_get(configuration: &configuration::Configuration, dns_zone_id: &str) -> Result<(), Error<V2DnsZonesDnsZoneIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones/{dnsZoneId}", local_var_configuration.base_path, dnsZoneId=crate::apis::urlencode(dns_zone_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DnsZonesDnsZoneIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_dns_zones_post(configuration: &configuration::Configuration, v2_dns_zones_post_request: Option<models::V2DnsZonesPostRequest>) -> Result<(), Error<V2DnsZonesPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/dns/zones", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_dns_zones_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DnsZonesPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_domains_domain_id_actions_create_authcode_post(configuration: &configuration::Configuration, domain_id: &str) -> Result<(), Error<V2DomainsDomainIdActionsCreateAuthcodePostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/actions/create-authcode", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DomainsDomainIdActionsCreateAuthcodePostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Update an incorrect auth code of an ongoing/failed Domain transfer. This route will also restart the transfer itself.
+pub async fn v2_domains_domain_id_authcode_patch(configuration: &configuration::Configuration, domain_id: &str, domain_declare_process_change_authcode_v2_deprecated_request: Option<models::DomainDeclareProcessChangeAuthcodeV2DeprecatedRequest>) -> Result<(), Error<V2DomainsDomainIdAuthcodePatchError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/authcode", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&domain_declare_process_change_authcode_v2_deprecated_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DomainsDomainIdAuthcodePatchError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Abort an incomplete Domain registration/transfer.
+pub async fn v2_domains_domain_id_declarations_delete(configuration: &configuration::Configuration, domain_id: &str) -> Result<(), Error<V2DomainsDomainIdDeclarationsDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/{domainId}/declarations", local_var_configuration.base_path, domainId=crate::apis::urlencode(domain_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DomainsDomainIdDeclarationsDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// List the top level domains currently supported by our API.
+pub async fn v2_domains_supported_tlds_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2DomainsSupportedTldsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/domains/supported-tlds", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2DomainsSupportedTldsGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_dns_zones_get(configuration: &configuration::Configuration, project_id: &str) -> Result<(), Error<V2ProjectsProjectIdDnsZonesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/dns/zones", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdDnsZonesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

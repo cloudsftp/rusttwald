@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **extensions** | **Vec<String>** |  | 
 **file_types** | [**Vec<models::DePeriodMittwaldPeriodV1PeriodFilePeriodFileType>**](de.mittwald.v1.file.FileType.md) |  | 
 **max_size_in_bytes** | **i32** |  | 
+**max_size_in_kb** | **i32** | deprecated, see maxSizeInBytes | 
 **mime_types** | **Vec<String>** |  | 
 **properties** | Option<[**models::ConversationRequestFileUpload201ResponseRulesProperties**](conversation_request_file_upload_201_response_rules_properties.md)> |  | [optional]
 

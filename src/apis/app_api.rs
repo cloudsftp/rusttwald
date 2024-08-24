@@ -251,6 +251,128 @@ pub enum AppUnlinkDatabaseError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`deprecated_app_link_database`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedAppLinkDatabaseError {
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_app_installations_app_installation_id_databases_database_id_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_actions_action_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdActionsActionPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_actions_copy_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdActionsCopyPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_databases_database_id_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdDatabasesDatabaseIdDeleteError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_databases_database_id_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdDatabasesDatabaseIdPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdDeleteError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_missing_dependencies_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdMissingDependenciesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_patch`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdPatchError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_appinstallations_app_installation_id_status_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2AppinstallationsAppInstallationIdStatusGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_appinstallations_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdAppinstallationsGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_projects_project_id_appinstallations_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2ProjectsProjectIdAppinstallationsPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_systemsoftware_system_software_id_versions_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SystemsoftwareSystemSoftwareIdVersionsGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_systemsoftware_system_software_id_versions_system_software_version_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SystemsoftwareSystemSoftwareIdVersionsSystemSoftwareVersionIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_systemsoftwares_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SystemsoftwaresGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_systemsoftwares_system_software_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SystemsoftwaresSystemSoftwareIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
 
 pub async fn app_execute_action(configuration: &configuration::Configuration, app_installation_id: &str, action: models::DePeriodMittwaldPeriodV1PeriodAppPeriodAction, body: Option<serde_json::Value>) -> Result<(), Error<AppExecuteActionError>> {
     let local_var_configuration = configuration;
@@ -863,7 +985,7 @@ pub async fn app_list_update_candidates_for_appversion(configuration: &configura
     }
 }
 
-pub async fn app_patch_appinstallation(configuration: &configuration::Configuration, app_installation_id: &str, app_patch_appinstallation_request: models::AppPatchAppinstallationRequest) -> Result<(), Error<AppPatchAppinstallationError>> {
+pub async fn app_patch_appinstallation(configuration: &configuration::Configuration, app_installation_id: &str, v2_appinstallations_app_installation_id_patch_request: models::V2AppinstallationsAppInstallationIdPatchRequest) -> Result<(), Error<AppPatchAppinstallationError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -882,7 +1004,7 @@ pub async fn app_patch_appinstallation(configuration: &configuration::Configurat
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&app_patch_appinstallation_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_appinstallations_app_installation_id_patch_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -935,7 +1057,7 @@ pub async fn app_replace_database(configuration: &configuration::Configuration, 
     }
 }
 
-pub async fn app_request_appinstallation(configuration: &configuration::Configuration, project_id: &str, app_request_appinstallation_request: models::AppRequestAppinstallationRequest) -> Result<models::AppRequestAppinstallation201Response, Error<AppRequestAppinstallationError>> {
+pub async fn app_request_appinstallation(configuration: &configuration::Configuration, project_id: &str, v2_projects_project_id_appinstallations_post_request: models::V2ProjectsProjectIdAppinstallationsPostRequest) -> Result<models::AppRequestAppinstallation201Response, Error<AppRequestAppinstallationError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -954,7 +1076,7 @@ pub async fn app_request_appinstallation(configuration: &configuration::Configur
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&app_request_appinstallation_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_projects_project_id_appinstallations_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -971,7 +1093,7 @@ pub async fn app_request_appinstallation(configuration: &configuration::Configur
     }
 }
 
-pub async fn app_request_appinstallation_copy(configuration: &configuration::Configuration, app_installation_id: &str, app_request_appinstallation_copy_request: models::AppRequestAppinstallationCopyRequest) -> Result<models::AppRequestAppinstallation201Response, Error<AppRequestAppinstallationCopyError>> {
+pub async fn app_request_appinstallation_copy(configuration: &configuration::Configuration, app_installation_id: &str, v2_appinstallations_app_installation_id_actions_copy_post_request: models::V2AppinstallationsAppInstallationIdActionsCopyPostRequest) -> Result<models::AppRequestAppinstallation201Response, Error<AppRequestAppinstallationCopyError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -990,7 +1112,7 @@ pub async fn app_request_appinstallation_copy(configuration: &configuration::Con
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&app_request_appinstallation_copy_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_appinstallations_app_installation_id_actions_copy_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1042,7 +1164,7 @@ pub async fn app_retrieve_status(configuration: &configuration::Configuration, a
     }
 }
 
-pub async fn app_set_database_users(configuration: &configuration::Configuration, app_installation_id: &str, database_id: &str, app_set_database_users_request: models::AppSetDatabaseUsersRequest) -> Result<(), Error<AppSetDatabaseUsersError>> {
+pub async fn app_set_database_users(configuration: &configuration::Configuration, app_installation_id: &str, database_id: &str, v2_app_installations_app_installation_id_databases_database_id_put_request: models::V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest) -> Result<(), Error<AppSetDatabaseUsersError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1061,7 +1183,7 @@ pub async fn app_set_database_users(configuration: &configuration::Configuration
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&app_set_database_users_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_app_installations_app_installation_id_databases_database_id_put_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1143,6 +1265,633 @@ pub async fn app_unlink_database(configuration: &configuration::Configuration, a
         Ok(())
     } else {
         let local_var_entity: Option<AppUnlinkDatabaseError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_app_link_database(configuration: &configuration::Configuration, app_installation_id: &str, app_link_database_request: models::AppLinkDatabaseRequest) -> Result<(), Error<DeprecatedAppLinkDatabaseError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/databases", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&app_link_database_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedAppLinkDatabaseError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_app_installations_app_installation_id_databases_database_id_put(configuration: &configuration::Configuration, app_installation_id: &str, database_id: &str, v2_app_installations_app_installation_id_databases_database_id_put_request: models::V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest) -> Result<(), Error<V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/app-installations/{appInstallationId}/databases/{databaseId}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id), databaseId=crate::apis::urlencode(database_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_app_installations_app_installation_id_databases_database_id_put_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_actions_action_post(configuration: &configuration::Configuration, app_installation_id: &str, action: models::DePeriodMittwaldPeriodV1PeriodAppPeriodAction, body: Option<serde_json::Value>) -> Result<(), Error<V2AppinstallationsAppInstallationIdActionsActionPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/actions/{action}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id), action=action.to_string());
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdActionsActionPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_actions_copy_post(configuration: &configuration::Configuration, app_installation_id: &str, v2_appinstallations_app_installation_id_actions_copy_post_request: models::V2AppinstallationsAppInstallationIdActionsCopyPostRequest) -> Result<(), Error<V2AppinstallationsAppInstallationIdActionsCopyPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/actions/copy", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_appinstallations_app_installation_id_actions_copy_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdActionsCopyPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_databases_database_id_delete(configuration: &configuration::Configuration, app_installation_id: &str, database_id: &str) -> Result<(), Error<V2AppinstallationsAppInstallationIdDatabasesDatabaseIdDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/databases/{databaseId}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id), databaseId=crate::apis::urlencode(database_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdDatabasesDatabaseIdDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_databases_database_id_put(configuration: &configuration::Configuration, app_installation_id: &str, database_id: &str, v2_app_installations_app_installation_id_databases_database_id_put_request: models::V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest) -> Result<(), Error<V2AppinstallationsAppInstallationIdDatabasesDatabaseIdPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/databases/{databaseId}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id), databaseId=crate::apis::urlencode(database_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_app_installations_app_installation_id_databases_database_id_put_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdDatabasesDatabaseIdPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_delete(configuration: &configuration::Configuration, app_installation_id: &str) -> Result<(), Error<V2AppinstallationsAppInstallationIdDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_get(configuration: &configuration::Configuration, app_installation_id: &str) -> Result<(), Error<V2AppinstallationsAppInstallationIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_missing_dependencies_get(configuration: &configuration::Configuration, app_installation_id: &str, target_app_version_id: &str) -> Result<(), Error<V2AppinstallationsAppInstallationIdMissingDependenciesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/missing-dependencies", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    local_var_req_builder = local_var_req_builder.query(&[("targetAppVersionID", &target_app_version_id.to_string())]);
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdMissingDependenciesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_patch(configuration: &configuration::Configuration, app_installation_id: &str, v2_appinstallations_app_installation_id_patch_request: models::V2AppinstallationsAppInstallationIdPatchRequest) -> Result<(), Error<V2AppinstallationsAppInstallationIdPatchError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_appinstallations_app_installation_id_patch_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdPatchError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_appinstallations_app_installation_id_status_get(configuration: &configuration::Configuration, app_installation_id: &str) -> Result<(), Error<V2AppinstallationsAppInstallationIdStatusGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/appinstallations/{appInstallationId}/status", local_var_configuration.base_path, appInstallationId=crate::apis::urlencode(app_installation_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2AppinstallationsAppInstallationIdStatusGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_appinstallations_get(configuration: &configuration::Configuration, project_id: &str, limit: Option<i32>, page: Option<i32>, skip: Option<i32>) -> Result<(), Error<V2ProjectsProjectIdAppinstallationsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/appinstallations", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = limit {
+        local_var_req_builder = local_var_req_builder.query(&[("limit", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = skip {
+        local_var_req_builder = local_var_req_builder.query(&[("skip", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdAppinstallationsGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_projects_project_id_appinstallations_post(configuration: &configuration::Configuration, project_id: &str, v2_projects_project_id_appinstallations_post_request: models::V2ProjectsProjectIdAppinstallationsPostRequest) -> Result<(), Error<V2ProjectsProjectIdAppinstallationsPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/projects/{projectId}/appinstallations", local_var_configuration.base_path, projectId=crate::apis::urlencode(project_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_projects_project_id_appinstallations_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2ProjectsProjectIdAppinstallationsPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_systemsoftware_system_software_id_versions_get(configuration: &configuration::Configuration, system_software_id: &str, version_range: Option<&str>, recommended: Option<bool>) -> Result<(), Error<V2SystemsoftwareSystemSoftwareIdVersionsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/systemsoftware/{systemSoftwareId}/versions", local_var_configuration.base_path, systemSoftwareId=crate::apis::urlencode(system_software_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = version_range {
+        local_var_req_builder = local_var_req_builder.query(&[("versionRange", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = recommended {
+        local_var_req_builder = local_var_req_builder.query(&[("recommended", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SystemsoftwareSystemSoftwareIdVersionsGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_systemsoftware_system_software_id_versions_system_software_version_id_get(configuration: &configuration::Configuration, system_software_id: &str, system_software_version_id: &str) -> Result<(), Error<V2SystemsoftwareSystemSoftwareIdVersionsSystemSoftwareVersionIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/systemsoftware/{systemSoftwareId}/versions/{systemSoftwareVersionId}", local_var_configuration.base_path, systemSoftwareId=crate::apis::urlencode(system_software_id), systemSoftwareVersionId=crate::apis::urlencode(system_software_version_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SystemsoftwareSystemSoftwareIdVersionsSystemSoftwareVersionIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_systemsoftwares_get(configuration: &configuration::Configuration, limit: Option<i32>, page: Option<i32>, skip: Option<i32>) -> Result<(), Error<V2SystemsoftwaresGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/systemsoftwares", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = limit {
+        local_var_req_builder = local_var_req_builder.query(&[("limit", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = skip {
+        local_var_req_builder = local_var_req_builder.query(&[("skip", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SystemsoftwaresGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_systemsoftwares_system_software_id_get(configuration: &configuration::Configuration, system_software_id: &str) -> Result<(), Error<V2SystemsoftwaresSystemSoftwareIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/systemsoftwares/{systemSoftwareId}", local_var_configuration.base_path, systemSoftwareId=crate::apis::urlencode(system_software_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SystemsoftwaresSystemSoftwareIdGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

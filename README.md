@@ -80,6 +80,23 @@ Class | Method | HTTP request | Description
 *AppApi* | [**app_set_database_users**](docs/AppApi.md#app_set_database_users) | **PUT** /v2/app-installations/{appInstallationId}/databases/{databaseId}/users | Create linkage between an AppInstallation and DatabaseUsers.
 *AppApi* | [**app_uninstall_appinstallation**](docs/AppApi.md#app_uninstall_appinstallation) | **DELETE** /v2/app-installations/{appInstallationId} | Trigger an uninstallation process for an AppInstallation.
 *AppApi* | [**app_unlink_database**](docs/AppApi.md#app_unlink_database) | **DELETE** /v2/app-installations/{appInstallationId}/databases/{databaseId} | Remove linkage between an AppInstallation and a Database.
+*AppApi* | [**deprecated_app_link_database**](docs/AppApi.md#deprecated_app_link_database) | **PUT** /v2/appinstallations/{appInstallationId}/databases | Create linkage between an AppInstallation and a MySql-Database.
+*AppApi* | [**v2_app_installations_app_installation_id_databases_database_id_put**](docs/AppApi.md#v2_app_installations_app_installation_id_databases_database_id_put) | **PUT** /v2/app-installations/{appInstallationId}/databases/{databaseId} | Create linkage between an AppInstallation and DatabaseUsers.
+*AppApi* | [**v2_appinstallations_app_installation_id_actions_action_post**](docs/AppApi.md#v2_appinstallations_app_installation_id_actions_action_post) | **POST** /v2/appinstallations/{appInstallationId}/actions/{action} | Trigger a runtime action belonging to an AppInstallation.
+*AppApi* | [**v2_appinstallations_app_installation_id_actions_copy_post**](docs/AppApi.md#v2_appinstallations_app_installation_id_actions_copy_post) | **POST** /v2/appinstallations/{appInstallationId}/actions/copy | Request a copy of an AppInstallation.
+*AppApi* | [**v2_appinstallations_app_installation_id_databases_database_id_delete**](docs/AppApi.md#v2_appinstallations_app_installation_id_databases_database_id_delete) | **DELETE** /v2/appinstallations/{appInstallationId}/databases/{databaseId} | Remove linkage between an AppInstallation and a Database.
+*AppApi* | [**v2_appinstallations_app_installation_id_databases_database_id_put**](docs/AppApi.md#v2_appinstallations_app_installation_id_databases_database_id_put) | **PUT** /v2/appinstallations/{appInstallationId}/databases/{databaseId} | Create linkage between an AppInstallation and DatabaseUsers.
+*AppApi* | [**v2_appinstallations_app_installation_id_delete**](docs/AppApi.md#v2_appinstallations_app_installation_id_delete) | **DELETE** /v2/appinstallations/{appInstallationId} | Trigger an uninstallation process for an AppInstallation.
+*AppApi* | [**v2_appinstallations_app_installation_id_get**](docs/AppApi.md#v2_appinstallations_app_installation_id_get) | **GET** /v2/appinstallations/{appInstallationId} | Get an AppInstallation.
+*AppApi* | [**v2_appinstallations_app_installation_id_missing_dependencies_get**](docs/AppApi.md#v2_appinstallations_app_installation_id_missing_dependencies_get) | **GET** /v2/appinstallations/{appInstallationId}/missing-dependencies | Get the missing requirements of an appInstallation for a specific target AppVersion.
+*AppApi* | [**v2_appinstallations_app_installation_id_patch**](docs/AppApi.md#v2_appinstallations_app_installation_id_patch) | **PATCH** /v2/appinstallations/{appInstallationId} | Update properties belonging to an AppInstallation.
+*AppApi* | [**v2_appinstallations_app_installation_id_status_get**](docs/AppApi.md#v2_appinstallations_app_installation_id_status_get) | **GET** /v2/appinstallations/{appInstallationId}/status | Get runtime status belonging to an AppInstallation.
+*AppApi* | [**v2_projects_project_id_appinstallations_get**](docs/AppApi.md#v2_projects_project_id_appinstallations_get) | **GET** /v2/projects/{projectId}/appinstallations | List AppInstallations belonging to a Project.
+*AppApi* | [**v2_projects_project_id_appinstallations_post**](docs/AppApi.md#v2_projects_project_id_appinstallations_post) | **POST** /v2/projects/{projectId}/appinstallations | Request an AppInstallation.
+*AppApi* | [**v2_systemsoftware_system_software_id_versions_get**](docs/AppApi.md#v2_systemsoftware_system_software_id_versions_get) | **GET** /v2/systemsoftware/{systemSoftwareId}/versions | List SystemSoftwareVersions belonging to a SystemSoftware.
+*AppApi* | [**v2_systemsoftware_system_software_id_versions_system_software_version_id_get**](docs/AppApi.md#v2_systemsoftware_system_software_id_versions_system_software_version_id_get) | **GET** /v2/systemsoftware/{systemSoftwareId}/versions/{systemSoftwareVersionId} | Get a SystemSoftwareVersion.
+*AppApi* | [**v2_systemsoftwares_get**](docs/AppApi.md#v2_systemsoftwares_get) | **GET** /v2/systemsoftwares | List SystemSoftwares.
+*AppApi* | [**v2_systemsoftwares_system_software_id_get**](docs/AppApi.md#v2_systemsoftwares_system_software_id_get) | **GET** /v2/systemsoftwares/{systemSoftwareId} | Get a SystemSoftware.
 *ArticleApi* | [**article_get_article**](docs/ArticleApi.md#article_get_article) | **GET** /v2/articles/{articleId} | Get an Article.
 *ArticleApi* | [**article_list_articles**](docs/ArticleApi.md#article_list_articles) | **GET** /v2/articles | List Articles.
 *BackupApi* | [**backup_create_project_backup**](docs/BackupApi.md#backup_create_project_backup) | **POST** /v2/projects/{projectId}/backups | Create a Backup of a Project.
@@ -108,6 +125,7 @@ Class | Method | HTTP request | Description
 *ContractApi* | [**contract_list_contracts**](docs/ContractApi.md#contract_list_contracts) | **GET** /v2/customers/{customerId}/contracts | Return a list of Contracts for the given Customer.
 *ContractApi* | [**contract_terminate_contract**](docs/ContractApi.md#contract_terminate_contract) | **POST** /v2/contracts/{contractId}/termination | Schedule the Termination of a Contract.
 *ContractApi* | [**contract_terminate_contract_item**](docs/ContractApi.md#contract_terminate_contract_item) | **POST** /v2/contracts/{contractId}/items/{contractItemId}/termination | Schedule the Termination of a ContractItem.
+*ContractApi* | [**deprecated_invoice_detail_of_invoice**](docs/ContractApi.md#deprecated_invoice_detail_of_invoice) | **GET** /v2/customers/{customerId}/invoices/{invoiceId} | Get details of an Invoice.
 *ContractApi* | [**invoice_detail**](docs/ContractApi.md#invoice_detail) | **GET** /v2/invoices/{invoiceId} | Get details of an Invoice.
 *ContractApi* | [**invoice_get_detail_of_invoice_settings**](docs/ContractApi.md#invoice_get_detail_of_invoice_settings) | **GET** /v2/customers/{customerId}/invoice-settings | Get InvoiceSettings of a Customer.
 *ContractApi* | [**invoice_get_file_access_token**](docs/ContractApi.md#invoice_get_file_access_token) | **GET** /v2/customers/{customerId}/invoices/{invoiceId}/file-access-token | Request an Access Token for the Invoice file.
@@ -193,20 +211,37 @@ Class | Method | HTTP request | Description
 *DatabaseApi* | [**database_update_redis_database_configuration**](docs/DatabaseApi.md#database_update_redis_database_configuration) | **PATCH** /v2/redis-databases/{redisDatabaseId}/configuration | Update a RedisDatabase's configuration.
 *DatabaseApi* | [**database_update_redis_database_description**](docs/DatabaseApi.md#database_update_redis_database_description) | **PATCH** /v2/redis-databases/{redisDatabaseId}/description | Update a RedisDatabase's description.
 *DefaultApi* | [**servicetoken_authenticate_service**](docs/DefaultApi.md#servicetoken_authenticate_service) | **POST** /v2/services/{accessKeyId}/actions/authenticate | Obtain a service token.
+*DefaultApi* | [**v2_service_access_key_id_actions_authenticate_post**](docs/DefaultApi.md#v2_service_access_key_id_actions_authenticate_post) | **POST** /v2/service/{accessKeyId}/actions/authenticate | Obtain a service token.
+*DomainApi* | [**deprecated_domain_get_screenshot_for_domain**](docs/DomainApi.md#deprecated_domain_get_screenshot_for_domain) | **GET** /v2/domains/{domainId}/screenshots/newest | Get File Service Reference for a Screenshot of a domain.
 *DomainApi* | [**dns_create_dns_zone**](docs/DomainApi.md#dns_create_dns_zone) | **POST** /v2/dns-zones | Create a DNSZone.
 *DomainApi* | [**dns_delete_dns_zone**](docs/DomainApi.md#dns_delete_dns_zone) | **DELETE** /v2/dns-zones/{dnsZoneId} | Delete a DNSZone.
 *DomainApi* | [**dns_get_dns_zone**](docs/DomainApi.md#dns_get_dns_zone) | **GET** /v2/dns-zones/{dnsZoneId} | Get a DNSZone.
 *DomainApi* | [**dns_list_dns_zones**](docs/DomainApi.md#dns_list_dns_zones) | **GET** /v2/projects/{projectId}/dns-zones | List DNSZones belonging to a Project.
+*DomainApi* | [**dns_record_a_set_custom_deprecated**](docs/DomainApi.md#dns_record_a_set_custom_deprecated) | **PUT** /v2/dns/zones/{zoneId}/recordset/acombined/custom | updates a-records for a specific zone
+*DomainApi* | [**dns_record_a_set_managed_by_ingress_deprecated**](docs/DomainApi.md#dns_record_a_set_managed_by_ingress_deprecated) | **POST** /v2/dns/zones/{zoneId}/recordset/acombined/managed/ingress | set a-records managed by ingress for a specific zone
+*DomainApi* | [**dns_record_cname_set_deprecated**](docs/DomainApi.md#dns_record_cname_set_deprecated) | **PUT** /v2/dns/zones/{zoneId}/recordset/cname | updates cname-record for a specific zone
+*DomainApi* | [**dns_record_mx_set_custom_deprecated**](docs/DomainApi.md#dns_record_mx_set_custom_deprecated) | **PUT** /v2/dns/zones/{zoneId}/recordset/mx/custom | updates mx-records for a specific zone
+*DomainApi* | [**dns_record_mx_set_managed_deprecated**](docs/DomainApi.md#dns_record_mx_set_managed_deprecated) | **POST** /v2/dns/zones/{zoneId}/recordset/mx/managed | sets mx-records to managed for a specific zone
+*DomainApi* | [**dns_record_srv_set_deprecated**](docs/DomainApi.md#dns_record_srv_set_deprecated) | **PUT** /v2/dns/zones/{zoneId}/recordset/srv | updates srv-records for a specific zone
+*DomainApi* | [**dns_record_txt_set_deprecated**](docs/DomainApi.md#dns_record_txt_set_deprecated) | **PUT** /v2/dns/zones/{zoneId}/recordset/txt | updates txt-records for a specific zone
 *DomainApi* | [**dns_set_record_set_managed**](docs/DomainApi.md#dns_set_record_set_managed) | **POST** /v2/dns-zones/{dnsZoneId}/record-sets/{recordSet}/actions/set-managed | Set a record set on a DNSZone to managed.
 *DomainApi* | [**dns_update_record_set**](docs/DomainApi.md#dns_update_record_set) | **PUT** /v2/dns-zones/{dnsZoneId}/record-sets/{recordSet} | Update a record set on a DNSZone.
 *DomainApi* | [**domain_abort_domain_declaration**](docs/DomainApi.md#domain_abort_domain_declaration) | **DELETE** /v2/domains/{domainId}/declaration | Abort a Domain declaration.
+*DomainApi* | [**domain_change_ownerc_of_domain_v2_deprecated**](docs/DomainApi.md#domain_change_ownerc_of_domain_v2_deprecated) | **PUT** /v2/domains/{domainId}/handles/ownerc | Change the owner contact of a domain.
+*DomainApi* | [**domain_change_project_of_domain_v2_deprecated**](docs/DomainApi.md#domain_change_project_of_domain_v2_deprecated) | **PUT** /v2/domains/{domainId}/projectId | Change the Project relation of a Domain.
 *DomainApi* | [**domain_check_domain_registrability**](docs/DomainApi.md#domain_check_domain_registrability) | **POST** /v2/domain-registrable | Check if a Domain is available to register.
+*DomainApi* | [**domain_check_domain_registrability_v2_deprecated**](docs/DomainApi.md#domain_check_domain_registrability_v2_deprecated) | **POST** /v2/domains | Check if a Domain is available to register.
 *DomainApi* | [**domain_check_domain_transferability**](docs/DomainApi.md#domain_check_domain_transferability) | **POST** /v2/domain-transferable | Check if a Domain is available to transfer.
 *DomainApi* | [**domain_create_domain_auth_code**](docs/DomainApi.md#domain_create_domain_auth_code) | **POST** /v2/domains/{domainId}/actions/auth-code | Create an auth code for a Domains transfer-out process.
+*DomainApi* | [**domain_declare_nameservers_v2_deprecated**](docs/DomainApi.md#domain_declare_nameservers_v2_deprecated) | **PUT** /v2/domains/{domainId}/nameservers | Change all nameservers of a Domain.
+*DomainApi* | [**domain_declare_process_change_authcode_v2_deprecated**](docs/DomainApi.md#domain_declare_process_change_authcode_v2_deprecated) | **PUT** /v2/domains/{domainId}/declarations/authcode | Update an AuthCode.
+*DomainApi* | [**domain_declare_process_change_handles_v2_deprecated**](docs/DomainApi.md#domain_declare_process_change_handles_v2_deprecated) | **PUT** /v2/domains/{domainId}/declarations/handles | Update a Domain's OwnerC handle.
 *DomainApi* | [**domain_delete_domain**](docs/DomainApi.md#domain_delete_domain) | **DELETE** /v2/domains/{domainId} | Delete a Domain.
 *DomainApi* | [**domain_get_domain**](docs/DomainApi.md#domain_get_domain) | **GET** /v2/domains/{domainId} | Get a Domain.
+*DomainApi* | [**domain_get_handle_fields_v2_deprecated**](docs/DomainApi.md#domain_get_handle_fields_v2_deprecated) | **GET** /v2/domains/handle-schema/{domainName} | Get a HandleSchema.
 *DomainApi* | [**domain_get_latest_screenshot**](docs/DomainApi.md#domain_get_latest_screenshot) | **GET** /v2/domains/{domainId}/latest-screenshot | Get the latest screenshot's FileReference belonging to a Domain.
 *DomainApi* | [**domain_list_domains**](docs/DomainApi.md#domain_list_domains) | **GET** /v2/domains | List Domains
+*DomainApi* | [**domain_list_domains_v2_deprecated**](docs/DomainApi.md#domain_list_domains_v2_deprecated) | **GET** /v2/projects/{projectId}/domains | List Domains belonging to a Project.
 *DomainApi* | [**domain_list_tld_contact_schemas**](docs/DomainApi.md#domain_list_tld_contact_schemas) | **GET** /v2/domain-tlds/{tld}/contact-schemas | List the contact schemas for a TLD.
 *DomainApi* | [**domain_list_tlds**](docs/DomainApi.md#domain_list_tlds) | **GET** /v2/domain-tlds | List TLDs.
 *DomainApi* | [**domain_resend_domain_email**](docs/DomainApi.md#domain_resend_domain_email) | **POST** /v2/domains/{domainId}/actions/resend-email | Resend a Domain email.
@@ -221,7 +256,10 @@ Class | Method | HTTP request | Description
 *DomainApi* | [**ingress_ingress_verify_ownership**](docs/DomainApi.md#ingress_ingress_verify_ownership) | **POST** /v2/ingresses/{ingressId}/actions/verify-ownership | Verifiy the ownership of an Ingress.
 *DomainApi* | [**ingress_list_ingresses**](docs/DomainApi.md#ingress_list_ingresses) | **GET** /v2/ingresses | List Ingresses.
 *DomainApi* | [**ingress_list_ingresses_compatible_with_certificate**](docs/DomainApi.md#ingress_list_ingresses_compatible_with_certificate) | **POST** /v2/actions/list-ingresses-compatible-with-certificate | List Ingresses compatible with a certificate.
+*DomainApi* | [**ingress_list_ingresses_v2_deprecated**](docs/DomainApi.md#ingress_list_ingresses_v2_deprecated) | **GET** /v2/projects/{projectId}/ingresses | List Ingresses belonging to a project.
+*DomainApi* | [**ingress_paths_deprecated**](docs/DomainApi.md#ingress_paths_deprecated) | **PUT** /v2/ingresses/{ingressId}/paths | Update an Ingresses paths.
 *DomainApi* | [**ingress_request_ingress_acme_certificate_issuance**](docs/DomainApi.md#ingress_request_ingress_acme_certificate_issuance) | **POST** /v2/ingresses/{ingressId}/actions/request-acme-certificate-issuance | Request the ACME certificate issuance of an Ingress.
+*DomainApi* | [**ingress_tls_deprecated**](docs/DomainApi.md#ingress_tls_deprecated) | **PUT** /v2/ingresses/{ingressId}/tls | Update an Ingresses tls settings.
 *DomainApi* | [**ingress_update_ingress_paths**](docs/DomainApi.md#ingress_update_ingress_paths) | **PATCH** /v2/ingresses/{ingressId}/paths | Update the paths of an Ingress.
 *DomainApi* | [**ingress_update_ingress_tls**](docs/DomainApi.md#ingress_update_ingress_tls) | **PATCH** /v2/ingresses/{ingressId}/tls | Update the tls settings of an Ingress.
 *DomainApi* | [**ssl_check_replace_certificate**](docs/DomainApi.md#ssl_check_replace_certificate) | **POST** /v2/certificates/{certificateId}/actions/check-replace-certificate | Check the replacement of a Certificate.
@@ -233,6 +271,16 @@ Class | Method | HTTP request | Description
 *DomainApi* | [**ssl_list_certificate_requests**](docs/DomainApi.md#ssl_list_certificate_requests) | **GET** /v2/certificate-requests | List CertificateRequests belonging to a Project or an Ingress.
 *DomainApi* | [**ssl_list_certificates**](docs/DomainApi.md#ssl_list_certificates) | **GET** /v2/certificates | List Certificates belonging to a Project or an Ingress.
 *DomainApi* | [**ssl_replace_certificate**](docs/DomainApi.md#ssl_replace_certificate) | **PUT** /v2/certificates/{certificateId} | Update a Certificate.
+*DomainApi* | [**v2_dns_zones_dns_zone_id_delete**](docs/DomainApi.md#v2_dns_zones_dns_zone_id_delete) | **DELETE** /v2/dns/zones/{dnsZoneId} | Delete a DNSZone.
+*DomainApi* | [**v2_dns_zones_dns_zone_id_get**](docs/DomainApi.md#v2_dns_zones_dns_zone_id_get) | **GET** /v2/dns/zones/{dnsZoneId} | Get a DNSZone.
+*DomainApi* | [**v2_dns_zones_post**](docs/DomainApi.md#v2_dns_zones_post) | **POST** /v2/dns/zones | Create a DNSZone.
+*DomainApi* | [**v2_domains_domain_id_actions_create_authcode_post**](docs/DomainApi.md#v2_domains_domain_id_actions_create_authcode_post) | **POST** /v2/domains/{domainId}/actions/create-authcode | Create an auth code for a Domains transfer-out process.
+*DomainApi* | [**v2_domains_domain_id_authcode_patch**](docs/DomainApi.md#v2_domains_domain_id_authcode_patch) | **PATCH** /v2/domains/{domainId}/authcode | Update the auth code of a Domain.
+*DomainApi* | [**v2_domains_domain_id_declarations_delete**](docs/DomainApi.md#v2_domains_domain_id_declarations_delete) | **DELETE** /v2/domains/{domainId}/declarations | Abort a Domain declaration.
+*DomainApi* | [**v2_domains_supported_tlds_get**](docs/DomainApi.md#v2_domains_supported_tlds_get) | **GET** /v2/domains/supported-tlds | List TLDs.
+*DomainApi* | [**v2_projects_project_id_dns_zones_get**](docs/DomainApi.md#v2_projects_project_id_dns_zones_get) | **GET** /v2/projects/{projectId}/dns/zones | List DNSZones belonging to a Project.
+*FileApi* | [**deprecated_file_get_file_token_rules**](docs/FileApi.md#deprecated_file_get_file_token_rules) | **GET** /v2/file-token-rules/{token} | Get a Token's upload rules.
+*FileApi* | [**deprecated_file_get_file_type_rules**](docs/FileApi.md#deprecated_file_get_file_type_rules) | **GET** /v2/file-type-rules/{name} | Get a Type's upload rules.
 *FileApi* | [**file_create_file**](docs/FileApi.md#file_create_file) | **POST** /v2/files | Create a File.
 *FileApi* | [**file_get_file**](docs/FileApi.md#file_get_file) | **GET** /v2/files/{fileId} | Get a File.
 *FileApi* | [**file_get_file_meta**](docs/FileApi.md#file_get_file_meta) | **GET** /v2/files/{fileId}/meta | Get a File's meta.
@@ -243,21 +291,48 @@ Class | Method | HTTP request | Description
 *MailApi* | [**mail_create_mail_address**](docs/MailApi.md#mail_create_mail_address) | **POST** /v2/projects/{projectId}/mail-addresses | Create a MailAddress.
 *MailApi* | [**mail_delete_delivery_box**](docs/MailApi.md#mail_delete_delivery_box) | **DELETE** /v2/delivery-boxes/{deliveryBoxId} | Delete a DeliveryBox.
 *MailApi* | [**mail_delete_mail_address**](docs/MailApi.md#mail_delete_mail_address) | **DELETE** /v2/mail-addresses/{mailAddressId} | Delete a MailAddress.
+*MailApi* | [**mail_deliverybox_update_description_deprecated**](docs/MailApi.md#mail_deliverybox_update_description_deprecated) | **PUT** /v2/deliveryboxes/{id}/description | Update the description of an deliverybox
+*MailApi* | [**mail_deliverybox_update_password_deprecated**](docs/MailApi.md#mail_deliverybox_update_password_deprecated) | **PUT** /v2/deliveryboxes/{id}/password | Update the password for a specific deliverybox
 *MailApi* | [**mail_get_delivery_box**](docs/MailApi.md#mail_get_delivery_box) | **GET** /v2/delivery-boxes/{deliveryBoxId} | Get a DeliveryBox.
 *MailApi* | [**mail_get_mail_address**](docs/MailApi.md#mail_get_mail_address) | **GET** /v2/mail-addresses/{mailAddressId} | Get a MailAddress.
 *MailApi* | [**mail_list_delivery_boxes**](docs/MailApi.md#mail_list_delivery_boxes) | **GET** /v2/projects/{projectId}/delivery-boxes | List DeliveryBoxes belonging to a Project.
 *MailApi* | [**mail_list_mail_addresses**](docs/MailApi.md#mail_list_mail_addresses) | **GET** /v2/projects/{projectId}/mail-addresses | List MailAddresses belonging to a Project.
 *MailApi* | [**mail_list_project_mail_settings**](docs/MailApi.md#mail_list_project_mail_settings) | **GET** /v2/projects/{projectId}/mail-settings | List mail settings of a Project.
+*MailApi* | [**mail_mailaddress_update_address_deprecated**](docs/MailApi.md#mail_mailaddress_update_address_deprecated) | **PUT** /v2/mailaddresses/{id}/address | Update mail-address
+*MailApi* | [**mail_projectsetting_update_blacklist_deprecated**](docs/MailApi.md#mail_projectsetting_update_blacklist_deprecated) | **PUT** /v2/projects/{projectId}/mailsettings/blacklist | Update blacklist for a given project ID
+*MailApi* | [**mail_projectsetting_update_whitelist_deprecated**](docs/MailApi.md#mail_projectsetting_update_whitelist_deprecated) | **PUT** /v2/projects/{projectId}/mailsettings/whitelist | Update whitelist for a given project ID
 *MailApi* | [**mail_update_delivery_box_description**](docs/MailApi.md#mail_update_delivery_box_description) | **PATCH** /v2/delivery-boxes/{deliveryBoxId}/description | Update the description of a DeliveryBox.
 *MailApi* | [**mail_update_delivery_box_password**](docs/MailApi.md#mail_update_delivery_box_password) | **PATCH** /v2/delivery-boxes/{deliveryBoxId}/password | Update the password of a DeliveryBox.
 *MailApi* | [**mail_update_mail_address_address**](docs/MailApi.md#mail_update_mail_address_address) | **PATCH** /v2/mail-addresses/{mailAddressId}/address | Update a MailAddress.
 *MailApi* | [**mail_update_mail_address_autoresponder**](docs/MailApi.md#mail_update_mail_address_autoresponder) | **PATCH** /v2/mail-addresses/{mailAddressId}/autoresponder | Update the autoresponder of a MailAddress.
+*MailApi* | [**mail_update_mail_address_autoresponder_v2_deprecated**](docs/MailApi.md#mail_update_mail_address_autoresponder_v2_deprecated) | **PUT** /v2/mail-addresses/{mailAddressId}/autoresponder | Update the autoresponder of a MailAddress.
 *MailApi* | [**mail_update_mail_address_catch_all**](docs/MailApi.md#mail_update_mail_address_catch_all) | **PATCH** /v2/mail-addresses/{mailAddressId}/catch-all | Update the catchall of a MailAddress.
+*MailApi* | [**mail_update_mail_address_catchall_v2_deprecated**](docs/MailApi.md#mail_update_mail_address_catchall_v2_deprecated) | **PUT** /v2/mail-addresses/{mailAddressId}/catchall | Update the catchall of a MailAddress.
 *MailApi* | [**mail_update_mail_address_forward_addresses**](docs/MailApi.md#mail_update_mail_address_forward_addresses) | **PATCH** /v2/mail-addresses/{mailAddressId}/forward-addresses | Update the forward addresses of a MailAddresses.
+*MailApi* | [**mail_update_mail_address_forward_addresses_v2_deprecated**](docs/MailApi.md#mail_update_mail_address_forward_addresses_v2_deprecated) | **PUT** /v2/mail-addresses/{mailAddressId}/forward-addresses | Update the forward addresses of a MailAddresses.
 *MailApi* | [**mail_update_mail_address_password**](docs/MailApi.md#mail_update_mail_address_password) | **PATCH** /v2/mail-addresses/{mailAddressId}/password | Update the password for a MailAddress.
+*MailApi* | [**mail_update_mail_address_password_v2_deprecated**](docs/MailApi.md#mail_update_mail_address_password_v2_deprecated) | **PUT** /v2/mail-addresses/{mailAddressId}/password | Update the password for a MailAddress.
 *MailApi* | [**mail_update_mail_address_quota**](docs/MailApi.md#mail_update_mail_address_quota) | **PATCH** /v2/mail-addresses/{mailAddressId}/quota | Update the quota of a MailAddress.
+*MailApi* | [**mail_update_mail_address_quota_v2_deprecated**](docs/MailApi.md#mail_update_mail_address_quota_v2_deprecated) | **PUT** /v2/mail-addresses/{mailAddressId}/quota | Update the quota of a MailAddress.
 *MailApi* | [**mail_update_mail_address_spam_protection**](docs/MailApi.md#mail_update_mail_address_spam_protection) | **PATCH** /v2/mail-addresses/{mailAddressId}/spam-protection | Update the spam protection of a MailAddress.
+*MailApi* | [**mail_update_mail_address_spam_protection_v2_deprecated**](docs/MailApi.md#mail_update_mail_address_spam_protection_v2_deprecated) | **PUT** /v2/mail-addresses/{mailAddressId}/spam-protection | Update the spam protection of a MailAddress.
 *MailApi* | [**mail_update_project_mail_setting**](docs/MailApi.md#mail_update_project_mail_setting) | **PATCH** /v2/projects/{projectId}/mail-settings/{mailSetting} | Update a mail setting of a Project.
+*MailApi* | [**mail_update_project_mail_setting_v2_deprecated**](docs/MailApi.md#mail_update_project_mail_setting_v2_deprecated) | **PUT** /v2/projects/{projectId}/mail-settings/{setting} | Update a mail setting of a Project.
+*MailApi* | [**v2_deliveryboxes_delivery_box_id_delete**](docs/MailApi.md#v2_deliveryboxes_delivery_box_id_delete) | **DELETE** /v2/deliveryboxes/{deliveryBoxId} | Delete a DeliveryBox.
+*MailApi* | [**v2_deliveryboxes_delivery_box_id_get**](docs/MailApi.md#v2_deliveryboxes_delivery_box_id_get) | **GET** /v2/deliveryboxes/{deliveryBoxId} | Get a DeliveryBox.
+*MailApi* | [**v2_mailaddresses_mail_address_id_auto_responder_put**](docs/MailApi.md#v2_mailaddresses_mail_address_id_auto_responder_put) | **PUT** /v2/mailaddresses/{mailAddressId}/autoResponder | Update the autoresponder of a MailAddress.
+*MailApi* | [**v2_mailaddresses_mail_address_id_catch_all_put**](docs/MailApi.md#v2_mailaddresses_mail_address_id_catch_all_put) | **PUT** /v2/mailaddresses/{mailAddressId}/catchAll | Update the catchall of a MailAddress.
+*MailApi* | [**v2_mailaddresses_mail_address_id_delete**](docs/MailApi.md#v2_mailaddresses_mail_address_id_delete) | **DELETE** /v2/mailaddresses/{mailAddressId} | Delete a MailAddress.
+*MailApi* | [**v2_mailaddresses_mail_address_id_forwardaddresses_put**](docs/MailApi.md#v2_mailaddresses_mail_address_id_forwardaddresses_put) | **PUT** /v2/mailaddresses/{mailAddressId}/forwardaddresses | Update the forward addresses of a MailAddresses.
+*MailApi* | [**v2_mailaddresses_mail_address_id_get**](docs/MailApi.md#v2_mailaddresses_mail_address_id_get) | **GET** /v2/mailaddresses/{mailAddressId} | Get a MailAddress.
+*MailApi* | [**v2_mailaddresses_mail_address_id_password_put**](docs/MailApi.md#v2_mailaddresses_mail_address_id_password_put) | **PUT** /v2/mailaddresses/{mailAddressId}/password | Update the password for a MailAddress.
+*MailApi* | [**v2_mailaddresses_mail_address_id_quota_put**](docs/MailApi.md#v2_mailaddresses_mail_address_id_quota_put) | **PUT** /v2/mailaddresses/{mailAddressId}/quota | Update the quota of a MailAddress.
+*MailApi* | [**v2_mailaddresses_mail_address_id_spamprotection_put**](docs/MailApi.md#v2_mailaddresses_mail_address_id_spamprotection_put) | **PUT** /v2/mailaddresses/{mailAddressId}/spamprotection | Update the spam protection of a MailAddress.
+*MailApi* | [**v2_projects_project_id_deliveryboxes_get**](docs/MailApi.md#v2_projects_project_id_deliveryboxes_get) | **GET** /v2/projects/{projectId}/deliveryboxes | List DeliveryBoxes belonging to a Project.
+*MailApi* | [**v2_projects_project_id_deliveryboxes_post**](docs/MailApi.md#v2_projects_project_id_deliveryboxes_post) | **POST** /v2/projects/{projectId}/deliveryboxes | Create a DeliveryBox.
+*MailApi* | [**v2_projects_project_id_mailaddresses_get**](docs/MailApi.md#v2_projects_project_id_mailaddresses_get) | **GET** /v2/projects/{projectId}/mailaddresses | List MailAddresses belonging to a Project.
+*MailApi* | [**v2_projects_project_id_mailaddresses_post**](docs/MailApi.md#v2_projects_project_id_mailaddresses_post) | **POST** /v2/projects/{projectId}/mailaddresses | Create a MailAddress.
+*MailApi* | [**v2_projects_project_id_mailsettings_get**](docs/MailApi.md#v2_projects_project_id_mailsettings_get) | **GET** /v2/projects/{projectId}/mailsettings | List mail settings of a Project.
 *MarketplaceApi* | [**contributor_rotate_secret_for_extension_instance**](docs/MarketplaceApi.md#contributor_rotate_secret_for_extension_instance) | **PUT** /v2/contributors/{contributorId}/extensions/{extensionId}/extension-instances/{extensionInstanceId}/secret | Rotate the secret for an extension instance.
 *MarketplaceApi* | [**extension_authenticate_instance**](docs/MarketplaceApi.md#extension_authenticate_instance) | **POST** /v2/extension-instances/{extensionInstanceId}/tokens | Authenticate your external application using the extensionInstanceSecret.
 *MarketplaceApi* | [**extension_consent_to_extension_scopes**](docs/MarketplaceApi.md#extension_consent_to_extension_scopes) | **PATCH** /v2/extension-instances/{extensionInstanceId}/scopes | Consent to extension scopes.
@@ -280,11 +355,15 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**notifications_count_unread_notifications**](docs/NotificationApi.md#notifications_count_unread_notifications) | **GET** /v2/notification-unread-counts | Get the counts for unread notifications of the user.
 *NotificationApi* | [**notifications_list_notifications**](docs/NotificationApi.md#notifications_list_notifications) | **GET** /v2/notifications | List all unread notifications.
 *NotificationApi* | [**notifications_read_all_notifications**](docs/NotificationApi.md#notifications_read_all_notifications) | **POST** /v2/notifications/actions/read-all | Mark all notifications as read.
+*NotificationApi* | [**notifications_read_all_notifications_deprecated**](docs/NotificationApi.md#notifications_read_all_notifications_deprecated) | **PUT** /v2/notifications/status | Mark all notifications as read (deprecated).
 *NotificationApi* | [**notifications_read_notification**](docs/NotificationApi.md#notifications_read_notification) | **PUT** /v2/notifications/{notificationId}/status | Mark notification as read.
+*NotificationApi* | [**v2_notifications_unread_counts_get**](docs/NotificationApi.md#v2_notifications_unread_counts_get) | **GET** /v2/notifications/unread-counts | Get the counts for unread notifications of the user.
 *PageInsightsApi* | [**pageinsights_get_performance_data**](docs/PageInsightsApi.md#pageinsights_get_performance_data) | **GET** /v2/page-insights | Get detailed performance data for a given domain and path.
 *PageInsightsApi* | [**pageinsights_get_strace_data**](docs/PageInsightsApi.md#pageinsights_get_strace_data) | **GET** /v2/projects/{projectId}/straces/{straceId} | Get all data for a given strace.
 *PageInsightsApi* | [**pageinsights_list_performance_data_for_project**](docs/PageInsightsApi.md#pageinsights_list_performance_data_for_project) | **GET** /v2/projects/{projectId}/page-insights | List websites (specified as domain and path) from a project where performance data is available.
 *PageInsightsApi* | [**pageinsights_schedule_strace**](docs/PageInsightsApi.md#pageinsights_schedule_strace) | **POST** /v2/projects/{projectId}/straces | Schedule a strace measurement for a single http request.
+*PageInsightsApi* | [**v2_pageinsights_get**](docs/PageInsightsApi.md#v2_pageinsights_get) | **GET** /v2/pageinsights | Get detailed performance data for a given domain and path.
+*PageInsightsApi* | [**v2_projects_project_id_pageinsights_get**](docs/PageInsightsApi.md#v2_projects_project_id_pageinsights_get) | **GET** /v2/projects/{projectId}/pageinsights | List websites (specified as domain and path) from a project where performance data is available.
 *ProjectApi* | [**project_accept_project_invite**](docs/ProjectApi.md#project_accept_project_invite) | **POST** /v2/project-invites/{projectInviteId}/actions/accept | Accept a ProjectInvite.
 *ProjectApi* | [**project_create_project**](docs/ProjectApi.md#project_create_project) | **POST** /v2/servers/{serverId}/projects | Create a Project belonging to a Server.
 *ProjectApi* | [**project_create_project_invite**](docs/ProjectApi.md#project_create_project_invite) | **POST** /v2/projects/{projectId}/invites | Create a ProjectInvite.
@@ -313,11 +392,16 @@ Class | Method | HTTP request | Description
 *ProjectApi* | [**project_update_project_description**](docs/ProjectApi.md#project_update_project_description) | **PATCH** /v2/projects/{projectId}/description | Update a Project's description.
 *ProjectApi* | [**project_update_project_membership**](docs/ProjectApi.md#project_update_project_membership) | **PATCH** /v2/project-memberships/{projectMembershipId} | Update a ProjectMembership.
 *ProjectApi* | [**project_update_server_description**](docs/ProjectApi.md#project_update_server_description) | **PATCH** /v2/servers/{serverId}/description | Update a Servers's description.
+*ProjectApi* | [**v2_project_project_id_invites_post**](docs/ProjectApi.md#v2_project_project_id_invites_post) | **POST** /v2/project/{projectId}/invites | Create a ProjectInvite.
 *ProjectFileSystemApi* | [**project_file_system_get_directories**](docs/ProjectFileSystemApi.md#project_file_system_get_directories) | **GET** /v2/projects/{projectId}/filesystem-directories | List directories belonging to a Project.
 *ProjectFileSystemApi* | [**project_file_system_get_disk_usage**](docs/ProjectFileSystemApi.md#project_file_system_get_disk_usage) | **GET** /v2/projects/{projectId}/filesystem-disk-usage | Get a Project directory filesystem usage.
 *ProjectFileSystemApi* | [**project_file_system_get_file_content**](docs/ProjectFileSystemApi.md#project_file_system_get_file_content) | **GET** /v2/projects/{projectId}/filesystem-file-content | Get a Project file's content.
 *ProjectFileSystemApi* | [**project_file_system_get_jwt**](docs/ProjectFileSystemApi.md#project_file_system_get_jwt) | **GET** /v2/projects/{projectId}/jwt | Get a Project's file/filesystem authorization token.
 *ProjectFileSystemApi* | [**project_file_system_list_files**](docs/ProjectFileSystemApi.md#project_file_system_list_files) | **GET** /v2/projects/{projectId}/filesystem-files | Get a Project file's information.
+*ProjectFileSystemApi* | [**v2_projects_project_id_filesystem_directories_get**](docs/ProjectFileSystemApi.md#v2_projects_project_id_filesystem_directories_get) | **GET** /v2/projects/{projectId}/filesystem/directories | List directories belonging to a Project.
+*ProjectFileSystemApi* | [**v2_projects_project_id_filesystem_files_get**](docs/ProjectFileSystemApi.md#v2_projects_project_id_filesystem_files_get) | **GET** /v2/projects/{projectId}/filesystem/files | Get a Project file's information.
+*ProjectFileSystemApi* | [**v2_projects_project_id_filesystem_files_raw_get**](docs/ProjectFileSystemApi.md#v2_projects_project_id_filesystem_files_raw_get) | **GET** /v2/projects/{projectId}/filesystem/files/raw | Get a Project file's content.
+*ProjectFileSystemApi* | [**v2_projects_project_id_filesystem_usages_disk_get**](docs/ProjectFileSystemApi.md#v2_projects_project_id_filesystem_usages_disk_get) | **GET** /v2/projects/{projectId}/filesystem/usages/disk | Get a Project directory filesystem usage.
 *RelocationApi* | [**relocation_create_legacy_tariff_change**](docs/RelocationApi.md#relocation_create_legacy_tariff_change) | **POST** /v2/legacy-tariff-change | Register a tariff change for a legacy tariff.
 *RelocationApi* | [**relocation_create_relocation**](docs/RelocationApi.md#relocation_create_relocation) | **POST** /v2/relocation | Relocate an external Project to mittwald.
 *SshsftpUserApi* | [**sftp_user_create_sftp_user**](docs/SshsftpUserApi.md#sftp_user_create_sftp_user) | **POST** /v2/projects/{projectId}/sftp-users | Create an SFTPUser for a Project.
@@ -330,7 +414,38 @@ Class | Method | HTTP request | Description
 *SshsftpUserApi* | [**ssh_user_get_ssh_user**](docs/SshsftpUserApi.md#ssh_user_get_ssh_user) | **GET** /v2/ssh-users/{sshUserId} | Get an SSHUser.
 *SshsftpUserApi* | [**ssh_user_list_ssh_users**](docs/SshsftpUserApi.md#ssh_user_list_ssh_users) | **GET** /v2/projects/{projectId}/ssh-users | Get all SSHUsers for a Project.
 *SshsftpUserApi* | [**ssh_user_update_ssh_user**](docs/SshsftpUserApi.md#ssh_user_update_ssh_user) | **PATCH** /v2/ssh-users/{sshUserId} | Update an SSHUser.
+*SshsftpUserApi* | [**v2_project_project_id_sftp_users_get**](docs/SshsftpUserApi.md#v2_project_project_id_sftp_users_get) | **GET** /v2/project/{projectId}/sftp-users | Get all SFTPUsers for a Project.
+*SshsftpUserApi* | [**v2_sshusers_ssh_user_id_patch**](docs/SshsftpUserApi.md#v2_sshusers_ssh_user_id_patch) | **PATCH** /v2/sshusers/{sshUserId} | Update an SSHUser.
+*UserApi* | [**deprecated_user_change_email**](docs/UserApi.md#deprecated_user_change_email) | **PUT** /v2/signup/email | Change your Email-Address.
+*UserApi* | [**deprecated_user_confirm_password_reset**](docs/UserApi.md#deprecated_user_confirm_password_reset) | **POST** /v2/signup/password/reset/confirm | Confirm password reset.
+*UserApi* | [**deprecated_user_create_issue**](docs/UserApi.md#deprecated_user_create_issue) | **POST** /v2/users/self/issues | Create a new issue.
+*UserApi* | [**deprecated_user_delete_api_token**](docs/UserApi.md#deprecated_user_delete_api_token) | **DELETE** /v2/signup/token/api/{apiTokenId} | Deletes an ApiToken.
+*UserApi* | [**deprecated_user_delete_ssh_key**](docs/UserApi.md#deprecated_user_delete_ssh_key) | **DELETE** /v2/signup/ssh/{sshKeyId} | Remove a ssh-key.
+*UserApi* | [**deprecated_user_disable_mfa**](docs/UserApi.md#deprecated_user_disable_mfa) | **DELETE** /v2/signup/mfa | Disable Multi Factor Authentication.
+*UserApi* | [**deprecated_user_edit_api_token**](docs/UserApi.md#deprecated_user_edit_api_token) | **PUT** /v2/signup/token/api/{apiTokenId} | Update an existing `ApiToken`.
+*UserApi* | [**deprecated_user_edit_ssh_key**](docs/UserApi.md#deprecated_user_edit_ssh_key) | **PUT** /v2/signup/ssh/{sshKeyId} | Edit a stored ssh-key.
+*UserApi* | [**deprecated_user_init_password_reset**](docs/UserApi.md#deprecated_user_init_password_reset) | **POST** /v2/signup/password/reset | Initialize password reset process.
+*UserApi* | [**deprecated_user_logout**](docs/UserApi.md#deprecated_user_logout) | **PUT** /v2/signup/logout | Terminate session and invalidate access token.
+*UserApi* | [**deprecated_user_resend_verification_email**](docs/UserApi.md#deprecated_user_resend_verification_email) | **POST** /v2/signup/email/resend | Resend the Email-Address verification email.
+*UserApi* | [**deprecated_user_service_avatar_remove**](docs/UserApi.md#deprecated_user_service_avatar_remove) | **DELETE** /v2/user/{userId}/avatar | Remove Avatar
+*UserApi* | [**deprecated_user_service_avatar_request_upload**](docs/UserApi.md#deprecated_user_service_avatar_request_upload) | **POST** /v2/user/{userId}/avatar | Request a new avatar upload
+*UserApi* | [**deprecated_user_service_feedback_create**](docs/UserApi.md#deprecated_user_service_feedback_create) | **POST** /v2/user/feedback | Submit user feedback
+*UserApi* | [**deprecated_user_service_feedback_list**](docs/UserApi.md#deprecated_user_service_feedback_list) | **GET** /v2/user/feedback | Returns your submitted feedback
+*UserApi* | [**deprecated_user_service_issue_new**](docs/UserApi.md#deprecated_user_service_issue_new) | **POST** /v2/user/issues | create a new issue
+*UserApi* | [**deprecated_user_service_personal_information_update**](docs/UserApi.md#deprecated_user_service_personal_information_update) | **PUT** /v2/user/{userId} | Change your personal information
+*UserApi* | [**deprecated_user_service_personalized_settings_get**](docs/UserApi.md#deprecated_user_service_personalized_settings_get) | **GET** /v2/user/settings | Get personalized settings for the user executing the request
+*UserApi* | [**deprecated_user_service_personalized_settings_update**](docs/UserApi.md#deprecated_user_service_personalized_settings_update) | **PUT** /v2/user/settings | update personalized settings
+*UserApi* | [**deprecated_user_service_phone_number_add**](docs/UserApi.md#deprecated_user_service_phone_number_add) | **POST** /v2/user/{userId}/phone | Add phone number and init verification process
+*UserApi* | [**deprecated_user_service_phone_number_remove**](docs/UserApi.md#deprecated_user_service_phone_number_remove) | **DELETE** /v2/user/{userId}/phone | remove your PhoneNumber
+*UserApi* | [**deprecated_user_service_phone_number_verify**](docs/UserApi.md#deprecated_user_service_phone_number_verify) | **POST** /v2/user/{userId}/phone/verify | Verify phone number
+*UserApi* | [**deprecated_user_service_user_get**](docs/UserApi.md#deprecated_user_service_user_get) | **GET** /v2/user/{userId} | Get profile information for the specified user if the user is related to the executing user
+*UserApi* | [**deprecated_user_service_user_get_own**](docs/UserApi.md#deprecated_user_service_user_get_own) | **GET** /v2/user | Get profile information for the executing user
+*UserApi* | [**deprecated_user_terminate_all_sessions**](docs/UserApi.md#deprecated_user_terminate_all_sessions) | **DELETE** /v2/signup/sessions | Terminate all sessions, except the current session.
+*UserApi* | [**deprecated_user_terminate_session**](docs/UserApi.md#deprecated_user_terminate_session) | **DELETE** /v2/signup/sessions/{tokenId} | Terminate a specific Session.
+*UserApi* | [**deprecated_user_update_account**](docs/UserApi.md#deprecated_user_update_account) | **PUT** /v2/signup/profile | Update your account information.
+*UserApi* | [**deprecated_user_verify_email**](docs/UserApi.md#deprecated_user_verify_email) | **POST** /v2/signup/email/verify | Verify an added Email-Address.
 *UserApi* | [**password_validation_get_password_policy**](docs/UserApi.md#password_validation_get_password_policy) | **GET** /v2/password-policies/{passwordPolicy} | Get a PasswordPolicy.
+*UserApi* | [**password_validation_get_password_policy_v2_deprecated**](docs/UserApi.md#password_validation_get_password_policy_v2_deprecated) | **GET** /v2/password/policies/{path} | Get a password policy.
 *UserApi* | [**user_add_phone_number**](docs/UserApi.md#user_add_phone_number) | **POST** /v2/users/{userId}/phone | Add phone number and start verification process.
 *UserApi* | [**user_authenticate**](docs/UserApi.md#user_authenticate) | **POST** /v2/authenticate | Authenticate yourself to get an access token.
 *UserApi* | [**user_authenticate_mfa**](docs/UserApi.md#user_authenticate_mfa) | **POST** /v2/authenticate-mfa | Validate your second factor.
@@ -385,6 +500,31 @@ Class | Method | HTTP request | Description
 *UserApi* | [**user_verify_email**](docs/UserApi.md#user_verify_email) | **POST** /v2/users/self/credentials/email/actions/verify-email | Verify an added Email-Address.
 *UserApi* | [**user_verify_phone_number**](docs/UserApi.md#user_verify_phone_number) | **POST** /v2/users/{userId}/actions/verify-phone | Verify phone number.
 *UserApi* | [**user_verify_registration**](docs/UserApi.md#user_verify_registration) | **POST** /v2/verify-registration | Verify your registration.
+*UserApi* | [**v2_signup_authentication_mfa_post**](docs/UserApi.md#v2_signup_authentication_mfa_post) | **POST** /v2/signup/authentication/mfa | Validate your second factor.
+*UserApi* | [**v2_signup_authentication_post**](docs/UserApi.md#v2_signup_authentication_post) | **POST** /v2/signup/authentication | Authenticate yourself to get an access token.
+*UserApi* | [**v2_signup_email_get**](docs/UserApi.md#v2_signup_email_get) | **GET** /v2/signup/email | Get your verified Email-Address.
+*UserApi* | [**v2_signup_mfa_confirm_post**](docs/UserApi.md#v2_signup_mfa_confirm_post) | **POST** /v2/signup/mfa/confirm | Confirm Multi Factor Authentication.
+*UserApi* | [**v2_signup_mfa_get**](docs/UserApi.md#v2_signup_mfa_get) | **GET** /v2/signup/mfa | Get your current multi factor auth status.
+*UserApi* | [**v2_signup_mfa_post**](docs/UserApi.md#v2_signup_mfa_post) | **POST** /v2/signup/mfa | Initialize Multi Factor Authentication. If successful, it needs to be confirmed, before usage of mfa.
+*UserApi* | [**v2_signup_mfa_reset_recoverycodes_put**](docs/UserApi.md#v2_signup_mfa_reset_recoverycodes_put) | **PUT** /v2/signup/mfa/reset-recoverycodes | Reset RecoveryCodes for MFA.
+*UserApi* | [**v2_signup_password_get**](docs/UserApi.md#v2_signup_password_get) | **GET** /v2/signup/password | The timestamp of your latest password change.
+*UserApi* | [**v2_signup_password_put**](docs/UserApi.md#v2_signup_password_put) | **PUT** /v2/signup/password | Change your password.
+*UserApi* | [**v2_signup_profile_delete**](docs/UserApi.md#v2_signup_profile_delete) | **DELETE** /v2/signup/profile | Delete your account and all your personal data.
+*UserApi* | [**v2_signup_profile_get**](docs/UserApi.md#v2_signup_profile_get) | **GET** /v2/signup/profile | Get your account information.
+*UserApi* | [**v2_signup_registration_post**](docs/UserApi.md#v2_signup_registration_post) | **POST** /v2/signup/registration | Register with email and password.
+*UserApi* | [**v2_signup_registration_verification_post**](docs/UserApi.md#v2_signup_registration_verification_post) | **POST** /v2/signup/registration/verification | Verify your registration.
+*UserApi* | [**v2_signup_sessions_get**](docs/UserApi.md#v2_signup_sessions_get) | **GET** /v2/signup/sessions | List all sessions.
+*UserApi* | [**v2_signup_sessions_token_id_get**](docs/UserApi.md#v2_signup_sessions_token_id_get) | **GET** /v2/signup/sessions/{tokenId} | Get a specific session.
+*UserApi* | [**v2_signup_ssh_get**](docs/UserApi.md#v2_signup_ssh_get) | **GET** /v2/signup/ssh | Get your stored ssh-keys.
+*UserApi* | [**v2_signup_ssh_post**](docs/UserApi.md#v2_signup_ssh_post) | **POST** /v2/signup/ssh | Store a new ssh-key.
+*UserApi* | [**v2_signup_ssh_ssh_key_id_get**](docs/UserApi.md#v2_signup_ssh_ssh_key_id_get) | **GET** /v2/signup/ssh/{sshKeyId} | Get a specific stored ssh-key.
+*UserApi* | [**v2_signup_supportcode_get**](docs/UserApi.md#v2_signup_supportcode_get) | **GET** /v2/signup/supportcode | Request a support code.
+*UserApi* | [**v2_signup_supportcodes_get**](docs/UserApi.md#v2_signup_supportcodes_get) | **GET** /v2/signup/supportcodes | Request a support code.
+*UserApi* | [**v2_signup_token_api_api_token_id_get**](docs/UserApi.md#v2_signup_token_api_api_token_id_get) | **GET** /v2/signup/token/api/{apiTokenId} | Get a specific ApiToken.
+*UserApi* | [**v2_signup_token_api_get**](docs/UserApi.md#v2_signup_token_api_get) | **GET** /v2/signup/token/api | List all of your ApiTokens.
+*UserApi* | [**v2_signup_token_api_post**](docs/UserApi.md#v2_signup_token_api_post) | **POST** /v2/signup/token/api | Store a new ApiToken.
+*UserApi* | [**v2_signup_token_check_post**](docs/UserApi.md#v2_signup_token_check_post) | **POST** /v2/signup/token/check | Check token for validity.
+*UserApi* | [**v2_users_user_id_phone_verify_post**](docs/UserApi.md#v2_users_user_id_phone_verify_post) | **POST** /v2/users/{userId}/phone/verify | Verify phone number.
 
 
 ## Documentation For Models
@@ -392,13 +532,8 @@ Class | Method | HTTP request | Description
  - [AppExecuteAction429Response](docs/AppExecuteAction429Response.md)
  - [AppGetMissingDependenciesForAppinstallation200Response](docs/AppGetMissingDependenciesForAppinstallation200Response.md)
  - [AppLinkDatabaseRequest](docs/AppLinkDatabaseRequest.md)
- - [AppPatchAppinstallationRequest](docs/AppPatchAppinstallationRequest.md)
- - [AppPatchAppinstallationRequestSystemSoftwareValue](docs/AppPatchAppinstallationRequestSystemSoftwareValue.md)
  - [AppReplaceDatabaseRequest](docs/AppReplaceDatabaseRequest.md)
  - [AppRequestAppinstallation201Response](docs/AppRequestAppinstallation201Response.md)
- - [AppRequestAppinstallationCopyRequest](docs/AppRequestAppinstallationCopyRequest.md)
- - [AppRequestAppinstallationRequest](docs/AppRequestAppinstallationRequest.md)
- - [AppSetDatabaseUsersRequest](docs/AppSetDatabaseUsersRequest.md)
  - [BackupCreateProjectBackupExportRequest](docs/BackupCreateProjectBackupExportRequest.md)
  - [BackupCreateProjectBackupRequest](docs/BackupCreateProjectBackupRequest.md)
  - [BackupCreateProjectBackupScheduleRequest](docs/BackupCreateProjectBackupScheduleRequest.md)
@@ -464,14 +599,12 @@ Class | Method | HTTP request | Description
  - [DeMittwaldV1CronjobCronjobExecutionAbortedBy](docs/DeMittwaldV1CronjobCronjobExecutionAbortedBy.md)
  - [DeMittwaldV1CustomerCustomerActiveSuspension](docs/DeMittwaldV1CustomerCustomerActiveSuspension.md)
  - [DeMittwaldV1DnsCombinedAManagedManagedBy](docs/DeMittwaldV1DnsCombinedAManagedManagedBy.md)
- - [DeMittwaldV1DnsCombinedAManagedManagedByOneOf](docs/DeMittwaldV1DnsCombinedAManagedManagedByOneOf.md)
  - [DeMittwaldV1DnsRecordSettingsTtl](docs/DeMittwaldV1DnsRecordSettingsTtl.md)
  - [DeMittwaldV1DnsZoneRecordSet](docs/DeMittwaldV1DnsZoneRecordSet.md)
  - [DeMittwaldV1DomainDomainHandles](docs/DeMittwaldV1DomainDomainHandles.md)
  - [DeMittwaldV1FeePeriodBasedFeeStrategyPeriodsInner](docs/DeMittwaldV1FeePeriodBasedFeeStrategyPeriodsInner.md)
  - [DeMittwaldV1IngressIngressDeprecatedTls](docs/DeMittwaldV1IngressIngressDeprecatedTls.md)
  - [DeMittwaldV1IngressIngressIps](docs/DeMittwaldV1IngressIngressIps.md)
- - [DeMittwaldV1IngressIngressTls](docs/DeMittwaldV1IngressIngressTls.md)
  - [DeMittwaldV1IngressPathTarget](docs/DeMittwaldV1IngressPathTarget.md)
  - [DeMittwaldV1IngressTargetContainerContainer](docs/DeMittwaldV1IngressTargetContainerContainer.md)
  - [DeMittwaldV1InvoiceInvoiceGroupsInner](docs/DeMittwaldV1InvoiceInvoiceGroupsInner.md)
@@ -747,6 +880,8 @@ Class | Method | HTTP request | Description
  - [DePeriodMittwaldPeriodV1PeriodOrderPeriodServerTariffChange](docs/DePeriodMittwaldPeriodV1PeriodOrderPeriodServerTariffChange.md)
  - [DePeriodMittwaldPeriodV1PeriodPollPeriodUserPollSettings](docs/DePeriodMittwaldPeriodV1PeriodPollPeriodUserPollSettings.md)
  - [DePeriodMittwaldPeriodV1PeriodProjectPeriodAvatarRules](docs/DePeriodMittwaldPeriodV1PeriodProjectPeriodAvatarRules.md)
+ - [DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus](docs/DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus.md)
+ - [DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedServerReadinessStatus](docs/DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedServerReadinessStatus.md)
  - [DePeriodMittwaldPeriodV1PeriodProjectPeriodDisableReason](docs/DePeriodMittwaldPeriodV1PeriodProjectPeriodDisableReason.md)
  - [DePeriodMittwaldPeriodV1PeriodProjectPeriodFilesystemDirectoryListing](docs/DePeriodMittwaldPeriodV1PeriodProjectPeriodFilesystemDirectoryListing.md)
  - [DePeriodMittwaldPeriodV1PeriodProjectPeriodFilesystemUsagesDisk](docs/DePeriodMittwaldPeriodV1PeriodProjectPeriodFilesystemUsagesDisk.md)
@@ -797,23 +932,47 @@ Class | Method | HTTP request | Description
  - [DePeriodMittwaldPeriodV1PeriodUserPeriodUser](docs/DePeriodMittwaldPeriodV1PeriodUserPeriodUser.md)
  - [DePeriodMittwaldPeriodV1PeriodUserPeriodUserFeedback](docs/DePeriodMittwaldPeriodV1PeriodUserPeriodUserFeedback.md)
  - [DePeriodMittwaldPeriodV1PeriodUserPeriodUserInternal](docs/DePeriodMittwaldPeriodV1PeriodUserPeriodUserInternal.md)
- - [DnsCreateDnsZoneRequest](docs/DnsCreateDnsZoneRequest.md)
+ - [DeprecatedDomainGetScreenshotForDomain200Response](docs/DeprecatedDomainGetScreenshotForDomain200Response.md)
+ - [DeprecatedDomainGetScreenshotForDomainRequest](docs/DeprecatedDomainGetScreenshotForDomainRequest.md)
+ - [DeprecatedUserChangeEmailRequest](docs/DeprecatedUserChangeEmailRequest.md)
+ - [DeprecatedUserConfirmPasswordResetRequest](docs/DeprecatedUserConfirmPasswordResetRequest.md)
+ - [DeprecatedUserCreateIssueRequest](docs/DeprecatedUserCreateIssueRequest.md)
+ - [DeprecatedUserDisableMfaRequest](docs/DeprecatedUserDisableMfaRequest.md)
+ - [DeprecatedUserEditApiTokenRequest](docs/DeprecatedUserEditApiTokenRequest.md)
+ - [DeprecatedUserEditSshKeyRequest](docs/DeprecatedUserEditSshKeyRequest.md)
+ - [DeprecatedUserInitPasswordResetRequest](docs/DeprecatedUserInitPasswordResetRequest.md)
+ - [DeprecatedUserResendVerificationEmailRequest](docs/DeprecatedUserResendVerificationEmailRequest.md)
+ - [DeprecatedUserServiceFeedbackCreateRequest](docs/DeprecatedUserServiceFeedbackCreateRequest.md)
+ - [DeprecatedUserServiceIssueNewRequest](docs/DeprecatedUserServiceIssueNewRequest.md)
+ - [DeprecatedUserServicePersonalInformationUpdateRequest](docs/DeprecatedUserServicePersonalInformationUpdateRequest.md)
+ - [DeprecatedUserServicePersonalizedSettingsGet200Response](docs/DeprecatedUserServicePersonalizedSettingsGet200Response.md)
+ - [DeprecatedUserServicePersonalizedSettingsUpdateRequest](docs/DeprecatedUserServicePersonalizedSettingsUpdateRequest.md)
+ - [DeprecatedUserServicePhoneNumberAddRequest](docs/DeprecatedUserServicePhoneNumberAddRequest.md)
+ - [DeprecatedUserServicePhoneNumberVerifyRequest](docs/DeprecatedUserServicePhoneNumberVerifyRequest.md)
+ - [DeprecatedUserVerifyEmailRequest](docs/DeprecatedUserVerifyEmailRequest.md)
+ - [DnsRecordASetCustomDeprecatedRequest](docs/DnsRecordASetCustomDeprecatedRequest.md)
+ - [DnsRecordASetManagedByIngressDeprecated204Response](docs/DnsRecordASetManagedByIngressDeprecated204Response.md)
+ - [DnsRecordCnameSetDeprecatedRequest](docs/DnsRecordCnameSetDeprecatedRequest.md)
+ - [DnsRecordMxSetCustomDeprecatedRequest](docs/DnsRecordMxSetCustomDeprecatedRequest.md)
+ - [DnsRecordSrvSetDeprecatedRequest](docs/DnsRecordSrvSetDeprecatedRequest.md)
+ - [DnsRecordTxtSetDeprecatedRequest](docs/DnsRecordTxtSetDeprecatedRequest.md)
  - [DnsSetRecordSetManaged204Response](docs/DnsSetRecordSetManaged204Response.md)
  - [DnsUpdateRecordSetRequest](docs/DnsUpdateRecordSetRequest.md)
+ - [DomainChangeOwnercOfDomainV2Deprecated200Response](docs/DomainChangeOwnercOfDomainV2Deprecated200Response.md)
+ - [DomainChangeOwnercOfDomainV2DeprecatedRequest](docs/DomainChangeOwnercOfDomainV2DeprecatedRequest.md)
+ - [DomainChangeProjectOfDomainV2DeprecatedRequest](docs/DomainChangeProjectOfDomainV2DeprecatedRequest.md)
  - [DomainCheckDomainRegistrability200Response](docs/DomainCheckDomainRegistrability200Response.md)
  - [DomainCheckDomainRegistrabilityRequest](docs/DomainCheckDomainRegistrabilityRequest.md)
+ - [DomainCheckDomainRegistrabilityV2Deprecated200Response](docs/DomainCheckDomainRegistrabilityV2Deprecated200Response.md)
  - [DomainCheckDomainTransferability200Response](docs/DomainCheckDomainTransferability200Response.md)
  - [DomainCheckDomainTransferability200ResponseReasons](docs/DomainCheckDomainTransferability200ResponseReasons.md)
  - [DomainCheckDomainTransferabilityRequest](docs/DomainCheckDomainTransferabilityRequest.md)
  - [DomainCreateDomainAuthCode201Response](docs/DomainCreateDomainAuthCode201Response.md)
- - [DomainDeleteDomain200Response](docs/DomainDeleteDomain200Response.md)
+ - [DomainDeclareNameserversV2DeprecatedRequest](docs/DomainDeclareNameserversV2DeprecatedRequest.md)
+ - [DomainDeclareProcessChangeAuthcodeV2DeprecatedRequest](docs/DomainDeclareProcessChangeAuthcodeV2DeprecatedRequest.md)
+ - [DomainGetHandleFieldsV2Deprecated200Response](docs/DomainGetHandleFieldsV2Deprecated200Response.md)
  - [DomainGetLatestScreenshot200Response](docs/DomainGetLatestScreenshot200Response.md)
- - [DomainGetLatestScreenshotRequest](docs/DomainGetLatestScreenshotRequest.md)
- - [DomainListTldContactSchemas200Response](docs/DomainListTldContactSchemas200Response.md)
- - [DomainUpdateDomainAuthCodeRequest](docs/DomainUpdateDomainAuthCodeRequest.md)
  - [DomainUpdateDomainContactRequest](docs/DomainUpdateDomainContactRequest.md)
- - [DomainUpdateDomainNameserversRequest](docs/DomainUpdateDomainNameserversRequest.md)
- - [DomainUpdateDomainProjectIdRequest](docs/DomainUpdateDomainProjectIdRequest.md)
  - [ExtensionAuthenticateInstance201Response](docs/ExtensionAuthenticateInstance201Response.md)
  - [ExtensionAuthenticateInstanceRequest](docs/ExtensionAuthenticateInstanceRequest.md)
  - [ExtensionConsentToExtensionScopesRequest](docs/ExtensionConsentToExtensionScopesRequest.md)
@@ -825,29 +984,28 @@ Class | Method | HTTP request | Description
  - [IngressCreateIngress201Response](docs/IngressCreateIngress201Response.md)
  - [IngressCreateIngressRequest](docs/IngressCreateIngressRequest.md)
  - [IngressListIngressesCompatibleWithCertificateRequest](docs/IngressListIngressesCompatibleWithCertificateRequest.md)
+ - [IngressTlsDeprecatedRequest](docs/IngressTlsDeprecatedRequest.md)
  - [IngressUpdateIngressTlsRequest](docs/IngressUpdateIngressTlsRequest.md)
  - [IngressUpdateIngressTlsRequestOneOf](docs/IngressUpdateIngressTlsRequestOneOf.md)
  - [IngressUpdateIngressTlsRequestOneOf1](docs/IngressUpdateIngressTlsRequestOneOf1.md)
  - [InvoiceUpdateInvoiceSettingsRequest](docs/InvoiceUpdateInvoiceSettingsRequest.md)
- - [MailCreateDeliveryboxRequest](docs/MailCreateDeliveryboxRequest.md)
- - [MailCreateMailAddressRequest](docs/MailCreateMailAddressRequest.md)
  - [MailListProjectMailSettings200Response](docs/MailListProjectMailSettings200Response.md)
- - [MailUpdateMailAddressAddressRequest](docs/MailUpdateMailAddressAddressRequest.md)
- - [MailUpdateMailAddressAutoresponderRequest](docs/MailUpdateMailAddressAutoresponderRequest.md)
- - [MailUpdateMailAddressAutoresponderRequestAutoResponder](docs/MailUpdateMailAddressAutoresponderRequestAutoResponder.md)
+ - [MailMailaddressUpdateAddressDeprecatedRequest](docs/MailMailaddressUpdateAddressDeprecatedRequest.md)
+ - [MailProjectsettingUpdateBlacklistDeprecatedRequest](docs/MailProjectsettingUpdateBlacklistDeprecatedRequest.md)
+ - [MailProjectsettingUpdateWhitelistDeprecatedRequest](docs/MailProjectsettingUpdateWhitelistDeprecatedRequest.md)
+ - [MailUpdateMailAddressAutoresponderV2DeprecatedRequest](docs/MailUpdateMailAddressAutoresponderV2DeprecatedRequest.md)
+ - [MailUpdateMailAddressAutoresponderV2DeprecatedRequestAutoResponder](docs/MailUpdateMailAddressAutoresponderV2DeprecatedRequestAutoResponder.md)
  - [MailUpdateMailAddressCatchAllRequest](docs/MailUpdateMailAddressCatchAllRequest.md)
- - [MailUpdateMailAddressForwardAddressesRequest](docs/MailUpdateMailAddressForwardAddressesRequest.md)
- - [MailUpdateMailAddressQuotaRequest](docs/MailUpdateMailAddressQuotaRequest.md)
- - [MailUpdateMailAddressSpamProtectionRequest](docs/MailUpdateMailAddressSpamProtectionRequest.md)
- - [MailUpdateMailAddressSpamProtectionRequestSpamProtection](docs/MailUpdateMailAddressSpamProtectionRequestSpamProtection.md)
+ - [MailUpdateMailAddressForwardAddressesV2DeprecatedRequest](docs/MailUpdateMailAddressForwardAddressesV2DeprecatedRequest.md)
+ - [MailUpdateMailAddressQuotaV2DeprecatedRequest](docs/MailUpdateMailAddressQuotaV2DeprecatedRequest.md)
+ - [MailUpdateMailAddressSpamProtectionV2DeprecatedRequest](docs/MailUpdateMailAddressSpamProtectionV2DeprecatedRequest.md)
+ - [MailUpdateMailAddressSpamProtectionV2DeprecatedRequestSpamProtection](docs/MailUpdateMailAddressSpamProtectionV2DeprecatedRequestSpamProtection.md)
  - [MailUpdateProjectMailSettingRequest](docs/MailUpdateProjectMailSettingRequest.md)
- - [MailUpdateProjectMailSettingRequestOneOf](docs/MailUpdateProjectMailSettingRequestOneOf.md)
- - [MailUpdateProjectMailSettingRequestOneOf1](docs/MailUpdateProjectMailSettingRequestOneOf1.md)
  - [NewsletterGetInfo200Response](docs/NewsletterGetInfo200Response.md)
  - [NewsletterSubscribeUser200Response](docs/NewsletterSubscribeUser200Response.md)
  - [NewsletterSubscribeUserRequest](docs/NewsletterSubscribeUserRequest.md)
  - [NotificationsCountUnreadNotifications200Response](docs/NotificationsCountUnreadNotifications200Response.md)
- - [NotificationsReadAllNotifications200Response](docs/NotificationsReadAllNotifications200Response.md)
+ - [NotificationsReadAllNotificationsDeprecated200Response](docs/NotificationsReadAllNotificationsDeprecated200Response.md)
  - [OrderCreateOrder201Response](docs/OrderCreateOrder201Response.md)
  - [OrderCreateOrderRequest](docs/OrderCreateOrderRequest.md)
  - [OrderCreateOrderRequestOrderData](docs/OrderCreateOrderRequestOrderData.md)
@@ -866,7 +1024,6 @@ Class | Method | HTTP request | Description
  - [PageinsightsListPerformanceDataForProject200ResponseInner](docs/PageinsightsListPerformanceDataForProject200ResponseInner.md)
  - [PageinsightsListPerformanceDataForProject200ResponseInnerPathsInner](docs/PageinsightsListPerformanceDataForProject200ResponseInnerPathsInner.md)
  - [PageinsightsScheduleStraceRequest](docs/PageinsightsScheduleStraceRequest.md)
- - [ProjectCreateProjectInviteRequest](docs/ProjectCreateProjectInviteRequest.md)
  - [ProjectCreateProjectRequest](docs/ProjectCreateProjectRequest.md)
  - [ProjectListProjects200ResponseInner](docs/ProjectListProjects200ResponseInner.md)
  - [ProjectListProjects200ResponseInnerCustomerMeta](docs/ProjectListProjects200ResponseInnerCustomerMeta.md)
@@ -884,7 +1041,6 @@ Class | Method | HTTP request | Description
  - [ServicetokenAuthenticateService200Response](docs/ServicetokenAuthenticateService200Response.md)
  - [ServicetokenAuthenticateService200ResponseAccessToken](docs/ServicetokenAuthenticateService200ResponseAccessToken.md)
  - [ServicetokenAuthenticateService200ResponseAccessTokenJwtClaims](docs/ServicetokenAuthenticateService200ResponseAccessTokenJwtClaims.md)
- - [ServicetokenAuthenticateServiceRequest](docs/ServicetokenAuthenticateServiceRequest.md)
  - [SftpUserCreateSftpUserRequest](docs/SftpUserCreateSftpUserRequest.md)
  - [SftpUserUpdateSftpUserRequest](docs/SftpUserUpdateSftpUserRequest.md)
  - [SshUserCreateSshUserRequest](docs/SshUserCreateSshUserRequest.md)
@@ -895,33 +1051,21 @@ Class | Method | HTTP request | Description
  - [UserAuthenticate202Response](docs/UserAuthenticate202Response.md)
  - [UserAuthenticateMfa200Response](docs/UserAuthenticateMfa200Response.md)
  - [UserAuthenticateMfa408Response](docs/UserAuthenticateMfa408Response.md)
- - [UserAuthenticateMfaRequest](docs/UserAuthenticateMfaRequest.md)
- - [UserAuthenticateRequest](docs/UserAuthenticateRequest.md)
  - [UserAuthenticateWithAccessTokenRetrievalKey200Response](docs/UserAuthenticateWithAccessTokenRetrievalKey200Response.md)
  - [UserAuthenticateWithAccessTokenRetrievalKeyRequest](docs/UserAuthenticateWithAccessTokenRetrievalKeyRequest.md)
  - [UserChangeEmailRequest](docs/UserChangeEmailRequest.md)
  - [UserChangePassword200Response](docs/UserChangePassword200Response.md)
  - [UserChangePassword202Response](docs/UserChangePassword202Response.md)
- - [UserChangePasswordRequest](docs/UserChangePasswordRequest.md)
  - [UserCheckToken200Response](docs/UserCheckToken200Response.md)
- - [UserConfirmMfaRequest](docs/UserConfirmMfaRequest.md)
- - [UserConfirmPasswordResetRequest](docs/UserConfirmPasswordResetRequest.md)
  - [UserCreateApiToken201Response](docs/UserCreateApiToken201Response.md)
- - [UserCreateApiTokenRequest](docs/UserCreateApiTokenRequest.md)
  - [UserCreateFeedbackRequest](docs/UserCreateFeedbackRequest.md)
- - [UserCreateSshKeyRequest](docs/UserCreateSshKeyRequest.md)
  - [UserDeleteUser409Response](docs/UserDeleteUser409Response.md)
- - [UserDeleteUserRequest](docs/UserDeleteUserRequest.md)
- - [UserDisableMfaRequest](docs/UserDisableMfaRequest.md)
- - [UserEditApiTokenRequest](docs/UserEditApiTokenRequest.md)
- - [UserEditSshKeyRequest](docs/UserEditSshKeyRequest.md)
  - [UserGetMfaStatus200Response](docs/UserGetMfaStatus200Response.md)
  - [UserGetOwnEmail200Response](docs/UserGetOwnEmail200Response.md)
  - [UserGetPasswordUpdatedAt200Response](docs/UserGetPasswordUpdatedAt200Response.md)
  - [UserGetPersonalizedSettings200Response](docs/UserGetPersonalizedSettings200Response.md)
  - [UserGetSshKey200Response](docs/UserGetSshKey200Response.md)
  - [UserInitMfa200Response](docs/UserInitMfa200Response.md)
- - [UserInitPasswordResetRequest](docs/UserInitPasswordResetRequest.md)
  - [UserListSshKeys200Response](docs/UserListSshKeys200Response.md)
  - [UserOauthGetAuthorization400Response](docs/UserOauthGetAuthorization400Response.md)
  - [UserOauthRetrieveAccessToken200Response](docs/UserOauthRetrieveAccessToken200Response.md)
@@ -929,7 +1073,6 @@ Class | Method | HTTP request | Description
  - [UserPostPollStatusRequest](docs/UserPostPollStatusRequest.md)
  - [UserRefreshSessionRequest](docs/UserRefreshSessionRequest.md)
  - [UserRegister201Response](docs/UserRegister201Response.md)
- - [UserRegisterRequest](docs/UserRegisterRequest.md)
  - [UserRequestAvatarUpload200Response](docs/UserRequestAvatarUpload200Response.md)
  - [UserRequestAvatarUpload200ResponseRules](docs/UserRequestAvatarUpload200ResponseRules.md)
  - [UserRequestAvatarUpload200ResponseRulesProperties](docs/UserRequestAvatarUpload200ResponseRulesProperties.md)
@@ -938,11 +1081,27 @@ Class | Method | HTTP request | Description
  - [UserResetRecoverycodes200Response](docs/UserResetRecoverycodes200Response.md)
  - [UserResetRecoverycodesRequest](docs/UserResetRecoverycodesRequest.md)
  - [UserSupportCodeRequest200Response](docs/UserSupportCodeRequest200Response.md)
- - [UserUpdateAccountRequest](docs/UserUpdateAccountRequest.md)
  - [UserUpdatePersonalizedSettingsRequest](docs/UserUpdatePersonalizedSettingsRequest.md)
- - [UserVerifyEmailRequest](docs/UserVerifyEmailRequest.md)
- - [UserVerifyPhoneNumberRequest](docs/UserVerifyPhoneNumberRequest.md)
- - [UserVerifyRegistrationRequest](docs/UserVerifyRegistrationRequest.md)
+ - [V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest](docs/V2AppInstallationsAppInstallationIdDatabasesDatabaseIdPutRequest.md)
+ - [V2AppinstallationsAppInstallationIdActionsCopyPostRequest](docs/V2AppinstallationsAppInstallationIdActionsCopyPostRequest.md)
+ - [V2AppinstallationsAppInstallationIdPatchRequest](docs/V2AppinstallationsAppInstallationIdPatchRequest.md)
+ - [V2AppinstallationsAppInstallationIdPatchRequestSystemSoftwareValue](docs/V2AppinstallationsAppInstallationIdPatchRequestSystemSoftwareValue.md)
+ - [V2DnsZonesPostRequest](docs/V2DnsZonesPostRequest.md)
+ - [V2ProjectProjectIdInvitesPostRequest](docs/V2ProjectProjectIdInvitesPostRequest.md)
+ - [V2ProjectsProjectIdAppinstallationsPostRequest](docs/V2ProjectsProjectIdAppinstallationsPostRequest.md)
+ - [V2ProjectsProjectIdDeliveryboxesPostRequest](docs/V2ProjectsProjectIdDeliveryboxesPostRequest.md)
+ - [V2ProjectsProjectIdMailaddressesPostRequest](docs/V2ProjectsProjectIdMailaddressesPostRequest.md)
+ - [V2ServiceAccessKeyIdActionsAuthenticatePostRequest](docs/V2ServiceAccessKeyIdActionsAuthenticatePostRequest.md)
+ - [V2SignupAuthenticationMfaPostRequest](docs/V2SignupAuthenticationMfaPostRequest.md)
+ - [V2SignupAuthenticationPostRequest](docs/V2SignupAuthenticationPostRequest.md)
+ - [V2SignupMfaConfirmPostRequest](docs/V2SignupMfaConfirmPostRequest.md)
+ - [V2SignupPasswordPutRequest](docs/V2SignupPasswordPutRequest.md)
+ - [V2SignupProfileDeleteRequest](docs/V2SignupProfileDeleteRequest.md)
+ - [V2SignupRegistrationPostRequest](docs/V2SignupRegistrationPostRequest.md)
+ - [V2SignupRegistrationVerificationPostRequest](docs/V2SignupRegistrationVerificationPostRequest.md)
+ - [V2SignupSshPostRequest](docs/V2SignupSshPostRequest.md)
+ - [V2SignupTokenApiPostRequest](docs/V2SignupTokenApiPostRequest.md)
+ - [V2UsersUserIdPhoneVerifyPostRequest](docs/V2UsersUserIdPhoneVerifyPostRequest.md)
 
 
 To get access to the crate's generated documentation, use:

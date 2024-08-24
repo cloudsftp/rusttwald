@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | 
 **id** | **String** |  | 
 **image_ref_id** | Option<**String**> |  | [optional]
+**is_ready** | **bool** | deprecated | 
 **project_hosting_id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **readiness** | [**models::DePeriodMittwaldPeriodV1PeriodProjectPeriodDeprecatedProjectReadinessStatus**](de.mittwald.v1.project.DeprecatedProjectReadinessStatus.md) |  | 
 **server_id** | Option<**String**> |  | [optional]

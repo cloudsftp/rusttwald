@@ -37,11 +37,11 @@ pub struct DePeriodMittwaldPeriodV1PeriodIngressPeriodIngress {
     #[serde(rename = "projectId")]
     pub project_id: uuid::Uuid,
     #[serde(rename = "tls")]
-    pub tls: Box<models::DeMittwaldV1IngressIngressTls>,
+    pub tls: Box<models::IngressTlsDeprecatedRequest>,
 }
 
 impl DePeriodMittwaldPeriodV1PeriodIngressPeriodIngress {
-    pub fn new(dns_validation_errors: Vec<DnsValidationErrors>, hostname: String, id: uuid::Uuid, ips: models::DeMittwaldV1IngressIngressIps, is_default: bool, is_enabled: bool, ownership: models::DePeriodMittwaldPeriodV1PeriodIngressPeriodOwnership, paths: Vec<models::DePeriodMittwaldPeriodV1PeriodIngressPeriodPath>, project_id: uuid::Uuid, tls: models::DeMittwaldV1IngressIngressTls) -> DePeriodMittwaldPeriodV1PeriodIngressPeriodIngress {
+    pub fn new(dns_validation_errors: Vec<DnsValidationErrors>, hostname: String, id: uuid::Uuid, ips: models::DeMittwaldV1IngressIngressIps, is_default: bool, is_enabled: bool, ownership: models::DePeriodMittwaldPeriodV1PeriodIngressPeriodOwnership, paths: Vec<models::DePeriodMittwaldPeriodV1PeriodIngressPeriodPath>, project_id: uuid::Uuid, tls: models::IngressTlsDeprecatedRequest) -> DePeriodMittwaldPeriodV1PeriodIngressPeriodIngress {
         DePeriodMittwaldPeriodV1PeriodIngressPeriodIngress {
             dns_validation_errors,
             hostname,

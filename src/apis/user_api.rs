@@ -15,10 +15,301 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
+/// struct for typed errors of method [`deprecated_user_change_email`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserChangeEmailError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_confirm_password_reset`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserConfirmPasswordResetError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_create_issue`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserCreateIssueError {
+    Status401(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_delete_api_token`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserDeleteApiTokenError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_delete_ssh_key`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserDeleteSshKeyError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_disable_mfa`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserDisableMfaError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_edit_api_token`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserEditApiTokenError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_edit_ssh_key`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserEditSshKeyError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_init_password_reset`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserInitPasswordResetError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_logout`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserLogoutError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_resend_verification_email`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserResendVerificationEmailError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_avatar_remove`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceAvatarRemoveError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_avatar_request_upload`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceAvatarRequestUploadError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_feedback_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceFeedbackCreateError {
+    Status401(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_feedback_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceFeedbackListError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_issue_new`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceIssueNewError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_personal_information_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServicePersonalInformationUpdateError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_personalized_settings_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServicePersonalizedSettingsGetError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_personalized_settings_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServicePersonalizedSettingsUpdateError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_phone_number_add`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServicePhoneNumberAddError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status409(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_phone_number_remove`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServicePhoneNumberRemoveError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_phone_number_verify`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServicePhoneNumberVerifyError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status409(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_user_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceUserGetError {
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status412(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_service_user_get_own`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserServiceUserGetOwnError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_terminate_all_sessions`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserTerminateAllSessionsError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_terminate_session`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserTerminateSessionError {
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_update_account`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserUpdateAccountError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`deprecated_user_verify_email`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeprecatedUserVerifyEmailError {
+    Status400(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodValidationErrors),
+    Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`password_validation_get_password_policy`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum PasswordValidationGetPasswordPolicyError {
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`password_validation_get_password_policy_v2_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PasswordValidationGetPasswordPolicyV2DeprecatedError {
     Status429(models::AppExecuteAction429Response),
     DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     UnknownValue(serde_json::Value),
@@ -564,6 +855,1182 @@ pub enum UserVerifyRegistrationError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`v2_signup_authentication_mfa_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupAuthenticationMfaPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_authentication_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupAuthenticationPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_email_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupEmailGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_mfa_confirm_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupMfaConfirmPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_mfa_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupMfaGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_mfa_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupMfaPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_mfa_reset_recoverycodes_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupMfaResetRecoverycodesPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_password_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupPasswordGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_password_put`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupPasswordPutError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_profile_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupProfileDeleteError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_profile_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupProfileGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_registration_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupRegistrationPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_registration_verification_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupRegistrationVerificationPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_sessions_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSessionsGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_sessions_token_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSessionsTokenIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_ssh_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSshGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_ssh_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSshPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_ssh_ssh_key_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSshSshKeyIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_supportcode_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSupportcodeGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_supportcodes_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupSupportcodesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_token_api_api_token_id_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupTokenApiApiTokenIdGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_token_api_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupTokenApiGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_token_api_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupTokenApiPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_signup_token_check_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2SignupTokenCheckPostError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_users_user_id_phone_verify_post`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2UsersUserIdPhoneVerifyPostError {
+    UnknownValue(serde_json::Value),
+}
+
+
+pub async fn deprecated_user_change_email(configuration: &configuration::Configuration, deprecated_user_change_email_request: models::DeprecatedUserChangeEmailRequest) -> Result<(), Error<DeprecatedUserChangeEmailError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/email", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_change_email_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserChangeEmailError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_confirm_password_reset(configuration: &configuration::Configuration, deprecated_user_confirm_password_reset_request: models::DeprecatedUserConfirmPasswordResetRequest) -> Result<(), Error<DeprecatedUserConfirmPasswordResetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/password/reset/confirm", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_confirm_password_reset_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserConfirmPasswordResetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_create_issue(configuration: &configuration::Configuration, deprecated_user_create_issue_request: Option<models::DeprecatedUserCreateIssueRequest>) -> Result<serde_json::Value, Error<DeprecatedUserCreateIssueError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/users/self/issues", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_create_issue_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserCreateIssueError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_delete_api_token(configuration: &configuration::Configuration, api_token_id: &str) -> Result<(), Error<DeprecatedUserDeleteApiTokenError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/token/api/{apiTokenId}", local_var_configuration.base_path, apiTokenId=crate::apis::urlencode(api_token_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserDeleteApiTokenError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_delete_ssh_key(configuration: &configuration::Configuration, ssh_key_id: &str) -> Result<(), Error<DeprecatedUserDeleteSshKeyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/ssh/{sshKeyId}", local_var_configuration.base_path, sshKeyId=crate::apis::urlencode(ssh_key_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserDeleteSshKeyError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_disable_mfa(configuration: &configuration::Configuration, deprecated_user_disable_mfa_request: models::DeprecatedUserDisableMfaRequest) -> Result<serde_json::Value, Error<DeprecatedUserDisableMfaError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/mfa", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_disable_mfa_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserDisableMfaError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_edit_api_token(configuration: &configuration::Configuration, api_token_id: &str, deprecated_user_edit_api_token_request: models::DeprecatedUserEditApiTokenRequest) -> Result<(), Error<DeprecatedUserEditApiTokenError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/token/api/{apiTokenId}", local_var_configuration.base_path, apiTokenId=crate::apis::urlencode(api_token_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_edit_api_token_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserEditApiTokenError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_edit_ssh_key(configuration: &configuration::Configuration, ssh_key_id: &str, deprecated_user_edit_ssh_key_request: models::DeprecatedUserEditSshKeyRequest) -> Result<(), Error<DeprecatedUserEditSshKeyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/ssh/{sshKeyId}", local_var_configuration.base_path, sshKeyId=crate::apis::urlencode(ssh_key_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_edit_ssh_key_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserEditSshKeyError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_init_password_reset(configuration: &configuration::Configuration, deprecated_user_init_password_reset_request: models::DeprecatedUserInitPasswordResetRequest) -> Result<(), Error<DeprecatedUserInitPasswordResetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/password/reset", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_init_password_reset_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserInitPasswordResetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_logout(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<(), Error<DeprecatedUserLogoutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/logout", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserLogoutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_resend_verification_email(configuration: &configuration::Configuration, deprecated_user_resend_verification_email_request: models::DeprecatedUserResendVerificationEmailRequest) -> Result<(), Error<DeprecatedUserResendVerificationEmailError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/email/resend", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_resend_verification_email_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserResendVerificationEmailError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_avatar_remove(configuration: &configuration::Configuration, user_id: &str) -> Result<(), Error<DeprecatedUserServiceAvatarRemoveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}/avatar", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceAvatarRemoveError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_avatar_request_upload(configuration: &configuration::Configuration, user_id: &str, body: Option<serde_json::Value>) -> Result<models::CustomerRequestAvatarUpload200Response, Error<DeprecatedUserServiceAvatarRequestUploadError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}/avatar", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceAvatarRequestUploadError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_feedback_create(configuration: &configuration::Configuration, deprecated_user_service_feedback_create_request: Option<models::DeprecatedUserServiceFeedbackCreateRequest>) -> Result<serde_json::Value, Error<DeprecatedUserServiceFeedbackCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/feedback", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_feedback_create_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceFeedbackCreateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_feedback_list(configuration: &configuration::Configuration, subject: Option<&str>) -> Result<Vec<models::DePeriodMittwaldPeriodV1PeriodUserPeriodUserFeedback>, Error<DeprecatedUserServiceFeedbackListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/feedback", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = subject {
+        local_var_req_builder = local_var_req_builder.query(&[("subject", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceFeedbackListError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_issue_new(configuration: &configuration::Configuration, deprecated_user_service_issue_new_request: Option<models::DeprecatedUserServiceIssueNewRequest>) -> Result<(), Error<DeprecatedUserServiceIssueNewError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/issues", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_issue_new_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceIssueNewError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_personal_information_update(configuration: &configuration::Configuration, user_id: &str, deprecated_user_service_personal_information_update_request: models::DeprecatedUserServicePersonalInformationUpdateRequest) -> Result<(), Error<DeprecatedUserServicePersonalInformationUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_personal_information_update_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServicePersonalInformationUpdateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_personalized_settings_get(configuration: &configuration::Configuration, ) -> Result<models::DeprecatedUserServicePersonalizedSettingsGet200Response, Error<DeprecatedUserServicePersonalizedSettingsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/settings", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserServicePersonalizedSettingsGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_personalized_settings_update(configuration: &configuration::Configuration, deprecated_user_service_personalized_settings_update_request: models::DeprecatedUserServicePersonalizedSettingsUpdateRequest) -> Result<(), Error<DeprecatedUserServicePersonalizedSettingsUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/settings", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_personalized_settings_update_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServicePersonalizedSettingsUpdateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_phone_number_add(configuration: &configuration::Configuration, user_id: &str, deprecated_user_service_phone_number_add_request: models::DeprecatedUserServicePhoneNumberAddRequest) -> Result<(), Error<DeprecatedUserServicePhoneNumberAddError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}/phone", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_phone_number_add_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServicePhoneNumberAddError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_phone_number_remove(configuration: &configuration::Configuration, user_id: &str) -> Result<(), Error<DeprecatedUserServicePhoneNumberRemoveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}/phone", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServicePhoneNumberRemoveError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_phone_number_verify(configuration: &configuration::Configuration, user_id: &str, deprecated_user_service_phone_number_verify_request: models::DeprecatedUserServicePhoneNumberVerifyRequest) -> Result<(), Error<DeprecatedUserServicePhoneNumberVerifyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}/phone/verify", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_phone_number_verify_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserServicePhoneNumberVerifyError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_user_get(configuration: &configuration::Configuration, user_id: &str) -> Result<models::DePeriodMittwaldPeriodV1PeriodUserPeriodUser, Error<DeprecatedUserServiceUserGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user/{userId}", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceUserGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_service_user_get_own(configuration: &configuration::Configuration, ) -> Result<models::DePeriodMittwaldPeriodV1PeriodUserPeriodUser, Error<DeprecatedUserServiceUserGetOwnError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/user", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<DeprecatedUserServiceUserGetOwnError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_terminate_all_sessions(configuration: &configuration::Configuration, ) -> Result<(), Error<DeprecatedUserTerminateAllSessionsError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/sessions", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserTerminateAllSessionsError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_terminate_session(configuration: &configuration::Configuration, token_id: &str) -> Result<(), Error<DeprecatedUserTerminateSessionError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/sessions/{tokenId}", local_var_configuration.base_path, tokenId=crate::apis::urlencode(token_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserTerminateSessionError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_update_account(configuration: &configuration::Configuration, deprecated_user_service_personal_information_update_request: models::DeprecatedUserServicePersonalInformationUpdateRequest) -> Result<(), Error<DeprecatedUserUpdateAccountError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/profile", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_personal_information_update_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserUpdateAccountError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn deprecated_user_verify_email(configuration: &configuration::Configuration, deprecated_user_verify_email_request: models::DeprecatedUserVerifyEmailRequest) -> Result<(), Error<DeprecatedUserVerifyEmailError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/email/verify", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_verify_email_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DeprecatedUserVerifyEmailError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
 
 pub async fn password_validation_get_password_policy(configuration: &configuration::Configuration, password_policy: &str) -> Result<String, Error<PasswordValidationGetPasswordPolicyError>> {
     let local_var_configuration = configuration;
@@ -595,6 +2062,41 @@ pub async fn password_validation_get_password_policy(configuration: &configurati
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<PasswordValidationGetPasswordPolicyError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn password_validation_get_password_policy_v2_deprecated(configuration: &configuration::Configuration, path: &str) -> Result<String, Error<PasswordValidationGetPasswordPolicyV2DeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/password/policies/{path}", local_var_configuration.base_path, path=crate::apis::urlencode(path));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<PasswordValidationGetPasswordPolicyV2DeprecatedError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -636,7 +2138,7 @@ pub async fn user_add_phone_number(configuration: &configuration::Configuration,
     }
 }
 
-pub async fn user_authenticate(configuration: &configuration::Configuration, user_authenticate_request: models::UserAuthenticateRequest) -> Result<models::UserAuthenticateMfa200Response, Error<UserAuthenticateError>> {
+pub async fn user_authenticate(configuration: &configuration::Configuration, v2_signup_authentication_post_request: models::V2SignupAuthenticationPostRequest) -> Result<models::UserAuthenticateMfa200Response, Error<UserAuthenticateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -655,7 +2157,7 @@ pub async fn user_authenticate(configuration: &configuration::Configuration, use
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_authenticate_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_authentication_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -672,7 +2174,7 @@ pub async fn user_authenticate(configuration: &configuration::Configuration, use
     }
 }
 
-pub async fn user_authenticate_mfa(configuration: &configuration::Configuration, user_authenticate_mfa_request: models::UserAuthenticateMfaRequest) -> Result<models::UserAuthenticateMfa200Response, Error<UserAuthenticateMfaError>> {
+pub async fn user_authenticate_mfa(configuration: &configuration::Configuration, v2_signup_authentication_mfa_post_request: models::V2SignupAuthenticationMfaPostRequest) -> Result<models::UserAuthenticateMfa200Response, Error<UserAuthenticateMfaError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -691,7 +2193,7 @@ pub async fn user_authenticate_mfa(configuration: &configuration::Configuration,
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_authenticate_mfa_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_authentication_mfa_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -780,7 +2282,7 @@ pub async fn user_change_email(configuration: &configuration::Configuration, use
     }
 }
 
-pub async fn user_change_password(configuration: &configuration::Configuration, user_change_password_request: models::UserChangePasswordRequest) -> Result<models::UserChangePassword200Response, Error<UserChangePasswordError>> {
+pub async fn user_change_password(configuration: &configuration::Configuration, v2_signup_password_put_request: models::V2SignupPasswordPutRequest) -> Result<models::UserChangePassword200Response, Error<UserChangePasswordError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -799,7 +2301,7 @@ pub async fn user_change_password(configuration: &configuration::Configuration, 
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_change_password_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_password_put_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -852,7 +2354,7 @@ pub async fn user_check_token(configuration: &configuration::Configuration, body
     }
 }
 
-pub async fn user_confirm_mfa(configuration: &configuration::Configuration, user_confirm_mfa_request: models::UserConfirmMfaRequest) -> Result<models::UserResetRecoverycodes200Response, Error<UserConfirmMfaError>> {
+pub async fn user_confirm_mfa(configuration: &configuration::Configuration, v2_signup_mfa_confirm_post_request: models::V2SignupMfaConfirmPostRequest) -> Result<models::UserResetRecoverycodes200Response, Error<UserConfirmMfaError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -871,7 +2373,7 @@ pub async fn user_confirm_mfa(configuration: &configuration::Configuration, user
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_confirm_mfa_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_mfa_confirm_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -888,7 +2390,7 @@ pub async fn user_confirm_mfa(configuration: &configuration::Configuration, user
     }
 }
 
-pub async fn user_confirm_password_reset(configuration: &configuration::Configuration, user_confirm_password_reset_request: models::UserConfirmPasswordResetRequest) -> Result<(), Error<UserConfirmPasswordResetError>> {
+pub async fn user_confirm_password_reset(configuration: &configuration::Configuration, deprecated_user_confirm_password_reset_request: models::DeprecatedUserConfirmPasswordResetRequest) -> Result<(), Error<UserConfirmPasswordResetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -907,7 +2409,7 @@ pub async fn user_confirm_password_reset(configuration: &configuration::Configur
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_confirm_password_reset_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_confirm_password_reset_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -924,7 +2426,7 @@ pub async fn user_confirm_password_reset(configuration: &configuration::Configur
     }
 }
 
-pub async fn user_create_api_token(configuration: &configuration::Configuration, user_create_api_token_request: models::UserCreateApiTokenRequest) -> Result<models::UserCreateApiToken201Response, Error<UserCreateApiTokenError>> {
+pub async fn user_create_api_token(configuration: &configuration::Configuration, v2_signup_token_api_post_request: models::V2SignupTokenApiPostRequest) -> Result<models::UserCreateApiToken201Response, Error<UserCreateApiTokenError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -943,7 +2445,7 @@ pub async fn user_create_api_token(configuration: &configuration::Configuration,
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_create_api_token_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_token_api_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -996,7 +2498,7 @@ pub async fn user_create_feedback(configuration: &configuration::Configuration, 
     }
 }
 
-pub async fn user_create_ssh_key(configuration: &configuration::Configuration, user_create_ssh_key_request: models::UserCreateSshKeyRequest) -> Result<serde_json::Value, Error<UserCreateSshKeyError>> {
+pub async fn user_create_ssh_key(configuration: &configuration::Configuration, v2_signup_ssh_post_request: models::V2SignupSshPostRequest) -> Result<serde_json::Value, Error<UserCreateSshKeyError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1015,7 +2517,7 @@ pub async fn user_create_ssh_key(configuration: &configuration::Configuration, u
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_create_ssh_key_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_ssh_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1102,7 +2604,7 @@ pub async fn user_delete_ssh_key(configuration: &configuration::Configuration, s
     }
 }
 
-pub async fn user_delete_user(configuration: &configuration::Configuration, user_delete_user_request: models::UserDeleteUserRequest) -> Result<(), Error<UserDeleteUserError>> {
+pub async fn user_delete_user(configuration: &configuration::Configuration, v2_signup_profile_delete_request: models::V2SignupProfileDeleteRequest) -> Result<(), Error<UserDeleteUserError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1121,7 +2623,7 @@ pub async fn user_delete_user(configuration: &configuration::Configuration, user
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_delete_user_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_profile_delete_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1138,7 +2640,7 @@ pub async fn user_delete_user(configuration: &configuration::Configuration, user
     }
 }
 
-pub async fn user_disable_mfa(configuration: &configuration::Configuration, user_disable_mfa_request: models::UserDisableMfaRequest) -> Result<(), Error<UserDisableMfaError>> {
+pub async fn user_disable_mfa(configuration: &configuration::Configuration, deprecated_user_disable_mfa_request: models::DeprecatedUserDisableMfaRequest) -> Result<(), Error<UserDisableMfaError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1157,7 +2659,7 @@ pub async fn user_disable_mfa(configuration: &configuration::Configuration, user
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_disable_mfa_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_disable_mfa_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1174,7 +2676,7 @@ pub async fn user_disable_mfa(configuration: &configuration::Configuration, user
     }
 }
 
-pub async fn user_edit_api_token(configuration: &configuration::Configuration, api_token_id: &str, user_edit_api_token_request: models::UserEditApiTokenRequest) -> Result<(), Error<UserEditApiTokenError>> {
+pub async fn user_edit_api_token(configuration: &configuration::Configuration, api_token_id: &str, deprecated_user_edit_api_token_request: models::DeprecatedUserEditApiTokenRequest) -> Result<(), Error<UserEditApiTokenError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1193,7 +2695,7 @@ pub async fn user_edit_api_token(configuration: &configuration::Configuration, a
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_edit_api_token_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_edit_api_token_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1210,7 +2712,7 @@ pub async fn user_edit_api_token(configuration: &configuration::Configuration, a
     }
 }
 
-pub async fn user_edit_ssh_key(configuration: &configuration::Configuration, ssh_key_id: &str, user_edit_ssh_key_request: models::UserEditSshKeyRequest) -> Result<(), Error<UserEditSshKeyError>> {
+pub async fn user_edit_ssh_key(configuration: &configuration::Configuration, ssh_key_id: &str, deprecated_user_edit_ssh_key_request: models::DeprecatedUserEditSshKeyRequest) -> Result<(), Error<UserEditSshKeyError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1229,7 +2731,7 @@ pub async fn user_edit_ssh_key(configuration: &configuration::Configuration, ssh
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_edit_ssh_key_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_edit_ssh_key_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1634,7 +3136,7 @@ pub async fn user_init_mfa(configuration: &configuration::Configuration, body: O
     }
 }
 
-pub async fn user_init_password_reset(configuration: &configuration::Configuration, user_init_password_reset_request: models::UserInitPasswordResetRequest) -> Result<serde_json::Value, Error<UserInitPasswordResetError>> {
+pub async fn user_init_password_reset(configuration: &configuration::Configuration, deprecated_user_init_password_reset_request: models::DeprecatedUserInitPasswordResetRequest) -> Result<serde_json::Value, Error<UserInitPasswordResetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1653,7 +3155,7 @@ pub async fn user_init_password_reset(configuration: &configuration::Configurati
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_init_password_reset_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_init_password_reset_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2027,7 +3529,7 @@ pub async fn user_refresh_session(configuration: &configuration::Configuration, 
     }
 }
 
-pub async fn user_register(configuration: &configuration::Configuration, user_register_request: models::UserRegisterRequest) -> Result<models::UserRegister201Response, Error<UserRegisterError>> {
+pub async fn user_register(configuration: &configuration::Configuration, v2_signup_registration_post_request: models::V2SignupRegistrationPostRequest) -> Result<models::UserRegister201Response, Error<UserRegisterError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -2046,7 +3548,7 @@ pub async fn user_register(configuration: &configuration::Configuration, user_re
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_register_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_registration_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2349,7 +3851,7 @@ pub async fn user_terminate_session(configuration: &configuration::Configuration
     }
 }
 
-pub async fn user_update_account(configuration: &configuration::Configuration, user_update_account_request: models::UserUpdateAccountRequest) -> Result<(), Error<UserUpdateAccountError>> {
+pub async fn user_update_account(configuration: &configuration::Configuration, deprecated_user_service_personal_information_update_request: models::DeprecatedUserServicePersonalInformationUpdateRequest) -> Result<(), Error<UserUpdateAccountError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -2368,7 +3870,7 @@ pub async fn user_update_account(configuration: &configuration::Configuration, u
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_update_account_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_personal_information_update_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2385,7 +3887,7 @@ pub async fn user_update_account(configuration: &configuration::Configuration, u
     }
 }
 
-pub async fn user_update_personal_information(configuration: &configuration::Configuration, user_id: &str, user_update_account_request: models::UserUpdateAccountRequest) -> Result<(), Error<UserUpdatePersonalInformationError>> {
+pub async fn user_update_personal_information(configuration: &configuration::Configuration, user_id: &str, deprecated_user_service_personal_information_update_request: models::DeprecatedUserServicePersonalInformationUpdateRequest) -> Result<(), Error<UserUpdatePersonalInformationError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -2404,7 +3906,7 @@ pub async fn user_update_personal_information(configuration: &configuration::Con
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_update_account_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_service_personal_information_update_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2457,7 +3959,7 @@ pub async fn user_update_personalized_settings(configuration: &configuration::Co
     }
 }
 
-pub async fn user_verify_email(configuration: &configuration::Configuration, user_verify_email_request: models::UserVerifyEmailRequest) -> Result<(), Error<UserVerifyEmailError>> {
+pub async fn user_verify_email(configuration: &configuration::Configuration, deprecated_user_verify_email_request: models::DeprecatedUserVerifyEmailRequest) -> Result<(), Error<UserVerifyEmailError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -2476,7 +3978,7 @@ pub async fn user_verify_email(configuration: &configuration::Configuration, use
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_verify_email_request);
+    local_var_req_builder = local_var_req_builder.json(&deprecated_user_verify_email_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2493,7 +3995,7 @@ pub async fn user_verify_email(configuration: &configuration::Configuration, use
     }
 }
 
-pub async fn user_verify_phone_number(configuration: &configuration::Configuration, user_id: &str, user_verify_phone_number_request: models::UserVerifyPhoneNumberRequest) -> Result<(), Error<UserVerifyPhoneNumberError>> {
+pub async fn user_verify_phone_number(configuration: &configuration::Configuration, user_id: &str, v2_users_user_id_phone_verify_post_request: models::V2UsersUserIdPhoneVerifyPostRequest) -> Result<(), Error<UserVerifyPhoneNumberError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -2512,7 +4014,7 @@ pub async fn user_verify_phone_number(configuration: &configuration::Configurati
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_verify_phone_number_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_users_user_id_phone_verify_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2529,7 +4031,7 @@ pub async fn user_verify_phone_number(configuration: &configuration::Configurati
     }
 }
 
-pub async fn user_verify_registration(configuration: &configuration::Configuration, user_verify_registration_request: models::UserVerifyRegistrationRequest) -> Result<serde_json::Value, Error<UserVerifyRegistrationError>> {
+pub async fn user_verify_registration(configuration: &configuration::Configuration, v2_signup_registration_verification_post_request: models::V2SignupRegistrationVerificationPostRequest) -> Result<serde_json::Value, Error<UserVerifyRegistrationError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -2548,7 +4050,7 @@ pub async fn user_verify_registration(configuration: &configuration::Configurati
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&user_verify_registration_request);
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_registration_verification_post_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2560,6 +4062,902 @@ pub async fn user_verify_registration(configuration: &configuration::Configurati
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<UserVerifyRegistrationError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_authentication_mfa_post(configuration: &configuration::Configuration, v2_signup_authentication_mfa_post_request: models::V2SignupAuthenticationMfaPostRequest) -> Result<(), Error<V2SignupAuthenticationMfaPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/authentication/mfa", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_authentication_mfa_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupAuthenticationMfaPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_authentication_post(configuration: &configuration::Configuration, v2_signup_authentication_post_request: models::V2SignupAuthenticationPostRequest) -> Result<(), Error<V2SignupAuthenticationPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/authentication", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_authentication_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupAuthenticationPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_email_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2SignupEmailGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/email", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupEmailGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_mfa_confirm_post(configuration: &configuration::Configuration, v2_signup_mfa_confirm_post_request: models::V2SignupMfaConfirmPostRequest) -> Result<(), Error<V2SignupMfaConfirmPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/mfa/confirm", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_mfa_confirm_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupMfaConfirmPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_mfa_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2SignupMfaGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/mfa", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupMfaGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_mfa_post(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<(), Error<V2SignupMfaPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/mfa", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupMfaPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_mfa_reset_recoverycodes_put(configuration: &configuration::Configuration, user_reset_recoverycodes_request: models::UserResetRecoverycodesRequest) -> Result<(), Error<V2SignupMfaResetRecoverycodesPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/mfa/reset-recoverycodes", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&user_reset_recoverycodes_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupMfaResetRecoverycodesPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_password_get(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<(), Error<V2SignupPasswordGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/password", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupPasswordGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_password_put(configuration: &configuration::Configuration, v2_signup_password_put_request: models::V2SignupPasswordPutRequest) -> Result<(), Error<V2SignupPasswordPutError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/password", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_password_put_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupPasswordPutError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_profile_delete(configuration: &configuration::Configuration, v2_signup_profile_delete_request: models::V2SignupProfileDeleteRequest) -> Result<(), Error<V2SignupProfileDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/profile", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_profile_delete_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupProfileDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_profile_get(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<(), Error<V2SignupProfileGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/profile", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupProfileGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_registration_post(configuration: &configuration::Configuration, v2_signup_registration_post_request: models::V2SignupRegistrationPostRequest) -> Result<(), Error<V2SignupRegistrationPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/registration", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_registration_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupRegistrationPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_registration_verification_post(configuration: &configuration::Configuration, v2_signup_registration_verification_post_request: models::V2SignupRegistrationVerificationPostRequest) -> Result<(), Error<V2SignupRegistrationVerificationPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/registration/verification", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_registration_verification_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupRegistrationVerificationPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_sessions_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2SignupSessionsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/sessions", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSessionsGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_sessions_token_id_get(configuration: &configuration::Configuration, token_id: &str) -> Result<(), Error<V2SignupSessionsTokenIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/sessions/{tokenId}", local_var_configuration.base_path, tokenId=crate::apis::urlencode(token_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSessionsTokenIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_ssh_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2SignupSshGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/ssh", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSshGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_ssh_post(configuration: &configuration::Configuration, v2_signup_ssh_post_request: models::V2SignupSshPostRequest) -> Result<(), Error<V2SignupSshPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/ssh", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_ssh_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSshPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_ssh_ssh_key_id_get(configuration: &configuration::Configuration, ssh_key_id: &str) -> Result<(), Error<V2SignupSshSshKeyIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/ssh/{sshKeyId}", local_var_configuration.base_path, sshKeyId=crate::apis::urlencode(ssh_key_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSshSshKeyIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_supportcode_get(configuration: &configuration::Configuration, force_recreate: Option<bool>) -> Result<(), Error<V2SignupSupportcodeGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/supportcode", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = force_recreate {
+        local_var_req_builder = local_var_req_builder.query(&[("forceRecreate", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSupportcodeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_supportcodes_get(configuration: &configuration::Configuration, force_recreate: Option<bool>) -> Result<(), Error<V2SignupSupportcodesGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/supportcodes", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = force_recreate {
+        local_var_req_builder = local_var_req_builder.query(&[("forceRecreate", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupSupportcodesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_token_api_api_token_id_get(configuration: &configuration::Configuration, api_token_id: &str) -> Result<(), Error<V2SignupTokenApiApiTokenIdGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/token/api/{apiTokenId}", local_var_configuration.base_path, apiTokenId=crate::apis::urlencode(api_token_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupTokenApiApiTokenIdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_token_api_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2SignupTokenApiGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/token/api", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupTokenApiGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_token_api_post(configuration: &configuration::Configuration, v2_signup_token_api_post_request: models::V2SignupTokenApiPostRequest) -> Result<(), Error<V2SignupTokenApiPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/token/api", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_signup_token_api_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupTokenApiPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_signup_token_check_post(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<(), Error<V2SignupTokenCheckPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/signup/token/check", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2SignupTokenCheckPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn v2_users_user_id_phone_verify_post(configuration: &configuration::Configuration, user_id: &str, v2_users_user_id_phone_verify_post_request: models::V2UsersUserIdPhoneVerifyPostRequest) -> Result<(), Error<V2UsersUserIdPhoneVerifyPostError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/users/{userId}/phone/verify", local_var_configuration.base_path, userId=crate::apis::urlencode(user_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&v2_users_user_id_phone_verify_post_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2UsersUserIdPhoneVerifyPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

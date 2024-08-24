@@ -71,6 +71,16 @@ pub enum NotificationsReadAllNotificationsError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`notifications_read_all_notifications_deprecated`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum NotificationsReadAllNotificationsDeprecatedError {
+    Status403(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    Status429(models::AppExecuteAction429Response),
+    DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`notifications_read_notification`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -78,6 +88,13 @@ pub enum NotificationsReadNotificationError {
     Status404(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
     Status429(models::AppExecuteAction429Response),
     DefaultResponse(models::DePeriodMittwaldPeriodV1PeriodCommonsPeriodError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`v2_notifications_unread_counts_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum V2NotificationsUnreadCountsGetError {
     UnknownValue(serde_json::Value),
 }
 
@@ -273,7 +290,7 @@ pub async fn notifications_list_notifications(configuration: &configuration::Con
 }
 
 /// Mark all notifications for the authenticated user as read.
-pub async fn notifications_read_all_notifications(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<models::NotificationsReadAllNotifications200Response, Error<NotificationsReadAllNotificationsError>> {
+pub async fn notifications_read_all_notifications(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<models::NotificationsReadAllNotificationsDeprecated200Response, Error<NotificationsReadAllNotificationsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -309,7 +326,44 @@ pub async fn notifications_read_all_notifications(configuration: &configuration:
     }
 }
 
-pub async fn notifications_read_notification(configuration: &configuration::Configuration, notification_id: &str, notifications_read_all_notifications200_response: models::NotificationsReadAllNotifications200Response) -> Result<models::NotificationsReadAllNotifications200Response, Error<NotificationsReadNotificationError>> {
+/// Deprecated route. Please use /v2/notifications/actions/read-all instead.
+pub async fn notifications_read_all_notifications_deprecated(configuration: &configuration::Configuration, body: Option<serde_json::Value>) -> Result<models::NotificationsReadAllNotificationsDeprecated200Response, Error<NotificationsReadAllNotificationsDeprecatedError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/notifications/status", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&body);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<NotificationsReadAllNotificationsDeprecatedError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn notifications_read_notification(configuration: &configuration::Configuration, notification_id: &str, notifications_read_all_notifications_deprecated200_response: models::NotificationsReadAllNotificationsDeprecated200Response) -> Result<models::NotificationsReadAllNotificationsDeprecated200Response, Error<NotificationsReadNotificationError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -328,7 +382,7 @@ pub async fn notifications_read_notification(configuration: &configuration::Conf
         };
         local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&notifications_read_all_notifications200_response);
+    local_var_req_builder = local_var_req_builder.json(&notifications_read_all_notifications_deprecated200_response);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -340,6 +394,42 @@ pub async fn notifications_read_notification(configuration: &configuration::Conf
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<NotificationsReadNotificationError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// The user is determined by the access token used. Lighter weight route instead of getting all unread notifications and count yourself. 
+pub async fn v2_notifications_unread_counts_get(configuration: &configuration::Configuration, ) -> Result<(), Error<V2NotificationsUnreadCountsGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v2/notifications/unread-counts", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("x-access-token", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<V2NotificationsUnreadCountsGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

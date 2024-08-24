@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **name** | **String** |  | 
 **scopes** | **Vec<String>** |  | 
+**state** | **String** | deprecated | 
 **support** | [**models::DePeriodMittwaldPeriodV1PeriodMarketplacePeriodSupportMeta**](de.mittwald.v1.marketplace.SupportMeta.md) |  | 
 **tags** | **Vec<String>** |  | 
 

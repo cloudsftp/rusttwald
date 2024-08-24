@@ -15,6 +15,9 @@ use serde::{Deserialize, Serialize};
 pub struct DePeriodMittwaldPeriodV1PeriodProjectPeriodHardwareSpec {
     #[serde(rename = "cpu", skip_serializing_if = "Option::is_none")]
     pub cpu: Option<String>,
+    /// deprecated by memory
+    #[serde(rename = "mem", skip_serializing_if = "Option::is_none")]
+    pub mem: Option<String>,
     #[serde(rename = "memory", skip_serializing_if = "Option::is_none")]
     pub memory: Option<String>,
     #[serde(rename = "storage")]
@@ -25,6 +28,7 @@ impl DePeriodMittwaldPeriodV1PeriodProjectPeriodHardwareSpec {
     pub fn new(storage: String) -> DePeriodMittwaldPeriodV1PeriodProjectPeriodHardwareSpec {
         DePeriodMittwaldPeriodV1PeriodProjectPeriodHardwareSpec {
             cpu: None,
+            mem: None,
             memory: None,
             storage,
         }

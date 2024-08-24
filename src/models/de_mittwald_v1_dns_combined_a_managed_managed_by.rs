@@ -14,12 +14,12 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeMittwaldV1DnsCombinedAManagedManagedBy {
-    DeMittwaldV1DnsCombinedAManagedManagedByOneOf(Box<models::DeMittwaldV1DnsCombinedAManagedManagedByOneOf>),
+    DnsRecordASetManagedByIngressDeprecated204Response(Box<models::DnsRecordASetManagedByIngressDeprecated204Response>),
 }
 
 impl Default for DeMittwaldV1DnsCombinedAManagedManagedBy {
     fn default() -> Self {
-        Self::DeMittwaldV1DnsCombinedAManagedManagedByOneOf(Default::default())
+        Self::DnsRecordASetManagedByIngressDeprecated204Response(Default::default())
     }
 }
 
