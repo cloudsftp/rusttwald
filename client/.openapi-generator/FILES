@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 Cargo.toml
 README.md
@@ -737,7 +736,6 @@ src/models/de_mittwald_v1_signup_account_mfa_details.rs
 src/models/de_mittwald_v1_signup_profile_mfa_details.rs
 src/models/de_mittwald_v1_sshuser_authentication_one_of.rs
 src/models/de_mittwald_v1_sshuser_authentication_one_of_1.rs
-src/models/de_mittwald_v1_ssl_certificate_error_message.rs
 src/models/de_mittwald_v1_strace_data_db_queries_inner.rs
 src/models/de_mittwald_v1_strace_data_file_ops_inner.rs
 src/models/de_mittwald_v1_strace_data_networking_ops_inner.rs
@@ -999,7 +997,6 @@ src/models/de_period_mittwald_period_v1_period_project_period_filesystem_usages_
 src/models/de_period_mittwald_period_v1_period_project_period_fs_api_jwt.rs
 src/models/de_period_mittwald_period_v1_period_project_period_hardware_spec.rs
 src/models/de_period_mittwald_period_v1_period_project_period_machine_type.rs
-src/models/de_period_mittwald_period_v1_period_project_period_project.rs
 src/models/de_period_mittwald_period_v1_period_project_period_project_status.rs
 src/models/de_period_mittwald_period_v1_period_project_period_server.rs
 src/models/de_period_mittwald_period_v1_period_project_period_server_disable_reason.rs
@@ -1147,9 +1144,7 @@ src/models/relocation_create_legacy_tariff_change_request.rs
 src/models/relocation_create_relocation_request.rs
 src/models/relocation_create_relocation_request_contact.rs
 src/models/relocation_create_relocation_request_provider.rs
-src/models/relocation_create_relocation_request_provider_name.rs
 src/models/relocation_create_relocation_request_target.rs
-src/models/relocation_create_relocation_request_target_product.rs
 src/models/servicetoken_authenticate_service_200_response.rs
 src/models/servicetoken_authenticate_service_200_response_access_token.rs
 src/models/servicetoken_authenticate_service_200_response_access_token_jwt_claims.rs
