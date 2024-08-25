@@ -12,7 +12,6 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-#[serde(untagged)]
 pub enum DeMittwaldV1SslCertificateErrorMessage {
     /// Failed to read the certificate.
     #[serde(rename = "certificate_read_failed")]
@@ -73,5 +72,46 @@ pub enum DeMittwaldV1SslCertificateErrorMessage {
 impl Default for DeMittwaldV1SslCertificateErrorMessage {
     fn default() -> Self {
         Self::Unknown
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_ser_unknown() {
+        let variant = DeMittwaldV1SslCertificateErrorMessage::Unknown;
+        assert_eq!(
+            serde_json::to_string(&variant).expect("could not serialize"),
+            r#""unknown""#
+        );
+    }
+
+    #[test]
+    fn test_de_unknown() {
+        let raw = r#""unknown""#;
+        assert_eq!(
+            DeMittwaldV1SslCertificateErrorMessage::Unknown,
+            serde_json::from_str(raw).expect("could not decode"),
+        );
+    }
+
+    #[test]
+    fn test_ser_certificate_read_failed() {
+        let variant = DeMittwaldV1SslCertificateErrorMessage::ReadFailed;
+        assert_eq!(
+            serde_json::to_string(&variant).expect("could not serialize"),
+            r#""certificate_read_failed""#
+        );
+    }
+
+    #[test]
+    fn test_de_certificate_read_failed() {
+        let raw = r#""certificate_read_failed""#;
+        assert_eq!(
+            DeMittwaldV1SslCertificateErrorMessage::ReadFailed,
+            serde_json::from_str(raw).expect("could not decode"),
+        );
     }
 }
