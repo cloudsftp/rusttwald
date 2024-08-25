@@ -1,11 +1,14 @@
 [package]
 name = "rusttwald"
-version = "0.1.0"
-authors = ["Fabian Weik"]
-description = "Unofficial Rust API client for the mittwald. API."
+version = "0.1.1"
+authors = ["cloudsftp"]
+description = "Inofficial Rust API client for the mittwald. API."
 # Override this license by providing a License Object in the OpenAPI.
 license = "GPL-3.0-or-later"
 edition = "2021"
+repository = "https://github.com/cloudsftp/rusttwald/tree/latest"
+keywords = ["mittwald", "API", "REST"]
+
 
 [dependencies]
 serde = { version = "^1.0", features = ["derive"] }
