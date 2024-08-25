@@ -13,67 +13,19 @@ use serde::{de::Visitor, Deserialize, Serialize};
 
 /// RelocationCreateRelocationRequestProviderName : Name of your provider
 /// Name of your provider
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub enum RelocationCreateRelocationRequestProviderName {
+    #[serde(rename = "1und1")]
     EinsUnsEins,
+    #[serde(rename = "strato")]
     Strato,
+    #[serde(untagged)]
     Other(String),
 }
 
 impl Default for RelocationCreateRelocationRequestProviderName {
     fn default() -> Self {
         Self::Other(Default::default())
-    }
-}
-
-struct RelocationCreateRelocationRequestProviderNameVisitor;
-
-impl<'de> Visitor<'de> for RelocationCreateRelocationRequestProviderNameVisitor {
-    type Value = RelocationCreateRelocationRequestProviderName;
-
-    fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
-        formatter.write_str(r#""1und1", "strato", or any other string"#)
-    }
-
-    fn visit_str<E>(self, v: &str) -> Result<Self::Value, E>
-    where
-        E: serde::de::Error,
-    {
-        match v {
-            "1und1" => Ok(RelocationCreateRelocationRequestProviderName::EinsUnsEins),
-            "strato" => Ok(RelocationCreateRelocationRequestProviderName::Strato),
-            other => Ok(RelocationCreateRelocationRequestProviderName::Other(
-                other.to_string(),
-            )),
-        }
-    }
-}
-
-impl<'de> Deserialize<'de> for RelocationCreateRelocationRequestProviderName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        deserializer.deserialize_str(RelocationCreateRelocationRequestProviderNameVisitor {})
-    }
-}
-
-impl Serialize for RelocationCreateRelocationRequestProviderName {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        match self {
-            RelocationCreateRelocationRequestProviderName::EinsUnsEins => {
-                serializer.serialize_str("1und1")
-            }
-            RelocationCreateRelocationRequestProviderName::Strato => {
-                serializer.serialize_str("strato")
-            }
-            RelocationCreateRelocationRequestProviderName::Other(value) => {
-                serializer.serialize_str(value)
-            }
-        }
     }
 }
 
