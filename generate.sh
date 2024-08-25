@@ -13,4 +13,5 @@ java -jar openapi-generator-cli.jar \
     generate \
     -g rust \
     -i original-api.json \
-    --skip-validate-spec
+    --skip-validate-spec \
+    -o client
