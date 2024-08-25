@@ -5,3 +5,6 @@ src/models/relocation_create_relocation_request_target_product.rs
 
 # Deprecated field clashes
 src/models/de_period_mittwald_period_v1_period_project_period_project.rs
+
+#
+src/lib.rs
