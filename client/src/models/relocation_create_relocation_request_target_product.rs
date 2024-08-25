@@ -14,7 +14,6 @@ use serde::{Deserialize, Serialize};
 /// RelocationCreateRelocationRequestTargetProduct : Help our customer service finding your target account
 /// Help our customer service finding your target account
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-#[serde(untagged)]
 pub enum RelocationCreateRelocationRequestTargetProduct {
     #[serde(rename = "Space-Server")]
     SpaceServer,
@@ -26,6 +25,7 @@ pub enum RelocationCreateRelocationRequestTargetProduct {
     CMSHosting,
     #[serde(rename = "Shop-Hosting")]
     ShopHosting,
+    #[serde(untagged)]
     Other(String),
 }
 
@@ -40,7 +40,38 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_name() {
-        assert!(true)
+    fn test_ser_other() {
+        let variant = RelocationCreateRelocationRequestTargetProduct::Other("other".to_string());
+        assert_eq!(
+            serde_json::to_string(&variant).expect("could not serialize"),
+            r#""other""#
+        );
+    }
+
+    #[test]
+    fn test_de_other() {
+        let raw = r#""other""#;
+        assert_eq!(
+            RelocationCreateRelocationRequestTargetProduct::Other("other".to_string()),
+            serde_json::from_str(raw).expect("could not decode"),
+        );
+    }
+
+    #[test]
+    fn test_ser_space_server() {
+        let variant = RelocationCreateRelocationRequestTargetProduct::SpaceServer;
+        assert_eq!(
+            serde_json::to_string(&variant).expect("could not serialize"),
+            r#""Space-Server""#
+        );
+    }
+
+    #[test]
+    fn test_de_space_server() {
+        let raw = r#""Space-Server""#;
+        assert_eq!(
+            RelocationCreateRelocationRequestTargetProduct::SpaceServer,
+            serde_json::from_str(raw).expect("could not decode"),
+        );
     }
 }
