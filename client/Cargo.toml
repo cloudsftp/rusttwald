@@ -2,9 +2,9 @@
 name = "rusttwald"
 version = "0.1.0"
 authors = ["Fabian Weik"]
-description = "Unofficial mittwald API rust client"
+description = "Unofficial Rust API client for the mittwald. API."
 # Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+license = "GPL-3.0-or-later"
 edition = "2021"
 
 [dependencies]
